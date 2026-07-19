@@ -17,6 +17,8 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IConsultationService, ConsultationService>();
         services.AddScoped<IFavoriteService, FavoriteService>();
         services.AddScoped<IChatService, ChatService>();
+        services.AddScoped<IScholarshipService, ScholarshipService>();
+        services.AddScoped<IArticleService, ArticleService>();
 
         return services;
     }

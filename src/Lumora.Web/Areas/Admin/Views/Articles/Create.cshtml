@@ -1,0 +1,14 @@
+@model Lumora.Application.DTOs.Articles.ArticleCreateDto
+@{
+    ViewData["Title"] = SharedLocalizer["ArticlesLabel"].Value + " — " + SharedLocalizer["Add"].Value;
+}
+
+<div class="admin-card">
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <partial name="_Form" model="Model" />
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn lum-btn-navy">@SharedLocalizer["Save"]</button>
+            <a class="btn lum-btn-outline" asp-action="Index">@SharedLocalizer["BackToList"]</a>
+        </div>
+    </form>
+</div>

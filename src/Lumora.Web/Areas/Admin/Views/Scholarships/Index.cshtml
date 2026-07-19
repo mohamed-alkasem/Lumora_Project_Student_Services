@@ -1,0 +1,56 @@
+@model IEnumerable<Lumora.Application.DTOs.Scholarships.ScholarshipCardDto>
+@{
+    ViewData["Title"] = SharedLocalizer["Scholarships"].Value;
+}
+
+<div class="admin-toolbar">
+    <span></span>
+    <a class="btn lum-btn-navy" asp-action="Create">+ @SharedLocalizer["AddNew"]</a>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>@SharedLocalizer["ImageLabel"]</th>
+                <th>@SharedLocalizer["TitleLabel"]</th>
+                <th>@SharedLocalizer["University"]</th>
+                <th>@SharedLocalizer["OriginalPriceLabel"]</th>
+                <th>@SharedLocalizer["DiscountedPriceLabel"]</th>
+                <th>@SharedLocalizer["StatusLabel"]</th>
+                <th>@SharedLocalizer["Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImageUrl))
+                        {
+                            <img class="admin-thumb" src="@item.ImageUrl" alt="@item.Title" />
+                        }
+                    </td>
+                    <td>@item.Title</td>
+                    <td>@item.UniversityName</td>
+                    <td><s>$@item.OriginalPriceUsd.ToString("N0")</s></td>
+                    <td><strong>$@item.DiscountedPriceUsd.ToString("N0")</strong> <span class="admin-badge admin-badge-contacted">-@item.DiscountPercent%</span></td>
+                    <td>
+                        <span class="admin-badge @(item.IsActive ? "admin-badge-active" : "admin-badge-inactive")">
+                            @(item.IsActive ? SharedLocalizer["Active"] : SharedLocalizer["Inactive"])
+                        </span>
+                    </td>
+                    <td>
+                        <div class="admin-actions">
+                            <a class="btn btn-sm lum-btn-outline" asp-action="Edit" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a>
+                            <form asp-action="Delete" asp-route-id="@item.Id" method="post"
+                                  data-confirm="@SharedLocalizer["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">@SharedLocalizer["Delete"]</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

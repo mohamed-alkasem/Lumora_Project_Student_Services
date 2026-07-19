@@ -87,6 +87,72 @@ namespace Lumora.Infrastructure.Data.Migrations
                     b.ToTable("AcademicProgramTranslations", (string)null);
                 });
 
+            modelBuilder.Entity("Lumora.Domain.Entities.Article", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CoverImageUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPublished")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Articles", (string)null);
+                });
+
+            modelBuilder.Entity("Lumora.Domain.Entities.ArticleTranslation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LanguageCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Summary")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId", "LanguageCode")
+                        .IsUnique();
+
+                    b.ToTable("ArticleTranslations", (string)null);
+                });
+
             modelBuilder.Entity("Lumora.Domain.Entities.ChatConversation", b =>
                 {
                     b.Property<int>("Id")
@@ -454,6 +520,85 @@ namespace Lumora.Infrastructure.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("HousingTranslations", (string)null);
+                });
+
+            modelBuilder.Entity("Lumora.Domain.Entities.Scholarship", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Deadline")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("DiscountedPriceUsd")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("OriginalPriceUsd")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("UniversityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UniversityId");
+
+                    b.ToTable("Scholarships", (string)null);
+                });
+
+            modelBuilder.Entity("Lumora.Domain.Entities.ScholarshipTranslation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("LanguageCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ScholarshipId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ScholarshipId", "LanguageCode")
+                        .IsUnique();
+
+                    b.ToTable("ScholarshipTranslations", (string)null);
                 });
 
             modelBuilder.Entity("Lumora.Domain.Entities.Testimonial", b =>
@@ -874,6 +1019,17 @@ namespace Lumora.Infrastructure.Data.Migrations
                     b.Navigation("AcademicProgram");
                 });
 
+            modelBuilder.Entity("Lumora.Domain.Entities.ArticleTranslation", b =>
+                {
+                    b.HasOne("Lumora.Domain.Entities.Article", "Article")
+                        .WithMany("Translations")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+                });
+
             modelBuilder.Entity("Lumora.Domain.Entities.ChatConversation", b =>
                 {
                     b.HasOne("Lumora.Infrastructure.Identity.ApplicationUser", null)
@@ -982,6 +1138,28 @@ namespace Lumora.Infrastructure.Data.Migrations
                     b.Navigation("Housing");
                 });
 
+            modelBuilder.Entity("Lumora.Domain.Entities.Scholarship", b =>
+                {
+                    b.HasOne("Lumora.Domain.Entities.University", "University")
+                        .WithMany()
+                        .HasForeignKey("UniversityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("University");
+                });
+
+            modelBuilder.Entity("Lumora.Domain.Entities.ScholarshipTranslation", b =>
+                {
+                    b.HasOne("Lumora.Domain.Entities.Scholarship", "Scholarship")
+                        .WithMany("Translations")
+                        .HasForeignKey("ScholarshipId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Scholarship");
+                });
+
             modelBuilder.Entity("Lumora.Domain.Entities.TestimonialTranslation", b =>
                 {
                     b.HasOne("Lumora.Domain.Entities.Testimonial", "Testimonial")
@@ -1082,6 +1260,11 @@ namespace Lumora.Infrastructure.Data.Migrations
                     b.Navigation("Translations");
                 });
 
+            modelBuilder.Entity("Lumora.Domain.Entities.Article", b =>
+                {
+                    b.Navigation("Translations");
+                });
+
             modelBuilder.Entity("Lumora.Domain.Entities.ChatConversation", b =>
                 {
                     b.Navigation("Messages");
@@ -1105,6 +1288,11 @@ namespace Lumora.Infrastructure.Data.Migrations
                 {
                     b.Navigation("Images");
 
+                    b.Navigation("Translations");
+                });
+
+            modelBuilder.Entity("Lumora.Domain.Entities.Scholarship", b =>
+                {
                     b.Navigation("Translations");
                 });
 

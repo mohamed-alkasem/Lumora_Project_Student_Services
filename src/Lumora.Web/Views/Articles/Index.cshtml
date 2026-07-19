@@ -1,0 +1,62 @@
+@model IReadOnlyList<Lumora.Application.DTOs.Articles.ArticleCardDto>
+@{
+    ViewData["Title"] = SharedLocalizer["ArticlesLabel"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/articles.css" asp-append-version="true" />
+}
+
+<section class="art-hero">
+    <div class="container">
+        <span class="art-hero-badge">
+            <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM7 7h10v2H7zm0 4h10v2H7zm0 4h7v2H7z"/></svg>
+            @SharedLocalizer["ArticlesLabel"]
+        </span>
+        <h1 class="art-hero-title">@SharedLocalizer["ArticlesHeroTitle"]</h1>
+        <p class="art-hero-subtitle">@SharedLocalizer["ArticlesHeroSubtitle"]</p>
+    </div>
+    <div class="art-hero-glow" aria-hidden="true"></div>
+</section>
+
+<section class="art-content">
+    <div class="container">
+        @if (Model.Count == 0)
+        {
+            <div class="art-empty">
+                <p>@SharedLocalizer["NoArticles"]</p>
+            </div>
+        }
+        else
+        {
+            <div class="art-grid">
+                @foreach (var (article, i) in Model.Select((a, i) => (a, i)))
+                {
+                    <article class="art-card" data-reveal style="--reveal-delay: @($"{i % 3 * 0.1:0.0}s")">
+                        <a class="art-card-band" asp-action="Details" asp-route-id="@article.Id">
+                            @if (!string.IsNullOrEmpty(article.CoverImageUrl))
+                            {
+                                <img src="@article.CoverImageUrl" alt="@article.Title" loading="lazy" />
+                            }
+                            else
+                            {
+                                <svg class="art-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM7 7h10v2H7zm0 4h10v2H7zm0 4h7v2H7z"/></svg>
+                            }
+                        </a>
+                        <div class="art-card-body">
+                            <time class="art-card-date">@article.CreatedAt.ToString("yyyy-MM-dd")</time>
+                            <h2 class="art-card-title">
+                                <a asp-action="Details" asp-route-id="@article.Id">@article.Title</a>
+                            </h2>
+                            <p class="art-card-summary">@article.Summary</p>
+                            <a class="art-read-more" asp-action="Details" asp-route-id="@article.Id">
+                                @SharedLocalizer["ReadMore"]
+                                <svg class="lum-icon art-arrow" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m8.59 16.59 1.41 1.41 6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+    </div>
+</section>

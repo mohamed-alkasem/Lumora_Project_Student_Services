@@ -1,0 +1,40 @@
+@model Lumora.Application.DTOs.Articles.ArticleDetailsDto
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/articles.css" asp-append-version="true" />
+}
+
+<article class="artd">
+    <header class="artd-hero">
+        <div class="container">
+            <time class="artd-date">@Model.CreatedAt.ToString("yyyy-MM-dd")</time>
+            <h1 class="artd-title">@Model.Title</h1>
+            <p class="artd-summary">@Model.Summary</p>
+        </div>
+        <div class="artd-hero-glow" aria-hidden="true"></div>
+    </header>
+
+    <div class="container artd-container">
+        @if (!string.IsNullOrEmpty(Model.CoverImageUrl))
+        {
+            <figure class="artd-cover" data-reveal="zoom">
+                <img src="@Model.CoverImageUrl" alt="@Model.Title" />
+            </figure>
+        }
+
+        <div class="artd-body">
+            @foreach (var paragraph in Model.Body.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+            {
+                <p>@paragraph</p>
+            }
+        </div>
+
+        <div class="artd-footer">
+            <a class="btn lum-btn-outline" asp-action="Index">@SharedLocalizer["BackToList"]</a>
+            <a class="btn lum-btn-gold" asp-controller="Consultations" asp-action="Request">@SharedLocalizer["FreeConsultation"]</a>
+        </div>
+    </div>
+</article>

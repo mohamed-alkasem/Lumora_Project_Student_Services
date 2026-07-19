@@ -138,7 +138,7 @@
   <data name="StudentTitle" xml:space="preserve"><value>Öğrenci unvanı</value></data>
   <data name="Quote" xml:space="preserve"><value>Yorum</value></data>
   <data name="RatingLabel" xml:space="preserve"><value>Puan</value></data>
-  <data name="ImageTooLarge" xml:space="preserve"><value>Görsel 2MB'den küçük olmalıdır</value></data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>Görsel 15MB'den küçük olmalıdır</value></data>
   <data name="ImageTypeNotAllowed" xml:space="preserve"><value>İzin verilen görsel türleri: PNG, JPG, WEBP, SVG</value></data>
   <data name="All" xml:space="preserve"><value>Tümü</value></data>
   <data name="CreatedAt" xml:space="preserve"><value>Oluşturulma</value></data>
@@ -239,4 +239,19 @@
   <data name="Upload" xml:space="preserve"><value>Yükle</value></data>
   <data name="WelcomeEmailSubject" xml:space="preserve"><value>Lumora'ya hoş geldiniz!</value></data>
   <data name="WelcomeEmailBody" xml:space="preserve"><value>Merhaba {0},&lt;br/&gt;&lt;br/&gt;Lumora hesabınız hazır. Üniversitelere göz atın, favorilerinizi kaydedin, ücretsiz danışmanlık isteyin ve ekibimizle sohbet edin — Türkiye'deki eğitim yolculuğunuzun her adımında yanınızdayız.&lt;br/&gt;&lt;br/&gt;Lumora Ekibi</value></data>
+  <data name="Scholarships" xml:space="preserve"><value>Burslar</value></data>
+  <data name="ScholarshipsHeroTitle" xml:space="preserve"><value>Burslar ve indirimli kontenjanlar</value></data>
+  <data name="ScholarshipsHeroSubtitle" xml:space="preserve"><value>Özel fiyatlarla sınırlı üniversite kontenjanları — son tarihten önce başvurun.</value></data>
+  <data name="NoScholarships" xml:space="preserve"><value>Şu anda aktif burs yok — yakında tekrar bakın.</value></data>
+  <data name="OriginalPriceLabel" xml:space="preserve"><value>Orijinal fiyat</value></data>
+  <data name="DiscountedPriceLabel" xml:space="preserve"><value>İndirimli fiyat</value></data>
+  <data name="DeadlineLabel" xml:space="preserve"><value>Son tarih</value></data>
+  <data name="ArticlesLabel" xml:space="preserve"><value>Makaleler</value></data>
+  <data name="ArticlesHeroTitle" xml:space="preserve"><value>Eğitim yolculuğunuz için rehberler ve haberler</value></data>
+  <data name="ArticlesHeroSubtitle" xml:space="preserve"><value>Türkiye'de eğitim ve yaşam hakkında ipuçları, rehberler ve güncellemeler.</value></data>
+  <data name="NoArticles" xml:space="preserve"><value>Henüz yayınlanmış makale yok.</value></data>
+  <data name="ReadMore" xml:space="preserve"><value>Devamını oku</value></data>
+  <data name="Summary" xml:space="preserve"><value>Özet</value></data>
+  <data name="Body" xml:space="preserve"><value>İçerik</value></data>
+  <data name="DevelopedBy" xml:space="preserve"><value>Tasarım ve geliştirme:</value></data>
 </root>

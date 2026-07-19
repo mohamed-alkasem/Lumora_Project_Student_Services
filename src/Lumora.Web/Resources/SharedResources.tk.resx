@@ -138,7 +138,7 @@
   <data name="StudentTitle" xml:space="preserve"><value>Talybyň derejesi</value></data>
   <data name="Quote" xml:space="preserve"><value>Pikir</value></data>
   <data name="RatingLabel" xml:space="preserve"><value>Baha</value></data>
-  <data name="ImageTooLarge" xml:space="preserve"><value>Surat 2MB-den kiçi bolmaly</value></data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>Surat 15MB-den kiçi bolmaly</value></data>
   <data name="ImageTypeNotAllowed" xml:space="preserve"><value>Rugsat berlen surat görnüşleri: PNG, JPG, WEBP, SVG</value></data>
   <data name="All" xml:space="preserve"><value>Ählisi</value></data>
   <data name="CreatedAt" xml:space="preserve"><value>Döredilen</value></data>
@@ -239,4 +239,19 @@
   <data name="Upload" xml:space="preserve"><value>Ýükle</value></data>
   <data name="WelcomeEmailSubject" xml:space="preserve"><value>Lumora-a hoş geldiňiz!</value></data>
   <data name="WelcomeEmailBody" xml:space="preserve"><value>Salam {0},&lt;br/&gt;&lt;br/&gt;Lumora hasabyňyz taýýar. Uniwersitetlere göz aýlaň, halanlaryňyzy ýatda saklaň, mugt maslahat soraň we toparymyz bilen söhbetdeş boluň — Türkiýedäki okuw syýahatyňyzyň her ädiminde ýanyňyzdadyrys.&lt;br/&gt;&lt;br/&gt;Lumora topary</value></data>
+  <data name="Scholarships" xml:space="preserve"><value>Talyp haklary</value></data>
+  <data name="ScholarshipsHeroTitle" xml:space="preserve"><value>Talyp haklary we arzanladylan orunlar</value></data>
+  <data name="ScholarshipsHeroSubtitle" xml:space="preserve"><value>Ýörite bahalardan çäkli uniwersitet orunlary — möhletden öň ýüz tutuň.</value></data>
+  <data name="NoScholarships" xml:space="preserve"><value>Häzirki wagtda işjeň talyp haky ýok — ýakynda dolanyň.</value></data>
+  <data name="OriginalPriceLabel" xml:space="preserve"><value>Asyl baha</value></data>
+  <data name="DiscountedPriceLabel" xml:space="preserve"><value>Arzanladyşdan soňky baha</value></data>
+  <data name="DeadlineLabel" xml:space="preserve"><value>Iň soňky möhlet</value></data>
+  <data name="ArticlesLabel" xml:space="preserve"><value>Makalalar</value></data>
+  <data name="ArticlesHeroTitle" xml:space="preserve"><value>Okuw syýahatyňyz üçin gollanmalar we habarlar</value></data>
+  <data name="ArticlesHeroSubtitle" xml:space="preserve"><value>Türkiýede okamak we ýaşamak barada maslahatlar, gollanmalar we täzelikler.</value></data>
+  <data name="NoArticles" xml:space="preserve"><value>Entek çap edilen makala ýok.</value></data>
+  <data name="ReadMore" xml:space="preserve"><value>Dowamyny oka</value></data>
+  <data name="Summary" xml:space="preserve"><value>Gysgaça</value></data>
+  <data name="Body" xml:space="preserve"><value>Mazmun</value></data>
+  <data name="DevelopedBy" xml:space="preserve"><value>Dizaýn we programmirleme:</value></data>
 </root>

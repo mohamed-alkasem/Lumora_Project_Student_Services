@@ -367,7 +367,7 @@
   <data name="RatingLabel" xml:space="preserve">
     <value>التقييم</value>
   </data>
-  <data name="ImageTooLarge" xml:space="preserve"><value>يجب أن يكون حجم الصورة أقل من 2 ميغابايت</value></data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>يجب أن يكون حجم الصورة أقل من 15 ميغابايت</value></data>
   <data name="ImageTypeNotAllowed" xml:space="preserve"><value>أنواع الصور المسموحة: PNG, JPG, WEBP, SVG</value></data>
   <data name="All" xml:space="preserve"><value>الكل</value></data>
   <data name="CreatedAt" xml:space="preserve"><value>تاريخ الإنشاء</value></data>
@@ -468,4 +468,19 @@
   <data name="Upload" xml:space="preserve"><value>رفع</value></data>
   <data name="WelcomeEmailSubject" xml:space="preserve"><value>أهلاً بك في لومورا!</value></data>
   <data name="WelcomeEmailBody" xml:space="preserve"><value>مرحباً {0}،&lt;br/&gt;&lt;br/&gt;حسابك في لومورا صار جاهزاً. تصفح الجامعات، احفظ مفضلتك، اطلب استشارة مجانية وتحدث مع فريقنا — نحن معك في كل خطوة من رحلتك الدراسية في تركيا.&lt;br/&gt;&lt;br/&gt;فريق لومورا</value></data>
+  <data name="Scholarships" xml:space="preserve"><value>المنح</value></data>
+  <data name="ScholarshipsHeroTitle" xml:space="preserve"><value>منح ومقاعد بأسعار مخفضة</value></data>
+  <data name="ScholarshipsHeroSubtitle" xml:space="preserve"><value>مقاعد جامعية محدودة بأسعار خاصة — قدّم قبل انتهاء المهلة.</value></data>
+  <data name="NoScholarships" xml:space="preserve"><value>لا توجد منح فعالة حالياً — عد قريباً.</value></data>
+  <data name="OriginalPriceLabel" xml:space="preserve"><value>السعر الأصلي</value></data>
+  <data name="DiscountedPriceLabel" xml:space="preserve"><value>السعر بعد الخصم</value></data>
+  <data name="DeadlineLabel" xml:space="preserve"><value>آخر موعد</value></data>
+  <data name="ArticlesLabel" xml:space="preserve"><value>المقالات</value></data>
+  <data name="ArticlesHeroTitle" xml:space="preserve"><value>أدلة وأخبار لرحلتك الدراسية</value></data>
+  <data name="ArticlesHeroSubtitle" xml:space="preserve"><value>نصائح وأدلة وتحديثات عن الدراسة والحياة في تركيا.</value></data>
+  <data name="NoArticles" xml:space="preserve"><value>لا توجد مقالات منشورة بعد.</value></data>
+  <data name="ReadMore" xml:space="preserve"><value>اقرأ المزيد</value></data>
+  <data name="Summary" xml:space="preserve"><value>الملخص</value></data>
+  <data name="Body" xml:space="preserve"><value>المحتوى</value></data>
+  <data name="DevelopedBy" xml:space="preserve"><value>تصميم وبرمجة</value></data>
 </root>

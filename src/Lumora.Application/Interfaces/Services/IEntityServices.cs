@@ -1,8 +1,10 @@
+using Lumora.Application.DTOs.Articles;
 using Lumora.Application.DTOs.Cities;
 using Lumora.Application.DTOs.Consultations;
 using Lumora.Application.DTOs.Faqs;
 using Lumora.Application.DTOs.Housings;
 using Lumora.Application.DTOs.Programs;
+using Lumora.Application.DTOs.Scholarships;
 using Lumora.Application.DTOs.Testimonials;
 using Lumora.Application.DTOs.Universities;
 using Lumora.Domain.Common;
@@ -58,6 +60,20 @@ public interface IHousingService
     Task AddImageAsync(int housingId, string url);
     /// Returns the removed image's url (for physical file cleanup), or null when not found.
     Task<string?> RemoveImageAsync(int imageId);
+}
+
+public interface IScholarshipService
+    : ITranslatableService<ScholarshipCardDto, ScholarshipCreateDto, ScholarshipUpdateDto>
+{
+    /// Public page: active offers only, ordered by DisplayOrder then newest.
+    Task<IReadOnlyList<ScholarshipCardDto>> GetActiveAsync(string languageCode);
+}
+
+public interface IArticleService
+    : ITranslatableService<ArticleDetailsDto, ArticleCreateDto, ArticleUpdateDto>
+{
+    /// Public list: published only, newest first.
+    Task<IReadOnlyList<ArticleCardDto>> GetPublishedAsync(string languageCode);
 }
 
 public interface IConsultationService

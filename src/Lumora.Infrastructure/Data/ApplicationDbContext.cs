@@ -34,6 +34,12 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
     public DbSet<ConsultationRequest> ConsultationRequests => Set<ConsultationRequest>();
     public DbSet<Favorite> Favorites => Set<Favorite>();
 
+    public DbSet<Scholarship> Scholarships => Set<Scholarship>();
+    public DbSet<ScholarshipTranslation> ScholarshipTranslations => Set<ScholarshipTranslation>();
+
+    public DbSet<Article> Articles => Set<Article>();
+    public DbSet<ArticleTranslation> ArticleTranslations => Set<ArticleTranslation>();
+
     public DbSet<UniversityImage> UniversityImages => Set<UniversityImage>();
     public DbSet<HousingImage> HousingImages => Set<HousingImage>();
 
