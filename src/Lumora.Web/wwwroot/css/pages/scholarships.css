@@ -1,0 +1,250 @@
+/* ============================================================
+   Scholarships page — offer cards with crossed-out original
+   price and gold discounted price. Logical properties only.
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.sch-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 3rem 3.5rem;
+    text-align: center;
+}
+
+.sch-hero-glow {
+    position: absolute;
+    inset-block-start: -4rem;
+    inset-inline-end: -4rem;
+    inline-size: 18rem;
+    block-size: 18rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 165, 26, 0.55) 0%, rgba(242, 165, 26, 0) 70%);
+    pointer-events: none;
+}
+
+.sch-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 0.8rem;
+    margin-block-end: 1rem;
+}
+
+.sch-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    max-inline-size: 26ch;
+    margin-inline: auto;
+}
+
+.sch-hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    max-inline-size: 55ch;
+    margin-inline: auto;
+    margin-block-end: 0;
+}
+
+/* ---------- Grid ---------- */
+.sch-content {
+    padding-block: 2.5rem 3rem;
+}
+
+.sch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+@media (max-width: 991.98px) {
+    .sch-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .sch-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Card ---------- */
+.sch-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--lum-shadow-lift);
+}
+
+.sch-card-band {
+    position: relative;
+    block-size: 9rem;
+    background: linear-gradient(135deg, var(--lum-navy-800), var(--lum-navy-700));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sch-card-image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+
+.sch-card-icon {
+    inline-size: 3rem;
+    block-size: 3rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ribbon-style discount badge */
+.sch-discount-badge {
+    position: absolute;
+    inset-block-start: 0.7rem;
+    inset-inline-start: 0.7rem;
+    background: #d93b52;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    box-shadow: 0 4px 14px rgba(217, 59, 82, 0.45);
+    animation: sch-pulse 2.4s ease-in-out infinite;
+    direction: ltr;
+}
+
+@keyframes sch-pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.07); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sch-discount-badge { animation: none; }
+}
+
+.sch-card-body {
+    padding: 1.1rem 1.2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.sch-uni-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    align-self: flex-start;
+    background: rgba(30, 58, 102, 0.08);
+    color: var(--lum-navy);
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-block-end: 0.6rem;
+}
+
+.sch-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--lum-navy-900);
+    margin-block-end: 0.4rem;
+}
+
+.sch-card-desc {
+    font-size: 0.85rem;
+    color: var(--lum-muted);
+    line-height: 1.6;
+    margin-block-end: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* the money moment: old price crossed out, new price big & gold */
+.sch-prices {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    border-block-start: 1px dashed var(--lum-line);
+    padding-block-start: 0.75rem;
+    margin-block-end: 0.5rem;
+    direction: ltr;
+    justify-content: flex-start;
+}
+
+[dir="rtl"] .sch-prices {
+    justify-content: flex-end;
+}
+
+.sch-price-old {
+    color: var(--lum-muted);
+    font-size: 1rem;
+    text-decoration-color: #d93b52;
+    text-decoration-thickness: 2px;
+}
+
+.sch-price-new {
+    color: var(--lum-gold-strong);
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.sch-deadline {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--lum-muted);
+    margin-block-end: 0.9rem;
+}
+
+.sch-deadline .lum-icon {
+    color: #d93b52;
+}
+
+.sch-card-actions {
+    margin-block-start: auto;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.sch-apply {
+    flex: 1;
+    background: var(--lum-navy);
+    color: var(--lum-white);
+    font-weight: 700;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.sch-apply:hover {
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+}
+
+/* ---------- Empty ---------- */
+.sch-empty {
+    text-align: center;
+    color: var(--lum-muted);
+    padding-block: 4rem;
+}
+
+.sch-empty .lum-icon {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    margin-block-end: 0.75rem;
+}

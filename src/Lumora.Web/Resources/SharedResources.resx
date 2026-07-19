@@ -367,7 +367,7 @@
   <data name="RatingLabel" xml:space="preserve">
     <value>Rating</value>
   </data>
-  <data name="ImageTooLarge" xml:space="preserve"><value>Image must be smaller than 2MB</value></data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>Image must be smaller than 15MB</value></data>
   <data name="ImageTypeNotAllowed" xml:space="preserve"><value>Allowed image types: PNG, JPG, WEBP, SVG</value></data>
   <data name="All" xml:space="preserve"><value>All</value></data>
   <data name="CreatedAt" xml:space="preserve"><value>Created</value></data>
@@ -468,4 +468,19 @@
   <data name="Upload" xml:space="preserve"><value>Upload</value></data>
   <data name="WelcomeEmailSubject" xml:space="preserve"><value>Welcome to Lumora!</value></data>
   <data name="WelcomeEmailBody" xml:space="preserve"><value>Hi {0},&lt;br/&gt;&lt;br/&gt;Your Lumora account is ready. Browse universities, save favorites, request a free consultation and chat with our team — we are with you at every step of your study journey in Türkiye.&lt;br/&gt;&lt;br/&gt;Lumora Team</value></data>
+  <data name="Scholarships" xml:space="preserve"><value>Scholarships</value></data>
+  <data name="ScholarshipsHeroTitle" xml:space="preserve"><value>Scholarships &amp; discounted seats</value></data>
+  <data name="ScholarshipsHeroSubtitle" xml:space="preserve"><value>Limited university seats at special prices — apply before the deadline.</value></data>
+  <data name="NoScholarships" xml:space="preserve"><value>No active scholarships right now — check back soon.</value></data>
+  <data name="OriginalPriceLabel" xml:space="preserve"><value>Original price</value></data>
+  <data name="DiscountedPriceLabel" xml:space="preserve"><value>Price after discount</value></data>
+  <data name="DeadlineLabel" xml:space="preserve"><value>Deadline</value></data>
+  <data name="ArticlesLabel" xml:space="preserve"><value>Articles</value></data>
+  <data name="ArticlesHeroTitle" xml:space="preserve"><value>Guides &amp; news for your study journey</value></data>
+  <data name="ArticlesHeroSubtitle" xml:space="preserve"><value>Tips, guides and updates about studying and living in Türkiye.</value></data>
+  <data name="NoArticles" xml:space="preserve"><value>No articles published yet.</value></data>
+  <data name="ReadMore" xml:space="preserve"><value>Read more</value></data>
+  <data name="Summary" xml:space="preserve"><value>Summary</value></data>
+  <data name="Body" xml:space="preserve"><value>Content</value></data>
+  <data name="DevelopedBy" xml:space="preserve"><value>Designed &amp; developed by</value></data>
 </root>

@@ -1,0 +1,48 @@
+@model Lumora.Application.DTOs.Articles.ArticleCreateDto
+
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+<div class="row">
+    <div class="col-md-5 mb-3">
+        <label class="form-label" for="coverFile">@SharedLocalizer["ImageLabel"]</label>
+        <input type="file" id="coverFile" name="coverFile" class="form-control" accept=".png,.jpg,.jpeg,.webp,.svg" />
+        <input type="hidden" asp-for="CoverImageUrl" />
+        @if (!string.IsNullOrEmpty(Model.CoverImageUrl))
+        {
+            <img class="admin-form-image-preview" src="@Model.CoverImageUrl" alt="" />
+        }
+    </div>
+    <div class="col-md-3 mb-3 d-flex align-items-end">
+        <div class="form-check">
+            <input asp-for="IsPublished" class="form-check-input" />
+            <label asp-for="IsPublished" class="form-check-label">@SharedLocalizer["IsPublished"]</label>
+        </div>
+    </div>
+</div>
+
+<partial name="_LangTabsHeader" model='"trx"' />
+<div class="tab-content" id="trx-content">
+    @for (var i = 0; i < Model.Translations.Count; i++)
+    {
+        var code = Model.Translations[i].LanguageCode;
+        <div class="tab-pane fade @(i == 0 ? "show active" : "")" id="trx-@code" role="tabpanel"
+             dir="@LanguageConstants.DirectionOf(code)">
+            <input type="hidden" asp-for="Translations[i].LanguageCode" />
+            <div class="mb-3">
+                <label asp-for="Translations[i].Title" class="form-label">@SharedLocalizer["TitleLabel"] (@code.ToUpper())</label>
+                <input asp-for="Translations[i].Title" class="form-control" />
+                <span asp-validation-for="Translations[i].Title" class="text-danger small"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Translations[i].Summary" class="form-label">@SharedLocalizer["Summary"] (@code.ToUpper())</label>
+                <textarea asp-for="Translations[i].Summary" class="form-control" rows="2"></textarea>
+                <span asp-validation-for="Translations[i].Summary" class="text-danger small"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Translations[i].Body" class="form-label">@SharedLocalizer["Body"] (@code.ToUpper())</label>
+                <textarea asp-for="Translations[i].Body" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="Translations[i].Body" class="text-danger small"></span>
+            </div>
+        </div>
+    }
+</div>

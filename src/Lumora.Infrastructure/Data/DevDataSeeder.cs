@@ -16,6 +16,8 @@ public static class DevDataSeeder
         await SeedHousingsAsync(context);
         await SeedTestimonialsAsync(context);
         await SeedFaqsAsync(context);
+        await SeedScholarshipsAsync(context);
+        await SeedArticlesAsync(context);
     }
 
     private static async Task SeedUniversitiesAsync(ApplicationDbContext context)
@@ -259,6 +261,107 @@ public static class DevDataSeeder
             new FaqTranslation { LanguageCode = LanguageConstants.Turkish, Question = trQ, Answer = trA }
         ]
     };
+
+    private static async Task SeedScholarshipsAsync(ApplicationDbContext context)
+    {
+        if (await context.Scholarships.AnyAsync())
+        {
+            return;
+        }
+
+        University UniByName(List<University> list, string en) =>
+            list.First(u => u.Translations.Any(t => t.LanguageCode == LanguageConstants.English && t.Name == en));
+
+        var universities = await context.Universities
+            .Include(u => u.Translations)
+            .Where(u => !u.IsDeleted)
+            .ToListAsync();
+
+        var scholarships = new[]
+        {
+            new Scholarship
+            {
+                University = UniByName(universities, "Koç University"),
+                OriginalPriceUsd = 22000, DiscountedPriceUsd = 11000,
+                Deadline = DateTime.UtcNow.AddMonths(2), DisplayOrder = 1,
+                Translations =
+                [
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.English, Title = "50% Engineering Scholarship", Description = "Half-tuition seats for international engineering applicants this intake. Limited quota, first come first served." },
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.Arabic, Title = "منحة 50% لكليات الهندسة", Description = "مقاعد بنصف الرسوم للمتقدمين الدوليين لتخصصات الهندسة لهذه الدفعة. الأماكن محدودة والأولوية للأسبق." },
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.Turkish, Title = "Mühendislikte %50 Burs", Description = "Bu dönem uluslararası mühendislik adaylarına yarı ücretli kontenjan. Kontenjan sınırlıdır." }
+                ]
+            },
+            new Scholarship
+            {
+                University = UniByName(universities, "Bilkent University"),
+                OriginalPriceUsd = 15000, DiscountedPriceUsd = 7500,
+                Deadline = DateTime.UtcNow.AddMonths(1), DisplayOrder = 2,
+                Translations =
+                [
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.English, Title = "Early-Bird 50% Discount", Description = "Apply early and secure your seat at half price for most programs, including Architecture and Law." },
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.Arabic, Title = "خصم 50% للتسجيل المبكر", Description = "قدّم مبكراً واحجز مقعدك بنصف السعر لمعظم التخصصات بما فيها العمارة والحقوق." },
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.Turkish, Title = "Erken Kayıt %50 İndirim", Description = "Erken başvurun; Mimarlık ve Hukuk dahil çoğu bölümde yarı fiyata yerinizi ayırtın." }
+                ]
+            },
+            new Scholarship
+            {
+                University = UniByName(universities, "Medipol University"),
+                OriginalPriceUsd = 8000, DiscountedPriceUsd = 5000,
+                Deadline = DateTime.UtcNow.AddMonths(3), DisplayOrder = 3,
+                Translations =
+                [
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.English, Title = "Health Programs Special Offer", Description = "Discounted seats in Pharmacy and Dentistry for this academic year — includes Turkish language prep." },
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.Arabic, Title = "عرض خاص للتخصصات الصحية", Description = "مقاعد مخفضة في الصيدلة وطب الأسنان لهذا العام الدراسي — يشمل سنة تحضيرية للغة التركية." },
+                    new ScholarshipTranslation { LanguageCode = LanguageConstants.Turkish, Title = "Sağlık Bölümleri Özel Fırsatı", Description = "Bu akademik yıl Eczacılık ve Diş Hekimliğinde indirimli kontenjan — Türkçe hazırlık dahil." }
+                ]
+            }
+        };
+
+        context.Scholarships.AddRange(scholarships);
+        await context.SaveChangesAsync();
+    }
+
+    private static async Task SeedArticlesAsync(ApplicationDbContext context)
+    {
+        if (await context.Articles.AnyAsync())
+        {
+            return;
+        }
+
+        var articles = new[]
+        {
+            new Article
+            {
+                Translations =
+                [
+                    new ArticleTranslation { LanguageCode = LanguageConstants.English, Title = "How to get accepted into a Turkish university", Summary = "A step-by-step guide from choosing the program to receiving your acceptance letter.", Body = "Choosing the right university starts with knowing your goals and budget.\n\nPrepare your documents early: passport, transcripts and a motivation letter make up the core of every application.\n\nLumora advisors review your file for free and match you with universities where your acceptance chances are highest." },
+                    new ArticleTranslation { LanguageCode = LanguageConstants.Arabic, Title = "كيف تحصل على قبول جامعي في تركيا", Summary = "دليل خطوة بخطوة من اختيار التخصص حتى استلام رسالة القبول.", Body = "اختيار الجامعة الصحيحة يبدأ بمعرفة أهدافك وميزانيتك.\n\nجهّز أوراقك مبكراً: جواز السفر وكشوف العلامات ورسالة الدافع هي أساس أي طلب.\n\nمستشارو لومورا يراجعون ملفك مجاناً ويرشحون لك الجامعات التي تكون فرص قبولك فيها أعلى." },
+                    new ArticleTranslation { LanguageCode = LanguageConstants.Turkish, Title = "Türkiye'de üniversiteye nasıl kabul alınır", Summary = "Bölüm seçiminden kabul mektubuna adım adım rehber.", Body = "Doğru üniversiteyi seçmek hedeflerinizi ve bütçenizi bilmekle başlar.\n\nBelgelerinizi erken hazırlayın: pasaport, transkript ve motivasyon mektubu her başvurunun temelidir.\n\nLumora danışmanları dosyanızı ücretsiz inceler ve kabul şansınızın en yüksek olduğu üniversitelerle eşleştirir." }
+                ]
+            },
+            new Article
+            {
+                Translations =
+                [
+                    new ArticleTranslation { LanguageCode = LanguageConstants.English, Title = "Student life in Istanbul: costs and tips", Summary = "What a month really costs: housing, transport, food and fun in Türkiye's biggest city.", Body = "Istanbul offers student housing from around $250 per month in shared dorms.\n\nA monthly transport card with student discount covers metro, bus and ferry.\n\nCook at home, use student canteens, and your food budget stays friendly." },
+                    new ArticleTranslation { LanguageCode = LanguageConstants.Arabic, Title = "حياة الطالب في إسطنبول: التكاليف ونصائح", Summary = "كم يكلف الشهر فعلياً: سكن ومواصلات وطعام وترفيه في أكبر مدن تركيا.", Body = "توفر إسطنبول سكناً طلابياً يبدأ من حوالي 250 دولاراً شهرياً في السكنات المشتركة.\n\nبطاقة المواصلات الشهرية بخصم الطلاب تغطي المترو والباص والعبّارة.\n\nاطبخ في البيت واستخدم مطاعم الجامعة وستبقى ميزانية طعامك مريحة." },
+                    new ArticleTranslation { LanguageCode = LanguageConstants.Turkish, Title = "İstanbul'da öğrenci hayatı: maliyetler ve ipuçları", Summary = "Bir ay gerçekte ne kadar tutar: konaklama, ulaşım, yemek ve eğlence.", Body = "İstanbul'da paylaşımlı yurtlarda aylık yaklaşık 250 dolardan başlayan öğrenci konaklaması bulunur.\n\nÖğrenci indirimli aylık ulaşım kartı metro, otobüs ve vapuru kapsar.\n\nEvde yemek yapın, öğrenci yemekhanelerini kullanın; yemek bütçeniz rahat kalır." }
+                ]
+            },
+            new Article
+            {
+                Translations =
+                [
+                    new ArticleTranslation { LanguageCode = LanguageConstants.English, Title = "Student visa for Türkiye: the complete checklist", Summary = "Every document you need and the order to prepare them in — with common mistakes to avoid.", Body = "Your acceptance letter is the first requirement for a student visa appointment.\n\nBank statements and proof of housing come next; consulates want to see a full picture.\n\nApply at least six weeks before the semester starts — Lumora follows up on your appointment for you." },
+                    new ArticleTranslation { LanguageCode = LanguageConstants.Arabic, Title = "فيزا الطالب لتركيا: القائمة الكاملة", Summary = "كل الأوراق المطلوبة وترتيب تجهيزها — مع الأخطاء الشائعة لتتجنبها.", Body = "رسالة القبول هي أول متطلبات موعد فيزا الطالب.\n\nيلي ذلك كشوف الحساب البنكي وإثبات السكن؛ القنصليات تريد صورة كاملة.\n\nقدّم قبل بدء الفصل بستة أسابيع على الأقل — ولومورا تتابع موعدك عنك." },
+                    new ArticleTranslation { LanguageCode = LanguageConstants.Turkish, Title = "Türkiye öğrenci vizesi: eksiksiz kontrol listesi", Summary = "Gereken tüm belgeler ve hazırlık sırası — kaçınılması gereken yaygın hatalarla.", Body = "Kabul mektubu, öğrenci vizesi randevusunun ilk şartıdır.\n\nArdından banka dökümleri ve konaklama kanıtı gelir; konsolosluklar tam bir tablo görmek ister.\n\nDönem başlamadan en az altı hafta önce başvurun — Lumora randevunuzu sizin için takip eder." }
+                ]
+            }
+        };
+
+        context.Articles.AddRange(articles);
+        await context.SaveChangesAsync();
+    }
 
     private static City NewCity(string en, string ar, string tr) => new()
     {

@@ -1,0 +1,85 @@
+@model IReadOnlyList<Lumora.Application.DTOs.Scholarships.ScholarshipCardDto>
+@{
+    ViewData["Title"] = SharedLocalizer["Scholarships"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/scholarships.css" asp-append-version="true" />
+}
+
+<section class="sch-hero">
+    <div class="container">
+        <span class="sch-hero-badge">
+            <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 15a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2-3.5 5 1.6.6L12 19.8l1.9 2.8 1.6-.6z"/></svg>
+            @SharedLocalizer["Scholarships"]
+        </span>
+        <h1 class="sch-hero-title">@SharedLocalizer["ScholarshipsHeroTitle"]</h1>
+        <p class="sch-hero-subtitle">@SharedLocalizer["ScholarshipsHeroSubtitle"]</p>
+    </div>
+    <div class="sch-hero-glow" aria-hidden="true"></div>
+</section>
+
+<section class="sch-content">
+    <div class="container">
+        @if (Model.Count == 0)
+        {
+            <div class="sch-empty">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 15a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"/></svg>
+                <p>@SharedLocalizer["NoScholarships"]</p>
+            </div>
+        }
+        else
+        {
+            <div class="sch-grid">
+                @foreach (var (item, i) in Model.Select((s, i) => (s, i)))
+                {
+                    <article class="sch-card" data-reveal style="--reveal-delay: @($"{i % 3 * 0.1:0.0}s")">
+                        <div class="sch-card-band">
+                            @if (!string.IsNullOrEmpty(item.ImageUrl))
+                            {
+                                <img class="sch-card-image" src="@item.ImageUrl" alt="@item.Title" loading="lazy" />
+                            }
+                            else
+                            {
+                                <svg class="sch-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                            }
+                            <span class="sch-discount-badge">-@item.DiscountPercent%</span>
+                        </div>
+
+                        <div class="sch-card-body">
+                            <span class="sch-uni-chip">
+                                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                                @item.UniversityName
+                            </span>
+                            <h2 class="sch-card-title">@item.Title</h2>
+                            <p class="sch-card-desc">@item.Description</p>
+
+                            <div class="sch-prices">
+                                <s class="sch-price-old">$@item.OriginalPriceUsd.ToString("N0")</s>
+                                <span class="sch-price-new">$@item.DiscountedPriceUsd.ToString("N0")</span>
+                            </div>
+
+                            @if (item.Deadline is DateTime deadline)
+                            {
+                                <p class="sch-deadline">
+                                    <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.5 5H11v6l5.2 3.1.8-1.3-4.5-2.7z"/></svg>
+                                    @SharedLocalizer["DeadlineLabel"]: <strong>@deadline.ToString("yyyy-MM-dd")</strong>
+                                </p>
+                            }
+
+                            <div class="sch-card-actions">
+                                <a class="btn sch-apply"
+                                   asp-controller="Consultations" asp-action="Request"
+                                   asp-route-universityId="@item.UniversityId">@SharedLocalizer["ApplyNow"]</a>
+                                <a class="btn lum-btn-outline btn-sm"
+                                   asp-controller="Universities" asp-action="Details" asp-route-id="@item.UniversityId">
+                                    @SharedLocalizer["AboutUniversity"]
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+    </div>
+</section>

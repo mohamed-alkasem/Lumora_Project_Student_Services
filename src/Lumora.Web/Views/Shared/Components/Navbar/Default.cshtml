@@ -25,7 +25,7 @@
                     <a class="lum-lang-pill @(lang == code ? "is-active" : "")"
                        asp-area="" asp-controller="Language" asp-action="SetLanguage"
                        asp-route-culture="@code" asp-route-returnUrl="@currentPath">
-                        @System.Globalization.CultureInfo.GetCultureInfo(code).NativeName.Split(' ')[0]
+                        @LanguageConstants.NativeNameOf(code)
                     </a>
                 </li>
             }
@@ -61,6 +61,14 @@
                 <li class="nav-item">
                     <a class="nav-link @(currentController == "Housings" ? "is-active" : "")"
                        asp-area="" asp-controller="Housings" asp-action="Index">@SharedLocalizer["Housing"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "Scholarships" ? "is-active" : "")"
+                       asp-area="" asp-controller="Scholarships" asp-action="Index">@SharedLocalizer["Scholarships"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "Articles" ? "is-active" : "")"
+                       asp-area="" asp-controller="Articles" asp-action="Index">@SharedLocalizer["ArticlesLabel"]</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @(currentController == "About" ? "is-active" : "")"

@@ -124,7 +124,8 @@ body {
 .lum-nav-links .nav-link {
     color: var(--lum-text);
     font-weight: 500;
-    padding-inline: 0.9rem;
+    padding-inline: 0.6rem;
+    white-space: nowrap;
 }
 
 .lum-nav-links .nav-link:hover {
@@ -565,4 +566,52 @@ body:not(.admin-body) main {
 .lum-hscroll > * {
     scroll-snap-align: start;
     flex-shrink: 0;
+}
+
+/* ---------- Developer credit ---------- */
+.lum-footer-credit {
+    margin: 0.4rem 0 0;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.lum-footer-credit > a:first-of-type {
+    color: var(--lum-gold);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.lum-footer-credit > a:first-of-type:hover {
+    text-decoration: underline;
+}
+
+.lum-credit-icon {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lum-credit-icon svg {
+    inline-size: 0.8rem;
+    block-size: 0.8rem;
+}
+
+.lum-credit-icon:hover {
+    background: var(--lum-gold);
+    color: var(--lum-navy-900);
+}
+
+.lum-credit-wa:hover {
+    background: #25d366;
+    color: #fff;
 }

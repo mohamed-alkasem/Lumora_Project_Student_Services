@@ -14,9 +14,15 @@ public class StudentsController : AdminBaseController
         _userManager = userManager;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int page = 1)
     {
+        const int pageSize = 20;
         var students = await _userManager.GetUsersInRoleAsync(RoleConstants.Student);
-        return View(students.OrderByDescending(s => s.CreatedAt).ToList());
+        var ordered = students.OrderByDescending(s => s.CreatedAt).ToList();
+
+        ViewBag.Page = page;
+        ViewBag.TotalPages = (int)Math.Ceiling(ordered.Count / (double)pageSize);
+        ViewBag.TotalCount = ordered.Count;
+        return View(ordered.Skip((page - 1) * pageSize).Take(pageSize).ToList());
     }
 }

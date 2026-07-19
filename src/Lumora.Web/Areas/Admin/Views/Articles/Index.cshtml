@@ -1,0 +1,52 @@
+@model IEnumerable<Lumora.Application.DTOs.Articles.ArticleDetailsDto>
+@{
+    ViewData["Title"] = SharedLocalizer["ArticlesLabel"].Value;
+}
+
+<div class="admin-toolbar">
+    <span></span>
+    <a class="btn lum-btn-navy" asp-action="Create">+ @SharedLocalizer["AddNew"]</a>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>@SharedLocalizer["ImageLabel"]</th>
+                <th>@SharedLocalizer["TitleLabel"]</th>
+                <th>@SharedLocalizer["CreatedAt"]</th>
+                <th>@SharedLocalizer["StatusLabel"]</th>
+                <th>@SharedLocalizer["Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var article in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(article.CoverImageUrl))
+                        {
+                            <img class="admin-thumb" src="@article.CoverImageUrl" alt="@article.Title" />
+                        }
+                    </td>
+                    <td>@article.Title</td>
+                    <td>@article.CreatedAt.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <span class="admin-badge @(article.IsPublished ? "admin-badge-active" : "admin-badge-inactive")">
+                            @(article.IsPublished ? SharedLocalizer["IsPublished"] : SharedLocalizer["Inactive"])
+                        </span>
+                    </td>
+                    <td>
+                        <div class="admin-actions">
+                            <a class="btn btn-sm lum-btn-outline" asp-action="Edit" asp-route-id="@article.Id">@SharedLocalizer["Edit"]</a>
+                            <form asp-action="Delete" asp-route-id="@article.Id" method="post"
+                                  data-confirm="@SharedLocalizer["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">@SharedLocalizer["Delete"]</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

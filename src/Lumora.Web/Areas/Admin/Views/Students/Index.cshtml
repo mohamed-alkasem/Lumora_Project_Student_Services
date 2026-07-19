@@ -4,7 +4,7 @@
 }
 
 <div class="admin-toolbar">
-    <span class="text-muted">@Model.Count</span>
+    <span class="text-muted">@ViewBag.TotalCount</span>
     <span></span>
 </div>
 
@@ -37,3 +37,14 @@
         </tbody>
     </table>
 </div>
+
+@if ((int)ViewBag.TotalPages > 1)
+{
+    <nav class="uni-pagination mt-3">
+        @for (var p = 1; p <= (int)ViewBag.TotalPages; p++)
+        {
+            <a class="uni-page-btn @(p == (int)ViewBag.Page ? "is-active" : "")"
+               asp-action="Index" asp-route-page="@p">@p</a>
+        }
+    </nav>
+}
