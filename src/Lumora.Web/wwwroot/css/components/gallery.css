@@ -1,0 +1,100 @@
+/* ============================================================
+   Photo gallery (university & housing details pages).
+   Main image with arrows + thumbnail strip; fade transitions.
+   ============================================================ */
+
+.lgal-main {
+    position: relative;
+    border-radius: var(--lum-radius);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: var(--lum-navy-900);
+}
+
+.lgal-main img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+}
+
+.lgal-main img.is-fading {
+    opacity: 0;
+}
+
+.lgal-arrow {
+    position: absolute;
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+    inline-size: 2.4rem;
+    block-size: 2.4rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--lum-navy-900);
+    font-size: 1.1rem;
+    display: grid;
+    place-items: center;
+    opacity: 0.85;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.lgal-arrow:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lgal-prev { inset-inline-start: 0.7rem; }
+.lgal-next { inset-inline-end: 0.7rem; }
+
+[dir="rtl"] .lgal-arrow svg {
+    transform: scaleX(-1);
+}
+
+.lgal-count {
+    position: absolute;
+    inset-block-end: 0.6rem;
+    inset-inline-end: 0.7rem;
+    background: rgba(20, 41, 74, 0.7);
+    color: #fff;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    padding: 0.15rem 0.7rem;
+    direction: ltr;
+}
+
+.lgal-thumbs {
+    display: flex;
+    gap: 0.5rem;
+    margin-block-start: 0.6rem;
+    overflow-x: auto;
+    padding-block-end: 0.25rem;
+}
+
+.lgal-thumb {
+    border: 2px solid transparent;
+    border-radius: var(--lum-radius-sm);
+    overflow: hidden;
+    padding: 0;
+    background: none;
+    inline-size: 4.6rem;
+    block-size: 3.4rem;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.lgal-thumb img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+
+.lgal-thumb:hover {
+    opacity: 1;
+}
+
+.lgal-thumb.is-active {
+    border-color: var(--lum-gold);
+    opacity: 1;
+}

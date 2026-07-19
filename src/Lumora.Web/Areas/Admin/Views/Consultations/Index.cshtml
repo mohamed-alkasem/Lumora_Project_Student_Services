@@ -1,0 +1,76 @@
+@model Lumora.Domain.Common.PagedResult<Lumora.Application.DTOs.Consultations.ConsultationAdminDto>
+@using Lumora.Domain.Enums
+@{
+    ViewData["Title"] = SharedLocalizer["Consultations"].Value;
+    var current = (ConsultationStatus?)ViewBag.CurrentStatus;
+}
+
+<div class="admin-toolbar">
+    <div class="d-flex gap-1">
+        <a class="btn btn-sm @(current is null ? "lum-btn-navy" : "lum-btn-outline")"
+           asp-action="Index">@SharedLocalizer["All"]</a>
+        @foreach (var status in Enum.GetValues<ConsultationStatus>())
+        {
+            <a class="btn btn-sm @(current == status ? "lum-btn-navy" : "lum-btn-outline")"
+               asp-action="Index" asp-route-status="@status">
+                @SharedLocalizer[$"Status{status}"]
+            </a>
+        }
+    </div>
+    <span class="text-muted">@Model.TotalCount</span>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@SharedLocalizer["FullName"]</th>
+                <th>@SharedLocalizer["Phone"]</th>
+                <th>@SharedLocalizer["University"]</th>
+                <th>@SharedLocalizer["Message"]</th>
+                <th>@SharedLocalizer["StatusLabel"]</th>
+                <th>@SharedLocalizer["Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model.Items)
+            {
+                <tr>
+                    <td>@request.Id</td>
+                    <td>@request.FullName</td>
+                    <td dir="ltr">@request.Phone</td>
+                    <td>@request.UniversityName</td>
+                    <td class="text-truncate" style="max-inline-size: 20ch;" title="@request.Message">@request.Message</td>
+                    <td>
+                        <span class="admin-badge admin-badge-@request.Status.ToString().ToLowerInvariant()">
+                            @SharedLocalizer[$"Status{request.Status}"]
+                        </span>
+                    </td>
+                    <td>
+                        <div class="admin-actions">
+                            @if (request.Status != ConsultationStatus.Contacted)
+                            {
+                                <form asp-action="UpdateStatus" method="post">
+                                    <input type="hidden" name="id" value="@request.Id" />
+                                    <input type="hidden" name="status" value="@ConsultationStatus.Contacted" />
+                                    <input type="hidden" name="filter" value="@current" />
+                                    <button type="submit" class="btn btn-sm lum-btn-outline">@SharedLocalizer["StatusContacted"]</button>
+                                </form>
+                            }
+                            @if (request.Status != ConsultationStatus.Closed)
+                            {
+                                <form asp-action="UpdateStatus" method="post">
+                                    <input type="hidden" name="id" value="@request.Id" />
+                                    <input type="hidden" name="status" value="@ConsultationStatus.Closed" />
+                                    <input type="hidden" name="filter" value="@current" />
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary">@SharedLocalizer["StatusClosed"]</button>
+                                </form>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,66 @@
+@model Lumora.Web.Models.Universities.UniversityIndexViewModel
+@{
+    const decimal tuitionMin = 500m;
+    const decimal tuitionMax = 25000m;
+    var tuitionValue = Model.Filter.MaxAnnualTuitionUsd ?? tuitionMax;
+}
+
+<div class="uni-filters-card">
+    <div class="uni-filters-head">
+        <h2 class="uni-filters-title">@SharedLocalizer["Filters"]</h2>
+        <button type="button" id="filtersReset" class="uni-filters-reset">@SharedLocalizer["Reset"]</button>
+    </div>
+
+    <div class="uni-filter-group">
+        <h3 class="uni-filter-label">@SharedLocalizer["UniversityType"]</h3>
+        <div class="uni-type-list" role="radiogroup" aria-label="@SharedLocalizer["UniversityType"]">
+            <button type="button" class="uni-type-btn @(Model.Filter.Type is null ? "is-active" : "")" data-type="">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+                <span>@SharedLocalizer["AllUniversities"]</span>
+                <span class="uni-type-count">@Model.TypeCounts.All</span>
+            </button>
+            <button type="button" class="uni-type-btn @(Model.Filter.Type == Lumora.Domain.Enums.UniversityType.Public ? "is-active" : "")" data-type="Public">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11v8H2v2h20v-2h-2v-8h-2v8h-3v-8h-2v8h-3v-8H8v8H5v-8H4z"/></svg>
+                <span>@SharedLocalizer["Public"]</span>
+                <span class="uni-type-count">@Model.TypeCounts.Public</span>
+            </button>
+            <button type="button" class="uni-type-btn @(Model.Filter.Type == Lumora.Domain.Enums.UniversityType.Private ? "is-active" : "")" data-type="Private">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3v18h6v-3.5h2V21h6V3H5zm4 14H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
+                <span>@SharedLocalizer["Private"]</span>
+                <span class="uni-type-count">@Model.TypeCounts.Private</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="uni-filter-group">
+        <h3 class="uni-filter-label">@SharedLocalizer["CityLabel"]</h3>
+        <div class="uni-city-chips">
+            @foreach (var city in Model.Cities)
+            {
+                <button type="button"
+                        class="uni-city-chip @(Model.Filter.CityId == city.Id ? "is-active" : "")"
+                        data-city-id="@city.Id">
+                    @city.Name
+                </button>
+            }
+        </div>
+    </div>
+
+    <div class="uni-filter-group">
+        <div class="uni-tuition-head">
+            <h3 class="uni-filter-label">@SharedLocalizer["MaxTuition"]</h3>
+            <span id="tuitionLabel" class="uni-tuition-value"></span>
+        </div>
+        <input type="range" id="tuitionRange" class="uni-tuition-range"
+               min="@tuitionMin" max="@tuitionMax" step="500" value="@tuitionValue" />
+        <div class="uni-tuition-bounds">
+            <span>$@tuitionMin.ToString("N0")</span>
+            <span>$@tuitionMax.ToString("N0")+</span>
+        </div>
+    </div>
+
+    <div class="uni-filters-foot">
+        <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        @SharedLocalizer["Favorites"]: <strong id="favCount">@Model.List.FavoriteIds.Count</strong>
+    </div>
+</div>

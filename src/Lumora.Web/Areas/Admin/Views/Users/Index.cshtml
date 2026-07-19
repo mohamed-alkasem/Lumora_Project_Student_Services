@@ -1,0 +1,51 @@
+@model IReadOnlyList<Lumora.Web.Areas.Admin.Models.AdminUserRowViewModel>
+@{
+    ViewData["Title"] = SharedLocalizer["AdminUsers"].Value;
+}
+
+<div class="admin-toolbar">
+    <span class="text-muted">@Model.Count</span>
+    <a class="btn lum-btn-navy" asp-action="Create">+ @SharedLocalizer["CreateAdmin"]</a>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@SharedLocalizer["FullName"]</th>
+                <th>@SharedLocalizer["Email"]</th>
+                <th>@SharedLocalizer["Role"]</th>
+                <th>@SharedLocalizer["StatusLabel"]</th>
+                <th>@SharedLocalizer["Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.FullName</td>
+                    <td dir="ltr">@user.Email</td>
+                    <td>@user.Role</td>
+                    <td>
+                        <span class="admin-badge @(user.IsActive ? "admin-badge-active" : "admin-badge-inactive")">
+                            @(user.IsActive ? SharedLocalizer["Active"] : SharedLocalizer["Inactive"])
+                        </span>
+                    </td>
+                    <td>
+                        @if (user.Role != RoleConstants.SuperAdmin)
+                        {
+                            <form asp-action="ToggleActive" asp-route-id="@user.Id" method="post"
+                                  data-confirm="@SharedLocalizer["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm @(user.IsActive ? "btn-outline-danger" : "lum-btn-outline")">
+                                    @(user.IsActive ? SharedLocalizer["Deactivate"] : SharedLocalizer["Activate"])
+                                </button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

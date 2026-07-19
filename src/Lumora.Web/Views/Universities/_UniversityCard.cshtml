@@ -1,0 +1,82 @@
+@using Lumora.Domain.Enums
+@model Lumora.Web.Models.Universities.UniversityCardViewModel
+@{
+    var card = Model.Card;
+    var isPublic = card.Type == UniversityType.Public;
+    var isTop = card.Rating >= 4.8m;
+}
+
+<article class="uni-card @(isPublic ? "uni-card-public" : "uni-card-private")">
+    <div class="uni-card-band">
+        @if (isTop)
+        {
+            <span class="uni-card-top-badge">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                @SharedLocalizer["TopBadge"]
+            </span>
+        }
+        <button type="button"
+                class="uni-card-heart @(Model.IsFavorite ? "is-fav" : "")"
+                data-university-id="@card.Id"
+                aria-pressed="@Model.IsFavorite.ToString().ToLowerInvariant()"
+                aria-label="@SharedLocalizer["Favorites"]"
+                title="@SharedLocalizer["LoginToSave"]">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </button>
+
+        @if (!string.IsNullOrEmpty(card.LogoUrl))
+        {
+            <img class="uni-card-logo" src="@card.LogoUrl" alt="@card.Name" loading="lazy" />
+        }
+        else if (isPublic)
+        {
+            <svg class="uni-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11v8H2v2h20v-2h-2v-8h-2v8h-3v-8h-2v8h-3v-8H8v8H5v-8H4z"/></svg>
+        }
+        else
+        {
+            <svg class="uni-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3v18h6v-3.5h2V21h6V3H5zm4 14H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
+        }
+    </div>
+
+    <div class="uni-card-body">
+        <div class="uni-card-meta">
+            <span class="uni-card-type-badge">@(isPublic ? SharedLocalizer["Public"] : SharedLocalizer["Private"])</span>
+            <span class="uni-card-rating">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                @card.Rating.ToString("0.0")
+            </span>
+        </div>
+
+        <h3 class="uni-card-name">
+            <a asp-area="" asp-controller="Universities" asp-action="Details" asp-route-id="@card.Id">@card.Name</a>
+        </h3>
+
+        <p class="uni-card-location">
+            <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+            @card.CityName · @card.CampusCount @SharedLocalizer["Campus"]
+        </p>
+
+        @if (card.ProgramNames.Count > 0)
+        {
+            <div class="uni-card-programs">
+                @foreach (var program in card.ProgramNames.Take(3))
+                {
+                    <span class="uni-card-program-chip">@program</span>
+                }
+            </div>
+        }
+
+        <div class="uni-card-tuition">
+            <span class="uni-card-tuition-label">@SharedLocalizer["AnnualTuition"]</span>
+            <span class="uni-card-price">$@card.AnnualTuitionUsd.ToString("N0") <small>@SharedLocalizer["PerYear"]</small></span>
+        </div>
+
+        <div class="uni-card-actions">
+            <a class="btn uni-card-apply"
+               asp-area="" asp-controller="Consultations" asp-action="Request"
+               asp-route-universityId="@card.Id">@SharedLocalizer["ApplyNow"]</a>
+            <a class="uni-card-more" aria-label="@SharedLocalizer["AboutUniversity"]"
+               asp-area="" asp-controller="Universities" asp-action="Details" asp-route-id="@card.Id">+</a>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,81 @@
+@model Lumora.Application.DTOs.Universities.UniversityCreateDto
+@using Lumora.Domain.Enums
+
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+<div class="row">
+    <div class="col-md-3 mb-3">
+        <label asp-for="Type" class="form-label">@SharedLocalizer["UniversityType"]</label>
+        <select asp-for="Type" class="form-select">
+            <option value="@UniversityType.Public">@SharedLocalizer["Public"]</option>
+            <option value="@UniversityType.Private">@SharedLocalizer["Private"]</option>
+        </select>
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="CityId" class="form-label">@SharedLocalizer["CityLabel"]</label>
+        <select asp-for="CityId" class="form-select" asp-items="@((List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)ViewBag.Cities)"></select>
+        <span asp-validation-for="CityId" class="text-danger small"></span>
+    </div>
+    <div class="col-md-2 mb-3">
+        <label asp-for="Rating" class="form-label">@SharedLocalizer["RatingLabel"]</label>
+        <input asp-for="Rating" class="form-control" type="number" step="0.1" min="0" max="5" />
+        <span asp-validation-for="Rating" class="text-danger small"></span>
+    </div>
+    <div class="col-md-2 mb-3">
+        <label asp-for="AnnualTuitionUsd" class="form-label">@SharedLocalizer["AnnualTuition"] ($)</label>
+        <input asp-for="AnnualTuitionUsd" class="form-control" />
+        <span asp-validation-for="AnnualTuitionUsd" class="text-danger small"></span>
+    </div>
+    <div class="col-md-2 mb-3">
+        <label asp-for="CampusCount" class="form-label">@SharedLocalizer["CampusCount"]</label>
+        <input asp-for="CampusCount" class="form-control" />
+        <span asp-validation-for="CampusCount" class="text-danger small"></span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <label class="form-label" for="logoFile">@SharedLocalizer["Logo"]</label>
+        <input type="file" id="logoFile" name="logoFile" class="form-control" accept=".png,.jpg,.jpeg,.webp,.svg" />
+        <input type="hidden" asp-for="LogoUrl" />
+        @if (!string.IsNullOrEmpty(Model.LogoUrl))
+        {
+            <img class="admin-form-image-preview" src="@Model.LogoUrl" alt="" />
+        }
+    </div>
+    <div class="col-md-8 mb-3">
+        <span class="form-label d-block">@SharedLocalizer["Programs"]</span>
+        <div class="d-flex flex-wrap gap-3 border rounded p-2" style="max-block-size: 9rem; overflow-y: auto;">
+            @foreach (var program in (List<Lumora.Application.DTOs.Programs.AcademicProgramDto>)ViewBag.Programs)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ProgramIds" value="@program.Id"
+                           id="prog-@program.Id" checked="@Model.ProgramIds.Contains(program.Id)" />
+                    <label class="form-check-label" for="prog-@program.Id">@program.Name</label>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<partial name="_LangTabsHeader" model='"trx"' />
+<div class="tab-content" id="trx-content">
+    @for (var i = 0; i < Model.Translations.Count; i++)
+    {
+        var code = Model.Translations[i].LanguageCode;
+        <div class="tab-pane fade @(i == 0 ? "show active" : "")" id="trx-@code" role="tabpanel"
+             dir="@LanguageConstants.DirectionOf(code)">
+            <input type="hidden" asp-for="Translations[i].LanguageCode" />
+            <div class="mb-3">
+                <label asp-for="Translations[i].Name" class="form-label">@SharedLocalizer["Name"] (@code.ToUpper())</label>
+                <input asp-for="Translations[i].Name" class="form-control" />
+                <span asp-validation-for="Translations[i].Name" class="text-danger small"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Translations[i].ShortDescription" class="form-label">@SharedLocalizer["Description"] (@code.ToUpper())</label>
+                <textarea asp-for="Translations[i].ShortDescription" class="form-control" rows="2"></textarea>
+                <span asp-validation-for="Translations[i].ShortDescription" class="text-danger small"></span>
+            </div>
+        </div>
+    }
+</div>

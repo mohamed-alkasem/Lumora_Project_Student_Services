@@ -1,0 +1,35 @@
+/* ============================================================
+   My Favorites page. Card styles come from
+   components/university-card.css; only page chrome lives here.
+   ============================================================ */
+
+.fav-header {
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 2rem;
+}
+
+.fav-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.fav-title .lum-icon {
+    color: #e0245e;
+}
+
+.fav-count-badge {
+    background: var(--lum-gold);
+    color: var(--lum-navy-900);
+    font-size: 0.9rem;
+    border-radius: 999px;
+    padding: 0.1rem 0.7rem;
+}
+
+.fav-content {
+    padding-block: 2rem 3rem;
+}

@@ -1,0 +1,64 @@
+@model Lumora.Domain.Common.PagedResult<Lumora.Application.DTOs.Universities.UniversityCardDto>
+@using Lumora.Domain.Enums
+@{
+    ViewData["Title"] = SharedLocalizer["Universities"].Value;
+}
+
+<div class="admin-toolbar">
+    <span class="text-muted">@Model.TotalCount @SharedLocalizer["Matching"]</span>
+    <a class="btn lum-btn-navy" asp-action="Create">+ @SharedLocalizer["AddNew"]</a>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>@SharedLocalizer["Logo"]</th>
+                <th>@SharedLocalizer["Name"]</th>
+                <th>@SharedLocalizer["UniversityType"]</th>
+                <th>@SharedLocalizer["CityLabel"]</th>
+                <th>@SharedLocalizer["RatingLabel"]</th>
+                <th>@SharedLocalizer["AnnualTuition"]</th>
+                <th>@SharedLocalizer["Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var uni in Model.Items)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(uni.LogoUrl))
+                        {
+                            <img class="admin-thumb" src="@uni.LogoUrl" alt="@uni.Name" />
+                        }
+                    </td>
+                    <td>@uni.Name</td>
+                    <td>@(uni.Type == UniversityType.Public ? SharedLocalizer["Public"] : SharedLocalizer["Private"])</td>
+                    <td>@uni.CityName</td>
+                    <td>★ @uni.Rating.ToString("0.0")</td>
+                    <td>$@uni.AnnualTuitionUsd.ToString("N0")</td>
+                    <td>
+                        <div class="admin-actions">
+                            <a class="btn btn-sm lum-btn-outline" asp-action="Edit" asp-route-id="@uni.Id">@SharedLocalizer["Edit"]</a>
+                            <form asp-action="Delete" asp-route-id="@uni.Id" method="post"
+                                  data-confirm="@SharedLocalizer["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">@SharedLocalizer["Delete"]</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav class="uni-pagination mt-3">
+        @for (var p = 1; p <= Model.TotalPages; p++)
+        {
+            <a class="uni-page-btn @(p == Model.Page ? "is-active" : "")"
+               asp-action="Index" asp-route-page="@p">@p</a>
+        }
+    </nav>
+}

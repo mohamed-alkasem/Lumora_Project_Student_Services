@@ -1,0 +1,141 @@
+/* ============================================================
+   About page + student testimonials. Logical properties only.
+   ============================================================ */
+
+.abt-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 3rem;
+    text-align: center;
+}
+
+.abt-hero-glow {
+    position: absolute;
+    inset-block-start: -4rem;
+    inset-inline-end: -4rem;
+    inline-size: 18rem;
+    block-size: 18rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 165, 26, 0.55) 0%, rgba(242, 165, 26, 0) 70%);
+    pointer-events: none;
+}
+
+.abt-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin-block-end: 0.5rem;
+}
+
+.abt-hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    max-inline-size: 55ch;
+    margin-inline: auto;
+    margin-block-end: 0;
+}
+
+.abt-content {
+    padding-block: 2.5rem 3rem;
+}
+
+.abt-intro-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 2rem;
+    max-inline-size: 52rem;
+    margin-inline: auto;
+    margin-block-end: 2.5rem;
+    border-inline-start: 4px solid var(--lum-gold);
+}
+
+.abt-section-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--lum-navy-900);
+    margin-block-end: 0.75rem;
+}
+
+.abt-intro-text {
+    color: var(--lum-text);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.abt-testimonials-heading {
+    text-align: center;
+    margin-block-end: 1.5rem;
+}
+
+.abt-testimonials {
+    /* horizontal scroll-snap carousel via .lum-hscroll */
+}
+
+
+
+.abt-testimonial-card {
+    inline-size: min(22rem, 85vw);
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.5rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.abt-quote-mark {
+    inline-size: 1.8rem;
+    block-size: 1.8rem;
+    color: var(--lum-gold);
+    margin-block-end: 0.5rem;
+}
+
+.abt-quote {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.95rem;
+    color: var(--lum-text);
+    line-height: 1.7;
+    margin-block-end: 1rem;
+    flex: 1;
+}
+
+.abt-student {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.abt-student-photo,
+.abt-student-initial {
+    inline-size: 2.6rem;
+    block-size: 2.6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.abt-student-initial {
+    display: grid;
+    place-items: center;
+    background: var(--lum-navy);
+    color: var(--lum-white);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.abt-student-name {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--lum-navy-900);
+}
+
+.abt-student-title {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--lum-muted);
+}

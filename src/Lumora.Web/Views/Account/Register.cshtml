@@ -1,0 +1,61 @@
+@model Lumora.Web.Models.Account.RegisterViewModel
+@{
+    ViewData["Title"] = SharedLocalizer["Register"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/auth.css" asp-append-version="true" />
+}
+
+<div class="container auth-wrap">
+    <div class="auth-shell">
+        <partial name="_AuthBrandPanel" />
+
+        <div class="auth-form">
+            <h1 class="auth-form-title">@SharedLocalizer["Register"]</h1>
+            <p class="auth-form-sub">@SharedLocalizer["HomeHeroText"]</p>
+
+            <form asp-controller="Account" asp-action="Register" method="post">
+                <input type="hidden" asp-for="ReturnUrl" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">@SharedLocalizer["FullName"]</label>
+                    <input asp-for="FullName" class="form-control" autocomplete="name" />
+                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">@SharedLocalizer["Email"]</label>
+                    <input asp-for="Email" class="form-control" autocomplete="email" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Password" class="form-label">@SharedLocalizer["Password"]</label>
+                        <input asp-for="Password" class="form-control" autocomplete="new-password" />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="ConfirmPassword" class="form-label">@SharedLocalizer["ConfirmPassword"]</label>
+                        <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn auth-submit">@SharedLocalizer["Register"]</button>
+
+                <p class="auth-alt">
+                    @SharedLocalizer["AlreadyHaveAccount"]
+                    <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl">@SharedLocalizer["Login"]</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/pages/auth.js" asp-append-version="true"></script>
+}

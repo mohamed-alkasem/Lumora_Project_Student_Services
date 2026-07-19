@@ -1,0 +1,44 @@
+@model IReadOnlyList<Lumora.Application.DTOs.Faqs.FaqDto>
+@{
+    ViewData["Title"] = SharedLocalizer["Faqs"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/faqs.css" asp-append-version="true" />
+}
+
+<section class="faq-hero">
+    <div class="container">
+        <h1 class="faq-hero-title">@SharedLocalizer["Faqs"]</h1>
+        <p class="faq-hero-subtitle">@SharedLocalizer["FaqHeroSubtitle"]</p>
+    </div>
+    <div class="faq-hero-glow" aria-hidden="true"></div>
+</section>
+
+<section class="faq-content">
+    <div class="container">
+        <div class="accordion faq-accordion" id="faqAccordion">
+            @foreach (var (faq, index) in Model.Select((f, i) => (f, i)))
+            {
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button @(index == 0 ? "" : "collapsed")" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#faq-@faq.Id"
+                                aria-expanded="@(index == 0 ? "true" : "false")" aria-controls="faq-@faq.Id">
+                            @faq.Question
+                        </button>
+                    </h2>
+                    <div id="faq-@faq.Id" class="accordion-collapse collapse @(index == 0 ? "show" : "")"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-answer">@faq.Answer</div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="faq-cta">
+            <p>@SharedLocalizer["ConsultationIntro"]</p>
+            <a class="btn lum-btn-gold" asp-controller="Consultations" asp-action="Request">@SharedLocalizer["RequestConsultation"]</a>
+        </div>
+    </div>
+</section>

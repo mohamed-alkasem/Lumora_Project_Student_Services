@@ -1,0 +1,121 @@
+/* ============================================================
+   Housing details page. Logical properties only.
+   ============================================================ */
+
+.hdet-hero {
+    background: linear-gradient(135deg, var(--lum-navy-900), var(--lum-navy-700));
+    color: var(--lum-white);
+    padding-block: 2.5rem;
+}
+
+.hdet-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hdet-image-box {
+    inline-size: 8rem;
+    block-size: 6rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--lum-radius);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.hdet-image-box img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+
+.hdet-image-box svg {
+    inline-size: 3rem;
+    block-size: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hdet-title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    margin: 0 0 0.3rem;
+}
+
+.hdet-location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+/* ---------- Content ---------- */
+.hdet-content {
+    padding-block: 2rem 3rem;
+}
+
+.hdet-layout {
+    display: grid;
+    grid-template-columns: 1fr 18rem;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 991.98px) {
+    .hdet-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hdet-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.5rem;
+    margin-block-end: 1.25rem;
+}
+
+.hdet-section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--lum-navy-900);
+    margin-block-end: 0.75rem;
+}
+
+.hdet-description {
+    color: var(--lum-text);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.hdet-description .lum-icon {
+    color: var(--lum-gold-strong);
+}
+
+/* ---------- CTA sidebar ---------- */
+.hdet-cta-card {
+    position: sticky;
+    inset-block-start: 1rem;
+    text-align: center;
+}
+
+.hdet-price-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--lum-muted);
+}
+
+.hdet-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--lum-navy-900);
+}
+
+.hdet-price small {
+    font-size: 0.9rem;
+    color: var(--lum-muted);
+}

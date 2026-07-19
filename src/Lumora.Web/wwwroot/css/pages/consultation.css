@@ -1,0 +1,74 @@
+/* Consultation request page — additions on top of the shared auth shell. */
+
+.consult-brand-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.consult-uni-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fdf6e9;
+    border: 1px solid var(--lum-gold-soft);
+    border-radius: var(--lum-radius-sm);
+    padding: 0.55rem 0.85rem;
+    font-size: 0.88rem;
+    margin-block-end: 1rem;
+}
+
+.consult-uni-chip .lum-icon {
+    color: var(--lum-gold-strong);
+}
+
+.consult-counter {
+    text-align: end;
+    font-size: 0.72rem;
+    color: var(--lum-muted);
+    margin-block-start: 0.2rem;
+}
+
+.consult-send-icon {
+    margin-inline-start: 0.4rem;
+}
+
+[dir="rtl"] .consult-send-icon {
+    transform: scaleX(-1);
+}
+
+/* mini progress dots on the brand panel */
+.consult-steps {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-block-start: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.consult-step-dot {
+    inline-size: 1.7rem;
+    block-size: 1.7rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.consult-step-dot.is-on {
+    background: var(--lum-gold);
+    color: var(--lum-navy-900);
+}
+
+.consult-step-line {
+    flex: 1;
+    max-inline-size: 2.2rem;
+    block-size: 2px;
+    background: rgba(255, 255, 255, 0.25);
+}

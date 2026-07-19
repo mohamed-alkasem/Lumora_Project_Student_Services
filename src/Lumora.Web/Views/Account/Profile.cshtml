@@ -1,0 +1,51 @@
+@model Lumora.Web.Models.Account.ProfileViewModel
+@{
+    ViewData["Title"] = SharedLocalizer["Profile"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/auth.css" asp-append-version="true" />
+}
+
+<div class="container auth-wrap">
+    <div class="auth-shell">
+        <partial name="_AuthBrandPanel" />
+
+        <div class="auth-form">
+            <h1 class="auth-form-title">@SharedLocalizer["Profile"]</h1>
+            <p class="auth-form-sub">@SharedLocalizer["MyAccount"]</p>
+
+            <form asp-controller="Account" asp-action="Profile" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">@SharedLocalizer["Email"]</label>
+                    <input asp-for="Email" class="form-control" readonly disabled />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">@SharedLocalizer["FullName"]</label>
+                    <input asp-for="FullName" class="form-control" autocomplete="name" />
+                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PhoneNumber" class="form-label">@SharedLocalizer["PhoneNumber"] (@SharedLocalizer["Optional"])</label>
+                    <input asp-for="PhoneNumber" class="form-control" autocomplete="tel" dir="ltr" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                </div>
+
+                <button type="submit" class="btn auth-submit">@SharedLocalizer["Save"]</button>
+
+                <p class="auth-alt">
+                    <a asp-controller="Account" asp-action="ChangePassword">@SharedLocalizer["ChangePassword"]</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/pages/auth.js" asp-append-version="true"></script>
+}

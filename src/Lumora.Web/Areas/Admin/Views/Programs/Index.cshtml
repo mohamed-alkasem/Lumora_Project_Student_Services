@@ -1,0 +1,39 @@
+@model IEnumerable<Lumora.Application.DTOs.Programs.AcademicProgramDto>
+@{
+    ViewData["Title"] = SharedLocalizer["Programs"].Value;
+}
+
+<div class="admin-toolbar">
+    <span></span>
+    <a class="btn lum-btn-navy" asp-action="Create">+ @SharedLocalizer["AddNew"]</a>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@SharedLocalizer["Name"]</th>
+                <th>@SharedLocalizer["Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var program in Model)
+            {
+                <tr>
+                    <td>@program.Id</td>
+                    <td>@program.Name</td>
+                    <td>
+                        <div class="admin-actions">
+                            <a class="btn btn-sm lum-btn-outline" asp-action="Edit" asp-route-id="@program.Id">@SharedLocalizer["Edit"]</a>
+                            <form asp-action="Delete" asp-route-id="@program.Id" method="post"
+                                  data-confirm="@SharedLocalizer["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">@SharedLocalizer["Delete"]</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,348 @@
+/* ============================================================
+   Universities directory page.
+   Logical properties only (inline-start/end, block-start/end)
+   so the layout mirrors automatically under dir="rtl".
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.uni-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 3.5rem 4.5rem;
+    text-align: center;
+}
+
+.uni-hero-glow {
+    position: absolute;
+    inset-block-start: -4rem;
+    inset-inline-end: -4rem;
+    inline-size: 18rem;
+    block-size: 18rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 165, 26, 0.55) 0%, rgba(242, 165, 26, 0) 70%);
+    pointer-events: none;
+}
+
+.uni-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 0.8rem;
+    margin-block-end: 1rem;
+}
+
+.uni-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    max-inline-size: 22ch;
+    margin-inline: auto;
+}
+
+.uni-hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    max-inline-size: 55ch;
+    margin-inline: auto;
+    margin-block-end: 1.75rem;
+}
+
+.uni-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-inline-size: 34rem;
+    margin-inline: auto;
+    background: var(--lum-white);
+    border-radius: 999px;
+    padding: 0.35rem 0.5rem;
+    padding-inline-start: 1rem;
+    box-shadow: var(--lum-shadow-lift);
+}
+
+.uni-search-icon {
+    color: var(--lum-muted);
+    flex-shrink: 0;
+}
+
+.uni-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--lum-text);
+    font-size: 0.95rem;
+    min-inline-size: 0;
+}
+
+.uni-search-clear {
+    border: none;
+    background: var(--lum-cream);
+    color: var(--lum-muted);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.uni-search-clear:hover {
+    background: var(--lum-line);
+    color: var(--lum-text);
+}
+
+/* ---------- Layout ---------- */
+.uni-content {
+    padding-block: 2rem 3rem;
+}
+
+.uni-layout {
+    display: grid;
+    grid-template-columns: 17rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 991.98px) {
+    .uni-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Filters sidebar ---------- */
+.uni-filters-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.25rem;
+    position: sticky;
+    inset-block-start: 1rem;
+}
+
+.uni-filters-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 1rem;
+}
+
+.uni-filters-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.uni-filters-reset {
+    border: none;
+    background: none;
+    color: var(--lum-gold-strong);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.uni-filter-group {
+    margin-block-end: 1.25rem;
+}
+
+.uni-filter-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--lum-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-block-end: 0.6rem;
+}
+
+.uni-type-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.uni-type-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    inline-size: 100%;
+    border: 1px solid var(--lum-line);
+    background: var(--lum-white);
+    color: var(--lum-text);
+    border-radius: var(--lum-radius-sm);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.88rem;
+    text-align: start;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.uni-type-btn span:first-of-type {
+    flex: 1;
+}
+
+.uni-type-btn:hover {
+    border-color: var(--lum-navy);
+}
+
+.uni-type-btn.is-active {
+    background: var(--lum-navy);
+    border-color: var(--lum-navy);
+    color: var(--lum-white);
+}
+
+.uni-type-count {
+    font-size: 0.75rem;
+    background: rgba(20, 41, 74, 0.08);
+    border-radius: 999px;
+    padding: 0.05rem 0.5rem;
+}
+
+.uni-type-btn.is-active .uni-type-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.uni-city-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    max-block-size: 8.5rem; /* many cities scroll instead of stretching the sidebar */
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.uni-city-chip {
+    border: 1px solid var(--lum-line);
+    background: var(--lum-white);
+    color: var(--lum-text);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.82rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.uni-city-chip:hover {
+    border-color: var(--lum-navy);
+}
+
+.uni-city-chip.is-active {
+    background: var(--lum-navy);
+    border-color: var(--lum-navy);
+    color: var(--lum-white);
+}
+
+.uni-tuition-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.uni-tuition-value {
+    color: var(--lum-gold-strong);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.uni-tuition-range {
+    inline-size: 100%;
+    accent-color: var(--lum-gold);
+}
+
+.uni-tuition-bounds {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--lum-muted);
+}
+
+.uni-filters-foot {
+    border-block-start: 1px solid var(--lum-line);
+    padding-block-start: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--lum-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #fdf6e9;
+    margin-inline: -1.25rem;
+    margin-block-end: -1.25rem;
+    padding: 0.9rem 1.25rem;
+    border-end-start-radius: var(--lum-radius);
+    border-end-end-radius: var(--lum-radius);
+}
+
+.uni-filters-foot .lum-icon {
+    color: var(--lum-gold-strong);
+}
+
+/* ---------- Results bar ---------- */
+.uni-results-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-block-end: 1rem;
+}
+
+.uni-results-count {
+    font-size: 0.9rem;
+    color: var(--lum-muted);
+}
+
+.uni-results-count strong {
+    color: var(--lum-text);
+}
+
+.uni-sort {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--lum-muted);
+}
+
+.uni-sort .form-select {
+    inline-size: auto;
+    border-radius: var(--lum-radius-sm);
+}
+
+/* ---------- Empty state & pagination ---------- */
+.uni-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-block-start: 1.75rem;
+}
+
+.uni-page-btn {
+    min-inline-size: 2.4rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--lum-line);
+    background: var(--lum-white);
+    color: var(--lum-text);
+    border-radius: var(--lum-radius-sm);
+    font-size: 0.85rem;
+}
+
+.uni-page-btn:hover:not(:disabled) {
+    border-color: var(--lum-navy);
+}
+
+.uni-page-btn.is-active {
+    background: var(--lum-navy);
+    border-color: var(--lum-navy);
+    color: var(--lum-white);
+    font-weight: 700;
+}
+
+.uni-page-btn:disabled {
+    opacity: 0.45;
+}
+
+/* ---------- Loading state ---------- */
+#uniList.is-loading {
+    opacity: 0.55;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}

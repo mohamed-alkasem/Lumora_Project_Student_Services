@@ -1,0 +1,51 @@
+@model Lumora.Web.Models.Housings.HousingIndexViewModel
+@{
+    ViewData["Title"] = SharedLocalizer["Housing"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/housings.css" asp-append-version="true" />
+}
+
+<div id="housingPage"
+     data-list-url="@Url.Action("List", "Housings")"
+     data-page-url="@Url.Action("Index", "Housings")">
+
+    <section class="hou-hero">
+        <div class="container">
+            <span class="hou-hero-badge">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 4 9v12h5v-7h6v7h5V9l-8-6z"/></svg>
+                @SharedLocalizer["Housing"]
+            </span>
+            <h1 class="hou-hero-title">@SharedLocalizer["HousingHeroTitle"]</h1>
+            <p class="hou-hero-subtitle">@SharedLocalizer["HousingHeroSubtitle"]</p>
+        </div>
+        <div class="hou-hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <section class="hou-content">
+        <div class="container">
+            <div class="hou-layout">
+                <aside class="hou-sidebar">
+                    <partial name="_FiltersSidebar" model="Model" />
+                </aside>
+
+                <div class="hou-results">
+                    <div class="hou-results-bar">
+                        <span class="hou-results-count">
+                            <strong id="resultsCount">@Model.Results.TotalCount</strong> @SharedLocalizer["MatchingHousing"]
+                        </span>
+                    </div>
+
+                    <div id="houList" aria-live="polite">
+                        <partial name="_HousingList" model="Model.Results" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    <script src="~/js/pages/housings.js" asp-append-version="true"></script>
+}

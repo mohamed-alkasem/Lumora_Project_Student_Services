@@ -1,0 +1,8 @@
+@{
+    ViewData["Title"] = SharedLocalizer["AccessDenied"].Value;
+}
+
+<div class="container"><div class="text-center my-5">
+    <h2>@SharedLocalizer["AccessDenied"]</h2>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">@SharedLocalizer["Home"]</a>
+</div></div>

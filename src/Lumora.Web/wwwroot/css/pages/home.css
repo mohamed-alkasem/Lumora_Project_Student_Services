@@ -1,0 +1,479 @@
+/* ============================================================
+   Landing page. Light cream hero per the approved design;
+   logical properties only for RTL mirroring.
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.home-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #fdf6e9 0%, var(--lum-cream) 60%);
+    padding-block: 4rem 3rem;
+}
+
+.home-hero-glow {
+    position: absolute;
+    inset-block-start: -6rem;
+    inset-inline-end: -6rem;
+    inline-size: 24rem;
+    block-size: 24rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 165, 26, 0.35) 0%, rgba(242, 165, 26, 0) 70%);
+    pointer-events: none;
+}
+
+.home-hero-copy {
+    max-inline-size: 40rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* hero entrance (on load, no scroll needed) */
+.home-hero-badge,
+.home-hero-title,
+.home-hero-text,
+.home-hero-actions,
+.home-stats {
+    animation: home-rise 0.7s ease both;
+}
+
+.home-hero-title   { animation-delay: 0.1s; }
+.home-hero-text    { animation-delay: 0.2s; }
+.home-hero-actions { animation-delay: 0.3s; }
+.home-stats        { animation-delay: 0.45s; }
+
+@keyframes home-rise {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-hero-badge, .home-hero-title, .home-hero-text,
+    .home-hero-actions, .home-stats { animation: none; }
+}
+
+.home-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--lum-white);
+    border: 1px solid var(--lum-line);
+    color: var(--lum-navy-900);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-block-end: 1.1rem;
+}
+
+.home-hero-badge .lum-icon {
+    color: var(--lum-gold);
+}
+
+.home-hero-title {
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    font-weight: 800;
+    color: var(--lum-navy-900);
+    line-height: 1.25;
+    margin-block-end: 0.9rem;
+}
+
+.home-hero-text {
+    color: var(--lum-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-block-end: 1.5rem;
+}
+
+.home-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-block-end: 2.25rem;
+}
+
+.home-stats {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 2rem;
+    justify-content: start;
+}
+
+@media (max-width: 575.98px) {
+    .home-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+.home-stat strong {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--lum-navy-900);
+}
+
+.home-stat span {
+    font-size: 0.78rem;
+    color: var(--lum-muted);
+}
+
+/* ---------- Generic sections ---------- */
+.home-section {
+    padding-block: 3rem;
+}
+
+.home-section-alt {
+    background: #f4efe6;
+}
+
+.home-kicker {
+    color: var(--lum-gold-strong);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-block-end: 0.3rem;
+}
+
+.home-kicker-light {
+    color: var(--lum-gold);
+}
+
+.home-section-title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--lum-navy-900);
+    margin-block-end: 1rem;
+}
+
+.home-title-light {
+    color: var(--lum-white);
+}
+
+.home-section-sub {
+    color: var(--lum-muted);
+    max-inline-size: 60ch;
+    margin-block-end: 1.25rem;
+}
+
+.home-section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-block-end: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- Services strip ---------- */
+.home-services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.1rem;
+}
+
+@media (max-width: 991.98px) {
+    .home-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-services {
+        grid-template-columns: 1fr;
+    }
+}
+
+.home-service-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.4rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--lum-shadow-lift);
+    color: inherit;
+}
+
+.home-service-icon {
+    inline-size: 2.8rem;
+    block-size: 2.8rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(242, 165, 26, 0.15);
+    color: var(--lum-gold-strong);
+    margin-block-end: 0.8rem;
+}
+
+.home-service-icon svg {
+    inline-size: 1.4rem;
+    block-size: 1.4rem;
+}
+
+.home-service-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--lum-navy-900);
+    margin-block-end: 0.4rem;
+}
+
+.home-service-card p {
+    font-size: 0.85rem;
+    color: var(--lum-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ---------- Top universities ---------- */
+.home-uni-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 991.98px) {
+    .home-uni-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .home-uni-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Housing blurb ---------- */
+.home-housing {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.home-housing-art {
+    inline-size: 11rem;
+    block-size: 11rem;
+    border-radius: var(--lum-radius);
+    background: linear-gradient(135deg, var(--lum-navy-900), var(--lum-navy-700));
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.85);
+    flex-shrink: 0;
+}
+
+.home-housing-art svg {
+    inline-size: 4.5rem;
+    block-size: 4.5rem;
+}
+
+.home-housing-copy {
+    flex: 1;
+    min-inline-size: 16rem;
+}
+
+/* ---------- Why Lumora (dark band) ---------- */
+.home-why {
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 3.5rem;
+    text-align: center;
+}
+
+.home-why-sub {
+    color: rgba(255, 255, 255, 0.72);
+    max-inline-size: 60ch;
+    margin-inline: auto;
+    margin-block-end: 2rem;
+}
+
+.home-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    text-align: start;
+}
+
+@media (max-width: 991.98px) {
+    .home-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+.home-feature {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--lum-radius);
+    padding: 1.4rem;
+}
+
+.home-feature-icon {
+    inline-size: 2.6rem;
+    block-size: 2.6rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(242, 165, 26, 0.2);
+    color: var(--lum-gold);
+    margin-block-end: 0.8rem;
+}
+
+.home-feature-icon svg {
+    inline-size: 1.3rem;
+    block-size: 1.3rem;
+}
+
+.home-feature h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-block-end: 0.4rem;
+}
+
+.home-feature p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ---------- Steps ---------- */
+.home-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.1rem;
+    counter-reset: step;
+}
+
+@media (max-width: 991.98px) {
+    .home-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+.home-step {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.3rem;
+    position: relative;
+}
+
+.home-step-num {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--lum-gold);
+    margin-block-end: 0.4rem;
+}
+
+.home-step h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--lum-navy-900);
+    margin-block-end: 0.35rem;
+}
+
+.home-step p {
+    font-size: 0.82rem;
+    color: var(--lum-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ---------- Testimonials (horizontal scroll-snap carousel via .lum-hscroll) ---------- */
+.home-testimonial {
+    inline-size: min(22rem, 85vw);
+
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.4rem;
+    margin: 0;
+}
+
+.home-quote-mark {
+    inline-size: 1.6rem;
+    block-size: 1.6rem;
+    color: var(--lum-gold);
+    margin-block-end: 0.4rem;
+}
+
+.home-testimonial blockquote {
+    font-size: 0.92rem;
+    color: var(--lum-text);
+    line-height: 1.7;
+    margin-block-end: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.home-testimonial figcaption strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--lum-navy-900);
+}
+
+.home-testimonial figcaption small {
+    color: var(--lum-muted);
+    font-size: 0.75rem;
+}
+
+/* ---------- CTA band ---------- */
+.home-cta {
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-700) 100%);
+    color: var(--lum-white);
+    padding-block: 2.75rem;
+}
+
+.home-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.home-cta-title {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 800;
+    margin-block-end: 0.3rem;
+}
+
+.home-cta-text {
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+}
+
+/* ---------- mobile tuning ---------- */
+@media (max-width: 575.98px) {
+    .home-hero {
+        padding-block: 2.5rem 2rem;
+    }
+
+    .home-section {
+        padding-block: 2rem;
+    }
+}

@@ -1,0 +1,120 @@
+/* ============================================================
+   Services page. Logical properties only.
+   ============================================================ */
+
+.svc-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 3rem;
+    text-align: center;
+}
+
+.svc-hero-glow {
+    position: absolute;
+    inset-block-start: -4rem;
+    inset-inline-end: -4rem;
+    inline-size: 18rem;
+    block-size: 18rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 165, 26, 0.55) 0%, rgba(242, 165, 26, 0) 70%);
+    pointer-events: none;
+}
+
+.svc-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin-block-end: 0.5rem;
+}
+
+.svc-hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    max-inline-size: 55ch;
+    margin-inline: auto;
+    margin-block-end: 0;
+}
+
+.svc-content {
+    padding-block: 2.5rem 3rem;
+}
+
+.svc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-inline-size: 52rem;
+    margin-inline: auto;
+}
+
+@media (max-width: 767.98px) {
+    .svc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.svc-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.svc-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--lum-shadow-lift);
+}
+
+.svc-icon {
+    inline-size: 3rem;
+    block-size: 3rem;
+    border-radius: var(--lum-radius-sm);
+    display: grid;
+    place-items: center;
+    margin-block-end: 1rem;
+}
+
+.svc-icon svg {
+    inline-size: 1.6rem;
+    block-size: 1.6rem;
+}
+
+.svc-icon-navy {
+    background: rgba(30, 58, 102, 0.1);
+    color: var(--lum-navy);
+}
+
+.svc-icon-gold {
+    background: rgba(242, 165, 26, 0.15);
+    color: var(--lum-gold-strong);
+}
+
+.svc-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--lum-navy-900);
+    margin-block-end: 0.5rem;
+}
+
+.svc-text {
+    color: var(--lum-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-block-end: 1rem;
+}
+
+.svc-link {
+    margin-block-start: auto;
+    color: var(--lum-gold-strong);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.svc-link:hover {
+    color: var(--lum-navy);
+}

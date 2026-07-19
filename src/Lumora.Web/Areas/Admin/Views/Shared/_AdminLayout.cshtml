@@ -1,0 +1,116 @@
+@{
+    var lang = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var dir  = LanguageConstants.DirectionOf(lang);
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+
+    // (controller, resource key) pairs drive the sidebar so adding a section is one line.
+    var sections = new (string Controller, string Key)[]
+    {
+        ("Home", "Dashboard"),
+        ("Universities", "Universities"),
+        ("Cities", "Cities"),
+        ("Programs", "Programs"),
+        ("Housings", "Housing"),
+        ("Faqs", "Faqs"),
+        ("Testimonials", "Testimonials"),
+        ("Consultations", "Consultations"),
+        ("Chat", "MessagesLabel"),
+        ("Students", "Students")
+    };
+}
+<!DOCTYPE html>
+<html lang="@lang" dir="@dir">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lumora Admin</title>
+    @if (dir == "rtl")
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/lumora-theme.css" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/shared.min.css" asp-append-version="true" />
+    </environment>
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="admin-body">
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <a class="lum-logo lum-logo-light admin-logo" asp-area="Admin" asp-controller="Home" asp-action="Index">
+                LUM<span class="lum-logo-dot" aria-hidden="true"></span>RA
+            </a>
+
+            <nav class="admin-nav">
+                @foreach (var (controller, key) in sections)
+                {
+                    <a class="admin-nav-link @(currentController == controller ? "is-active" : "")"
+                       asp-area="Admin" asp-controller="@controller" asp-action="Index">
+                        @SharedLocalizer[key]
+                    </a>
+                }
+                @if (User.IsInRole(RoleConstants.SuperAdmin))
+                {
+                    <a class="admin-nav-link @(currentController == "Users" ? "is-active" : "")"
+                       asp-area="Admin" asp-controller="Users" asp-action="Index">
+                        @SharedLocalizer["AdminUsers"]
+                    </a>
+                }
+            </nav>
+
+            <div class="admin-sidebar-foot">
+                <a class="admin-nav-link" asp-area="" asp-controller="Home" asp-action="Index" target="_blank">
+                    @SharedLocalizer["ViewSite"] ↗
+                </a>
+            </div>
+        </aside>
+
+        <div class="admin-main">
+            <header class="admin-topbar">
+                <h1 class="admin-page-title">@ViewData["Title"]</h1>
+                <div class="admin-topbar-actions">
+                    <div class="admin-langs">
+                        @foreach (var code in LanguageConstants.All)
+                        {
+                            <a asp-area="" asp-controller="Language" asp-action="SetLanguage"
+                               asp-route-culture="@code"
+                               asp-route-returnUrl="@Context.Request.Path"
+                               class="admin-lang-pill @(lang == code ? "is-active" : "")">
+                                @code.ToUpper()
+                            </a>
+                        }
+                    </div>
+                    <span class="admin-user">@User.Identity?.Name</span>
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-sm lum-btn-outline">@SharedLocalizer["Logout"]</button>
+                    </form>
+                </div>
+            </header>
+
+            <main class="admin-content">
+                @if (TempData["Success"] is string success)
+                {
+                    <div class="alert alert-success">@success</div>
+                }
+                @if (TempData["Error"] is string error)
+                {
+                    <div class="alert alert-danger">@error</div>
+                }
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/admin.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

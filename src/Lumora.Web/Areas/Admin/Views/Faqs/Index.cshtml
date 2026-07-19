@@ -1,0 +1,39 @@
+@model IReadOnlyList<Lumora.Application.DTOs.Faqs.FaqDto>
+@{
+    ViewData["Title"] = SharedLocalizer["Faqs"].Value;
+}
+
+<div class="admin-toolbar">
+    <span></span>
+    <a class="btn lum-btn-navy" asp-action="Create">+ @SharedLocalizer["AddNew"]</a>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>@SharedLocalizer["DisplayOrder"]</th>
+                <th>@SharedLocalizer["Question"]</th>
+                <th>@SharedLocalizer["Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var faq in Model)
+            {
+                <tr>
+                    <td>@faq.DisplayOrder</td>
+                    <td>@faq.Question</td>
+                    <td>
+                        <div class="admin-actions">
+                            <a class="btn btn-sm lum-btn-outline" asp-action="Edit" asp-route-id="@faq.Id">@SharedLocalizer["Edit"]</a>
+                            <form asp-action="Delete" asp-route-id="@faq.Id" method="post"
+                                  data-confirm="@SharedLocalizer["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">@SharedLocalizer["Delete"]</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

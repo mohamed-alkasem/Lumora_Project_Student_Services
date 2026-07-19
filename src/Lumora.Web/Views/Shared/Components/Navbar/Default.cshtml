@@ -1,0 +1,139 @@
+@using Lumora.Domain.Constants
+@using System.Linq
+@{
+    var lang = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var currentPath = ViewContext.HttpContext.Request.Path;
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+
+<div class="lum-topbar">
+    <div class="container lum-topbar-inner">
+        <div class="lum-topbar-contact">
+            <a href="tel:+905359330591">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02z"/></svg>
+                <span dir="ltr">+90 535 933 0591</span>
+            </a>
+            <a class="lum-topbar-email" href="mailto:info@lumora.com">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+                <span dir="ltr">info@lumora.com</span>
+            </a>
+        </div>
+        <ul class="lum-lang-list">
+            @foreach (var code in LanguageConstants.All)
+            {
+                <li>
+                    <a class="lum-lang-pill @(lang == code ? "is-active" : "")"
+                       asp-area="" asp-controller="Language" asp-action="SetLanguage"
+                       asp-route-culture="@code" asp-route-returnUrl="@currentPath">
+                        @System.Globalization.CultureInfo.GetCultureInfo(code).NativeName.Split(' ')[0]
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<nav class="lum-navbar navbar navbar-expand-lg">
+    <div class="container">
+        <a class="lum-logo" asp-area="" asp-controller="Home" asp-action="Index" aria-label="Lumora">
+            LUM<span class="lum-logo-dot" aria-hidden="true"></span>RA
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lumNav"
+                aria-controls="lumNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="lumNav">
+            <ul class="navbar-nav lum-nav-links mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "Home" ? "is-active" : "")"
+                       asp-area="" asp-controller="Home" asp-action="Index">@SharedLocalizer["Home"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "Services" ? "is-active" : "")"
+                       asp-area="" asp-controller="Services" asp-action="Index">@SharedLocalizer["Services"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "Universities" ? "is-active" : "")"
+                       asp-area="" asp-controller="Universities" asp-action="Index">@SharedLocalizer["Universities"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "Housings" ? "is-active" : "")"
+                       asp-area="" asp-controller="Housings" asp-action="Index">@SharedLocalizer["Housing"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "About" ? "is-active" : "")"
+                       asp-area="" asp-controller="About" asp-action="Index">@SharedLocalizer["About"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(currentController == "Faqs" ? "is-active" : "")"
+                       asp-area="" asp-controller="Faqs" asp-action="Index">@SharedLocalizer["Faqs"]</a>
+                </li>
+            </ul>
+
+            <div class="lum-nav-actions">
+                <a class="lum-nav-icon lum-nav-icon-fav" asp-area="" asp-controller="Favorites" asp-action="Index"
+                   aria-label="@SharedLocalizer["MyFavorites"]" data-tip="@SharedLocalizer["MyFavorites"]">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </a>
+                <a class="lum-nav-icon lum-nav-icon-chat" asp-area="" asp-controller="Chat" asp-action="Index"
+                   aria-label="@SharedLocalizer["ChatNav"]" data-tip="@SharedLocalizer["ChatNav"]">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/></svg>
+                    <span class="lum-nav-icon-ping" aria-hidden="true"></span>
+                </a>
+                <a class="btn lum-btn-gold d-none d-lg-inline-flex" asp-area="" asp-controller="Consultations" asp-action="Request">
+                    <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>
+                    @SharedLocalizer["FreeConsultation"]
+                </a>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="dropdown">
+                        <button class="btn lum-btn-outline btn-sm dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            @SharedLocalizer["MyAccount"]
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            @if (User.IsInRole(RoleConstants.Student))
+                            {
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Favorites" asp-action="Index">
+                                        @SharedLocalizer["MyFavorites"]
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Chat" asp-action="Index">
+                                        @SharedLocalizer["ChatNav"]
+                                    </a>
+                                </li>
+                            }
+                            @if (RoleConstants.AdminRoles.Any(User.IsInRole))
+                            {
+                                <li>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">
+                                        @SharedLocalizer["Dashboard"]
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Profile">
+                                    @SharedLocalizer["Profile"]
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li>
+                                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                                    <button type="submit" class="dropdown-item">@SharedLocalizer["Logout"]</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <a class="btn lum-btn-outline btn-sm" asp-area="" asp-controller="Account" asp-action="Login">@SharedLocalizer["Login"]</a>
+                }
+            </div>
+        </div>
+    </div>
+</nav>

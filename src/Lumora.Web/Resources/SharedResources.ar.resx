@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="AppName" xml:space="preserve">
+    <value>لومورا</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>أهلاً وسهلاً</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>غير موجود</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>حدث خطأ</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>هذا الحقل مطلوب</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>إنشاء حساب</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>تذكرني</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>الرجاء إدخال بريد إلكتروني صحيح</value>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>يجب أن تتكون كلمة المرور من 8 أحرف على الأقل</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>كلمتا المرور غير متطابقتين</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>البريد الإلكتروني أو كلمة المرور غير صحيحة</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>لا تملك صلاحية الوصول لهذه الصفحة</value>
+  </data>
+  <data name="AlreadyHaveAccount" xml:space="preserve">
+    <value>لديك حساب مسبقاً؟</value>
+  </data>
+  <data name="NoAccountYet" xml:space="preserve">
+    <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>خدماتنا</value>
+  </data>
+  <data name="Universities" xml:space="preserve">
+    <value>الجامعات</value>
+  </data>
+  <data name="Housing" xml:space="preserve">
+    <value>السكن</value>
+  </data>
+  <data name="FreeConsultation" xml:space="preserve">
+    <value>استشارة مجانية</value>
+  </data>
+  <data name="UniversityDirectory" xml:space="preserve">
+    <value>دليل الجامعات</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>اكتشف أفضل الجامعات في تركيا</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>قارن الجامعات الحكومية والخاصة حسب التقييم، السعر، المدينة والتخصصات — واختر ما يناسبك.</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>ابحث باسم الجامعة أو التخصص...</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>تصفية</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>إعادة تعيين</value>
+  </data>
+  <data name="UniversityType" xml:space="preserve">
+    <value>نوع الجامعة</value>
+  </data>
+  <data name="AllUniversities" xml:space="preserve">
+    <value>كل الجامعات</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>حكومية</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>خاصة</value>
+  </data>
+  <data name="CityLabel" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+  <data name="MaxTuition" xml:space="preserve">
+    <value>الحد الأقصى للرسوم</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>المفضلة</value>
+  </data>
+  <data name="Matching" xml:space="preserve">
+    <value>جامعة مطابقة</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>ترتيب</value>
+  </data>
+  <data name="TopRated" xml:space="preserve">
+    <value>الأعلى تقييماً</value>
+  </data>
+  <data name="TuitionLowHigh" xml:space="preserve">
+    <value>الرسوم: من الأقل للأعلى</value>
+  </data>
+  <data name="TuitionHighLow" xml:space="preserve">
+    <value>الرسوم: من الأعلى للأقل</value>
+  </data>
+  <data name="Newest" xml:space="preserve">
+    <value>الأحدث</value>
+  </data>
+  <data name="AnnualTuition" xml:space="preserve">
+    <value>الرسوم السنوية</value>
+  </data>
+  <data name="PerYear" xml:space="preserve">
+    <value>/سنة</value>
+  </data>
+  <data name="ApplyNow" xml:space="preserve">
+    <value>قدّم الآن</value>
+  </data>
+  <data name="TopBadge" xml:space="preserve">
+    <value>الأفضل</value>
+  </data>
+  <data name="Campus" xml:space="preserve">
+    <value>فرع</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>لا توجد جامعات مطابقة لخيارات التصفية</value>
+  </data>
+  <data name="LoginToSave" xml:space="preserve">
+    <value>سجّل الدخول لحفظ المفضلة</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="FooterTagline" xml:space="preserve">
+    <value>دليلك الموثوق للدراسة في تركيا</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>جميع الحقوق محفوظة</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="Cities" xml:space="preserve">
+    <value>المدن</value>
+  </data>
+  <data name="Programs" xml:space="preserve">
+    <value>التخصصات</value>
+  </data>
+  <data name="Faqs" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>آراء الطلاب</value>
+  </data>
+  <data name="Consultations" xml:space="preserve">
+    <value>طلبات الاستشارة</value>
+  </data>
+  <data name="Students" xml:space="preserve">
+    <value>الطلاب</value>
+  </data>
+  <data name="AdminUsers" xml:space="preserve">
+    <value>مستخدمو الإدارة</value>
+  </data>
+  <data name="ViewSite" xml:space="preserve">
+    <value>عرض الموقع</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>إضافة جديد</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>إجراءات</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>هل أنت متأكد من حذف هذا العنصر؟</value>
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value>تم الحفظ بنجاح</value>
+  </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value>تم الحذف بنجاح</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>العودة للقائمة</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>السؤال</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>الجواب</value>
+  </data>
+  <data name="TitleLabel" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان التفصيلي</value>
+  </data>
+  <data name="DisplayOrder" xml:space="preserve">
+    <value>ترتيب العرض</value>
+  </data>
+  <data name="IsPublished" xml:space="preserve">
+    <value>منشور</value>
+  </data>
+  <data name="CampusCount" xml:space="preserve">
+    <value>عدد الفروع</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>الشعار</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>الصورة الشخصية</value>
+  </data>
+  <data name="ImageLabel" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="PricePerMonth" xml:space="preserve">
+    <value>السعر الشهري (دولار)</value>
+  </data>
+  <data name="University" xml:space="preserve">
+    <value>الجامعة</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="StatusNew" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="StatusContacted" xml:space="preserve">
+    <value>تم التواصل</value>
+  </data>
+  <data name="StatusClosed" xml:space="preserve">
+    <value>مغلق</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>نشط</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>موقوف</value>
+  </data>
+  <data name="CreateAdmin" xml:space="preserve">
+    <value>إنشاء حساب أدمن</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>تفعيل</value>
+  </data>
+  <data name="Deactivate" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="NewConsultations" xml:space="preserve">
+    <value>استشارات جديدة</value>
+  </data>
+  <data name="StudentName" xml:space="preserve">
+    <value>اسم الطالب</value>
+  </data>
+  <data name="StudentTitle" xml:space="preserve">
+    <value>صفة الطالب</value>
+  </data>
+  <data name="Quote" xml:space="preserve">
+    <value>الرأي</value>
+  </data>
+  <data name="RatingLabel" xml:space="preserve">
+    <value>التقييم</value>
+  </data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>يجب أن يكون حجم الصورة أقل من 2 ميغابايت</value></data>
+  <data name="ImageTypeNotAllowed" xml:space="preserve"><value>أنواع الصور المسموحة: PNG, JPG, WEBP, SVG</value></data>
+  <data name="All" xml:space="preserve"><value>الكل</value></data>
+  <data name="CreatedAt" xml:space="preserve"><value>تاريخ الإنشاء</value></data>
+  <data name="Role" xml:space="preserve"><value>الدور</value></data>
+  <data name="MyAccount" xml:space="preserve"><value>حسابي</value></data>
+  <data name="Profile" xml:space="preserve"><value>الملف الشخصي</value></data>
+  <data name="ChangePassword" xml:space="preserve"><value>تغيير كلمة المرور</value></data>
+  <data name="CurrentPassword" xml:space="preserve"><value>كلمة المرور الحالية</value></data>
+  <data name="NewPassword" xml:space="preserve"><value>كلمة المرور الجديدة</value></data>
+  <data name="ConfirmNewPassword" xml:space="preserve"><value>تأكيد كلمة المرور الجديدة</value></data>
+  <data name="PasswordChanged" xml:space="preserve"><value>تم تغيير كلمة المرور بنجاح</value></data>
+  <data name="ProfileUpdated" xml:space="preserve"><value>تم تحديث ملفك الشخصي</value></data>
+  <data name="MyFavorites" xml:space="preserve"><value>مفضلتي</value></data>
+  <data name="NoFavoritesYet" xml:space="preserve"><value>لا توجد جامعات في مفضلتك بعد</value></data>
+  <data name="BrowseUniversities" xml:space="preserve"><value>تصفح الجامعات</value></data>
+  <data name="RequestConsultation" xml:space="preserve"><value>طلب استشارة</value></data>
+  <data name="SendRequest" xml:space="preserve"><value>إرسال الطلب</value></data>
+  <data name="RequestSent" xml:space="preserve"><value>تم استلام طلبك — سيتواصل معك فريقنا قريباً</value></data>
+  <data name="Optional" xml:space="preserve"><value>اختياري</value></data>
+  <data name="AboutUniversity" xml:space="preserve"><value>عن الجامعة</value></data>
+  <data name="AvailablePrograms" xml:space="preserve"><value>التخصصات المتاحة</value></data>
+  <data name="PhoneNumber" xml:space="preserve"><value>رقم الهاتف</value></data>
+  <data name="DuplicateEmail" xml:space="preserve"><value>هذا البريد الإلكتروني مسجل مسبقاً</value></data>
+  <data name="PasswordRequiresDigit" xml:space="preserve"><value>يجب أن تحتوي كلمة المرور على رقم واحد على الأقل</value></data>
+  <data name="PasswordRequiresLower" xml:space="preserve"><value>يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل</value></data>
+  <data name="PasswordRequiresUpper" xml:space="preserve"><value>يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل</value></data>
+  <data name="PasswordIncorrect" xml:space="preserve"><value>كلمة المرور الحالية غير صحيحة</value></data>
+  <data name="ConsultationIntro" xml:space="preserve"><value>عبّئ بياناتك وسيتواصل معك فريقنا لاستشارة مجانية.</value></data>
+  <data name="HousingHeroTitle" xml:space="preserve"><value>اعثر على سكن طلابي مريح</value></data>
+  <data name="HousingHeroSubtitle" xml:space="preserve"><value>تصفح السكنات والشقق حسب المدينة والسعر — قريباً من جامعتك.</value></data>
+  <data name="PerMonth" xml:space="preserve"><value>/شهر</value></data>
+  <data name="MaxPrice" xml:space="preserve"><value>الحد الأقصى للسعر</value></data>
+  <data name="NoHousingResults" xml:space="preserve"><value>لا توجد سكنات مطابقة لخيارات التصفية</value></data>
+  <data name="ViewDetails" xml:space="preserve"><value>عرض التفاصيل</value></data>
+  <data name="AboutHousing" xml:space="preserve"><value>عن هذا السكن</value></data>
+  <data name="AddressLabel" xml:space="preserve"><value>العنوان</value></data>
+  <data name="MatchingHousing" xml:space="preserve"><value>سكن مطابق</value></data>
+  <data name="ServicesHeroSubtitle" xml:space="preserve"><value>كل ما تحتاجه لرحلتك الدراسية في تركيا — في مكان واحد.</value></data>
+  <data name="ServiceAdmissionsTitle" xml:space="preserve"><value>القبول الجامعي</value></data>
+  <data name="ServiceAdmissionsText" xml:space="preserve"><value>نتولى طلبك من اختيار الجامعة المناسبة حتى استلام قبولك.</value></data>
+  <data name="ServiceHousingTitle" xml:space="preserve"><value>السكن الطلابي</value></data>
+  <data name="ServiceHousingText" xml:space="preserve"><value>سكنات وشقق قريبة من حرمك الجامعي وبما يناسب ميزانيتك.</value></data>
+  <data name="ServiceConsultingTitle" xml:space="preserve"><value>استشارة مجانية</value></data>
+  <data name="ServiceConsultingText" xml:space="preserve"><value>تحدث مع مستشارينا عن التخصصات والتكاليف والحياة في المدينة — مجاناً.</value></data>
+  <data name="ServiceSupportTitle" xml:space="preserve"><value>دعم مستمر</value></data>
+  <data name="ServiceSupportText" xml:space="preserve"><value>من الاستقبال بالمطار إلى إذن الإقامة — نبقى معك بعد وصولك.</value></data>
+  <data name="AboutHeroSubtitle" xml:space="preserve"><value>لومورا ترشد الطلاب إلى الجامعة الصحيحة والسكن المناسب وبداية موفقة في تركيا.</value></data>
+  <data name="AboutIntroTitle" xml:space="preserve"><value>من نحن</value></data>
+  <data name="AboutIntroText" xml:space="preserve"><value>لومورا منصة خدمات طلابية تساعد الطلاب الدوليين على اكتشاف الجامعات التركية ومقارنة التخصصات والرسوم وإيجاد السكن والحصول على إرشاد شخصي بلغتهم. ساعد فريقنا مئات الطلاب على تحويل خططهم الدراسية إلى قبول جامعي.</value></data>
+  <data name="TestimonialsTitle" xml:space="preserve"><value>ماذا يقول طلابنا</value></data>
+  <data name="FaqHeroSubtitle" xml:space="preserve"><value>إجابات عن أكثر الأسئلة التي يطرحها الطلاب.</value></data>
+  <data name="ChatTitle" xml:space="preserve"><value>محادثتك مع لومورا</value></data>
+  <data name="ChatIntro" xml:space="preserve"><value>فريقنا يرد بأسرع وقت ممكن.</value></data>
+  <data name="TypeMessage" xml:space="preserve"><value>اكتب رسالتك...</value></data>
+  <data name="Send" xml:space="preserve"><value>إرسال</value></data>
+  <data name="NoMessagesYet" xml:space="preserve"><value>لا رسائل بعد — ابدأ المحادثة!</value></data>
+  <data name="MessagesLabel" xml:space="preserve"><value>الرسائل</value></data>
+  <data name="Open" xml:space="preserve"><value>فتح</value></data>
+  <data name="ChatNav" xml:space="preserve"><value>المحادثة</value></data>
+  <data name="QuickLinks" xml:space="preserve"><value>روابط سريعة</value></data>
+  <data name="LocationText" xml:space="preserve"><value>إسطنبول، تركيا</value></data>
+  <data name="HomeHeroTitle" xml:space="preserve"><value>أنِر مستقبلك وابدأ رحلتك الجامعية</value></data>
+  <data name="HomeHeroText" xml:space="preserve"><value>من التسجيل وتأمين القبول الجامعي إلى التأشيرة والسكن — لومورا ترافقك في كل خطوة نحو حلمك الدراسي.</value></data>
+  <data name="StatStudents" xml:space="preserve"><value>طالب أنرنا دربهم</value></data>
+  <data name="StatUniversities" xml:space="preserve"><value>جامعة شريكة</value></data>
+  <data name="StatYears" xml:space="preserve"><value>سنوات خبرة</value></data>
+  <data name="StatAcceptance" xml:space="preserve"><value>نسبة قبول</value></data>
+  <data name="WhatWeOffer" xml:space="preserve"><value>ماذا نقدّم</value></data>
+  <data name="PublicAndPrivate" xml:space="preserve"><value>جامعات حكومية وخاصة</value></data>
+  <data name="HomeUniversitiesText" xml:space="preserve"><value>شبكة واسعة من الجامعات المعتمدة في تركيا — اختر ما يناسب طموحك وميزانيتك.</value></data>
+  <data name="HomeHousingTitle" xml:space="preserve"><value>سكن يشبه البيت</value></data>
+  <data name="HomeHousingText" xml:space="preserve"><value>نرتّب لك إقامة مريحة وآمنة منذ لحظة وصولك، قريبة من جامعتك وضمن ميزانيتك.</value></data>
+  <data name="WhyLumora" xml:space="preserve"><value>لماذا لومورا؟</value></data>
+  <data name="WhyLumoraSub" xml:space="preserve"><value>كما تشرق الشمس لتنير الطريق، نقف إلى جانب كل طالب لنجعل رحلته أوضح وأيسر وأغنى بالفرص.</value></data>
+  <data name="Feature1T" xml:space="preserve"><value>إرشاد شخصي</value></data>
+  <data name="Feature1X" xml:space="preserve"><value>خطة مخصصة لكل طالب حسب أهدافه وقدراته.</value></data>
+  <data name="Feature2T" xml:space="preserve"><value>فريق خبير</value></data>
+  <data name="Feature2X" xml:space="preserve"><value>مستشارون متمرّسون يعرفون النظام التعليمي عن قرب.</value></data>
+  <data name="Feature3T" xml:space="preserve"><value>شراكات موثوقة</value></data>
+  <data name="Feature3X" xml:space="preserve"><value>علاقات مباشرة مع الجامعات تسرّع قبولك.</value></data>
+  <data name="Feature4T" xml:space="preserve"><value>متابعة حتى الاستقرار</value></data>
+  <data name="Feature4X" xml:space="preserve"><value>نرافقك بعد الوصول حتى تستقر تماماً.</value></data>
+  <data name="HowWeWork" xml:space="preserve"><value>كيف نعمل</value></data>
+  <data name="SimpleSteps" xml:space="preserve"><value>خطوات بسيطة</value></data>
+  <data name="Step2T" xml:space="preserve"><value>اختيار الجامعة</value></data>
+  <data name="Step2X" xml:space="preserve"><value>نرشّح لك الجامعة والتخصص الأنسب.</value></data>
+  <data name="Step3T" xml:space="preserve"><value>القبول والأوراق</value></data>
+  <data name="Step3X" xml:space="preserve"><value>نجهّز ملفك ونؤمّن قبولك الجامعي.</value></data>
+  <data name="Step4T" xml:space="preserve"><value>التأشيرة والسفر</value></data>
+  <data name="Step4X" xml:space="preserve"><value>نساعدك في التأشيرة وترتيبات السفر.</value></data>
+  <data name="Step5T" xml:space="preserve"><value>السكن والاستقرار</value></data>
+  <data name="Step5X" xml:space="preserve"><value>نؤمّن سكنك ونتابع حتى تستقر.</value></data>
+  <data name="Step1X" xml:space="preserve"><value>نتعرف على أهدافك ونضع خطة واضحة.</value></data>
+  <data name="ViewAll" xml:space="preserve"><value>عرض الكل</value></data>
+  <data name="ReadyTitle" xml:space="preserve"><value>مستعد تبدأ رحلتك؟</value></data>
+  <data name="ReadyText" xml:space="preserve"><value>احجز استشارة مجانية الآن ودعنا نرسم دربك معاً.</value></data>
+  <data name="GalleryLabel" xml:space="preserve"><value>معرض الصور</value></data>
+  <data name="Upload" xml:space="preserve"><value>رفع</value></data>
+  <data name="WelcomeEmailSubject" xml:space="preserve"><value>أهلاً بك في لومورا!</value></data>
+  <data name="WelcomeEmailBody" xml:space="preserve"><value>مرحباً {0}،&lt;br/&gt;&lt;br/&gt;حسابك في لومورا صار جاهزاً. تصفح الجامعات، احفظ مفضلتك، اطلب استشارة مجانية وتحدث مع فريقنا — نحن معك في كل خطوة من رحلتك الدراسية في تركيا.&lt;br/&gt;&lt;br/&gt;فريق لومورا</value></data>
+</root>

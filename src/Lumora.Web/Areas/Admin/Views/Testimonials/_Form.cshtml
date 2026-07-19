@@ -1,0 +1,54 @@
+@model Lumora.Application.DTOs.Testimonials.TestimonialCreateDto
+
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <label class="form-label" for="photoFile">@SharedLocalizer["Photo"]</label>
+        <input type="file" id="photoFile" name="photoFile" class="form-control" accept=".png,.jpg,.jpeg,.webp,.svg" />
+        <input type="hidden" asp-for="PhotoUrl" />
+        @if (!string.IsNullOrEmpty(Model.PhotoUrl))
+        {
+            <img class="admin-form-image-preview" src="@Model.PhotoUrl" alt="" />
+        }
+    </div>
+    <div class="col-md-4 mb-3">
+        <label asp-for="DisplayOrder" class="form-label">@SharedLocalizer["DisplayOrder"]</label>
+        <input asp-for="DisplayOrder" class="form-control" />
+    </div>
+    <div class="col-md-4 mb-3 d-flex align-items-end">
+        <div class="form-check">
+            <input asp-for="IsPublished" class="form-check-input" />
+            <label asp-for="IsPublished" class="form-check-label">@SharedLocalizer["IsPublished"]</label>
+        </div>
+    </div>
+</div>
+
+<partial name="_LangTabsHeader" model='"trx"' />
+<div class="tab-content" id="trx-content">
+    @for (var i = 0; i < Model.Translations.Count; i++)
+    {
+        var code = Model.Translations[i].LanguageCode;
+        <div class="tab-pane fade @(i == 0 ? "show active" : "")" id="trx-@code" role="tabpanel"
+             dir="@LanguageConstants.DirectionOf(code)">
+            <input type="hidden" asp-for="Translations[i].LanguageCode" />
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Translations[i].StudentName" class="form-label">@SharedLocalizer["StudentName"] (@code.ToUpper())</label>
+                    <input asp-for="Translations[i].StudentName" class="form-control" />
+                    <span asp-validation-for="Translations[i].StudentName" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Translations[i].StudentTitle" class="form-label">@SharedLocalizer["StudentTitle"] (@code.ToUpper())</label>
+                    <input asp-for="Translations[i].StudentTitle" class="form-control" />
+                    <span asp-validation-for="Translations[i].StudentTitle" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Translations[i].QuoteText" class="form-label">@SharedLocalizer["Quote"] (@code.ToUpper())</label>
+                <textarea asp-for="Translations[i].QuoteText" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Translations[i].QuoteText" class="text-danger small"></span>
+            </div>
+        </div>
+    }
+</div>

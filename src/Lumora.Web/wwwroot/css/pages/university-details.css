@@ -1,0 +1,160 @@
+/* ============================================================
+   University details page. Logical properties only.
+   ============================================================ */
+
+.udet-hero {
+    color: var(--lum-white);
+    padding-block: 2.5rem;
+}
+
+.udet-hero-public {
+    background: linear-gradient(135deg, var(--lum-navy-900), var(--lum-navy-700));
+}
+
+.udet-hero-private {
+    background: linear-gradient(135deg, var(--lum-gold-strong), var(--lum-gold));
+}
+
+.udet-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.udet-logo-box {
+    inline-size: 6rem;
+    block-size: 6rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--lum-radius);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.udet-logo-box img {
+    max-inline-size: 80%;
+    max-block-size: 80%;
+    object-fit: contain;
+}
+
+.udet-logo-box svg {
+    inline-size: 3rem;
+    block-size: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.udet-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-block-end: 0.4rem;
+}
+
+.udet-type-badge {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 0.15rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.udet-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.udet-name {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    margin: 0 0 0.3rem;
+}
+
+.udet-location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+/* ---------- Content ---------- */
+.udet-content {
+    padding-block: 2rem 3rem;
+}
+
+.udet-layout {
+    display: grid;
+    grid-template-columns: 1fr 18rem;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 991.98px) {
+    .udet-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.udet-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.5rem;
+    margin-block-end: 1.25rem;
+}
+
+.udet-section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--lum-navy-900);
+    margin-block-end: 0.75rem;
+}
+
+.udet-description {
+    color: var(--lum-text);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.udet-programs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.uni-chip {
+    background: var(--lum-cream);
+    border: 1px solid var(--lum-line);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+/* ---------- CTA sidebar ---------- */
+.udet-cta-card {
+    position: sticky;
+    inset-block-start: 1rem;
+    text-align: center;
+}
+
+.udet-tuition-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--lum-muted);
+}
+
+.udet-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--lum-navy-900);
+}
+
+.udet-price small {
+    font-size: 0.9rem;
+    color: var(--lum-muted);
+}

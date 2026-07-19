@@ -1,0 +1,48 @@
+@model IReadOnlyList<Lumora.Application.DTOs.Universities.UniversityCardDto>
+@{
+    ViewData["Title"] = SharedLocalizer["MyFavorites"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/components/university-card.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pages/favorites.css" asp-append-version="true" />
+}
+
+<div id="favPage" data-toggle-url="@Url.Action("Toggle", "Favorites")">
+    @Html.AntiForgeryToken()
+
+    <section class="fav-header">
+        <div class="container">
+            <h1 class="fav-title">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                @SharedLocalizer["MyFavorites"]
+                <span class="fav-count-badge" id="favPageCount">@Model.Count</span>
+            </h1>
+        </div>
+    </section>
+
+    <section class="fav-content">
+        <div class="container">
+            <div class="uni-empty @(Model.Count == 0 ? "" : "d-none")" id="favEmpty">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <p>@SharedLocalizer["NoFavoritesYet"]</p>
+                <a class="btn lum-btn-navy" asp-controller="Universities" asp-action="Index">@SharedLocalizer["BrowseUniversities"]</a>
+            </div>
+
+            @if (Model.Count > 0)
+            {
+                <div class="uni-grid" id="favGrid">
+                    @foreach (var card in Model)
+                    {
+                        <partial name="~/Views/Universities/_UniversityCard.cshtml"
+                                 model="new Lumora.Web.Models.Universities.UniversityCardViewModel(card, true)" />
+                    }
+                </div>
+            }
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    <script src="~/js/pages/favorites.js" asp-append-version="true"></script>
+}

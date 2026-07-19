@@ -1,0 +1,387 @@
+/* ============================================================
+   Housing directory page. Same structure language as the
+   Universities page; logical properties only for RTL.
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.hou-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 3rem 3.5rem;
+    text-align: center;
+}
+
+.hou-hero-glow {
+    position: absolute;
+    inset-block-start: -4rem;
+    inset-inline-end: -4rem;
+    inline-size: 18rem;
+    block-size: 18rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 165, 26, 0.55) 0%, rgba(242, 165, 26, 0) 70%);
+    pointer-events: none;
+}
+
+.hou-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 0.8rem;
+    margin-block-end: 1rem;
+}
+
+.hou-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    max-inline-size: 24ch;
+    margin-inline: auto;
+}
+
+.hou-hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    max-inline-size: 55ch;
+    margin-inline: auto;
+    margin-block-end: 0;
+}
+
+/* ---------- Layout ---------- */
+.hou-content {
+    padding-block: 2rem 3rem;
+}
+
+.hou-layout {
+    display: grid;
+    grid-template-columns: 17rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 991.98px) {
+    .hou-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Filters sidebar ---------- */
+.hou-filters-card {
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    padding: 1.25rem;
+    position: sticky;
+    inset-block-start: 1rem;
+}
+
+.hou-filters-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 1rem;
+}
+
+.hou-filters-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hou-filters-reset {
+    border: none;
+    background: none;
+    color: var(--lum-gold-strong);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.hou-filter-group {
+    margin-block-end: 1.25rem;
+}
+
+.hou-filter-group:last-child {
+    margin-block-end: 0;
+}
+
+.hou-filter-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--lum-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-block-end: 0.6rem;
+}
+
+.hou-city-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    max-block-size: 8.5rem; /* many cities scroll instead of stretching the sidebar */
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.hou-city-chip {
+    border: 1px solid var(--lum-line);
+    background: var(--lum-white);
+    color: var(--lum-text);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.82rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.hou-city-chip:hover {
+    border-color: var(--lum-navy);
+}
+
+.hou-city-chip.is-active {
+    background: var(--lum-navy);
+    border-color: var(--lum-navy);
+    color: var(--lum-white);
+}
+
+.hou-price-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hou-price-value {
+    color: var(--lum-gold-strong);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.hou-price-range {
+    inline-size: 100%;
+    accent-color: var(--lum-gold);
+}
+
+.hou-price-bounds {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--lum-muted);
+}
+
+/* ---------- Results ---------- */
+.hou-results-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-block-end: 1rem;
+}
+
+.hou-results-count {
+    font-size: 0.9rem;
+    color: var(--lum-muted);
+}
+
+.hou-results-count strong {
+    color: var(--lum-text);
+}
+
+/* ---------- Cards ---------- */
+.hou-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+@media (max-width: 767.98px) {
+    .hou-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hou-card {
+    position: relative; /* anchor for the stretched details link */
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.hou-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--lum-shadow-lift);
+}
+
+.hou-card-band {
+    position: relative;
+    block-size: 8rem;
+    background: linear-gradient(135deg, var(--lum-navy-800), var(--lum-navy-700));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hou-card-image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+
+.hou-card-icon {
+    inline-size: 2.8rem;
+    block-size: 2.8rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hou-card-price-badge {
+    position: absolute;
+    inset-block-end: 0.6rem;
+    inset-inline-start: 0.6rem;
+    background: var(--lum-gold);
+    color: var(--lum-navy-900);
+    font-weight: 800;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    padding: 0.25rem 0.8rem;
+}
+
+.hou-card-price-badge small {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.hou-card-body {
+    padding: 1rem 1.15rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.hou-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-block-end: 0.3rem;
+}
+
+.hou-card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* the title link stretches over the whole card — click anywhere opens details */
+.hou-card-title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hou-card-actions {
+    position: relative;
+    z-index: 2;
+}
+
+.hou-card-price-badge {
+    z-index: 2;
+}
+
+.hou-card-title a:hover {
+    color: var(--lum-navy);
+}
+
+.hou-card-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--lum-muted);
+    margin-block-end: 0.6rem;
+}
+
+.hou-card-location .lum-icon {
+    color: var(--lum-gold-strong);
+    flex-shrink: 0;
+}
+
+.hou-card-description {
+    font-size: 0.85rem;
+    color: var(--lum-text);
+    margin-block-end: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hou-card-actions {
+    margin-block-start: auto;
+}
+
+.hou-card-view {
+    inline-size: 100%;
+    background: var(--lum-navy);
+    color: var(--lum-white);
+    font-weight: 600;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.hou-card-view:hover {
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+}
+
+/* ---------- Empty & pagination ---------- */
+.hou-empty {
+    text-align: center;
+    color: var(--lum-muted);
+    padding-block: 4rem;
+}
+
+.hou-empty .lum-icon {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    margin-block-end: 0.75rem;
+}
+
+.hou-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-block-start: 1.75rem;
+}
+
+.hou-page-btn {
+    min-inline-size: 2.4rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--lum-line);
+    background: var(--lum-white);
+    color: var(--lum-text);
+    border-radius: var(--lum-radius-sm);
+    font-size: 0.85rem;
+}
+
+.hou-page-btn:hover:not(:disabled) {
+    border-color: var(--lum-navy);
+}
+
+.hou-page-btn.is-active {
+    background: var(--lum-navy);
+    border-color: var(--lum-navy);
+    color: var(--lum-white);
+    font-weight: 700;
+}
+
+.hou-page-btn:disabled {
+    opacity: 0.45;
+}
+
+#houList.is-loading {
+    opacity: 0.55;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}

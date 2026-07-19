@@ -1,0 +1,31 @@
+@* Gallery management block shown on Universities/Housings Edit pages.
+   Model = list of existing images; posts to the owning controller's UploadImages/DeleteImage. *@
+@model IReadOnlyList<Lumora.Application.DTOs.Base.GalleryImageDto>
+@{
+    var entityId = (int)ViewBag.EntityId;
+}
+
+<div class="admin-card mt-4">
+    <h2 class="admin-gallery-title">@SharedLocalizer["GalleryLabel"]</h2>
+
+    <div class="admin-gallery-grid">
+        @foreach (var image in Model)
+        {
+            <div class="admin-gallery-item">
+                <img src="@image.Url" alt="" loading="lazy" />
+                <form asp-action="DeleteImage" asp-route-id="@entityId" method="post"
+                      data-confirm="@SharedLocalizer["ConfirmDelete"]">
+                    <input type="hidden" name="imageId" value="@image.Id" />
+                    <button type="submit" class="admin-gallery-remove" aria-label="@SharedLocalizer["Delete"]">✕</button>
+                </form>
+            </div>
+        }
+    </div>
+
+    <form asp-action="UploadImages" asp-route-id="@entityId" method="post"
+          enctype="multipart/form-data" class="admin-gallery-upload">
+        <input type="file" name="galleryFiles" class="form-control" multiple
+               accept=".png,.jpg,.jpeg,.webp,.svg" />
+        <button type="submit" class="btn lum-btn-navy">@SharedLocalizer["Upload"]</button>
+    </form>
+</div>

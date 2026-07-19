@@ -1,0 +1,41 @@
+@model Lumora.Domain.Common.PagedResult<Lumora.Application.DTOs.Housings.HousingCardDto>
+
+<div class="hou-list-root" data-total="@Model.TotalCount">
+    @if (Model.Items.Count == 0)
+    {
+        <div class="hou-empty">
+            <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 4 9v12h5v-7h6v7h5V9l-8-6z"/></svg>
+            <p>@SharedLocalizer["NoHousingResults"]</p>
+        </div>
+    }
+    else
+    {
+        <div class="hou-grid">
+            @foreach (var card in Model.Items)
+            {
+                <partial name="_HousingCard" model="card" />
+            }
+        </div>
+
+        @if (Model.TotalPages > 1)
+        {
+            <nav class="hou-pagination" aria-label="Pagination">
+                <button type="button" class="hou-page-btn" data-page="@(Model.Page - 1)"
+                        @(Model.HasPrevious ? "" : "disabled")>
+                    @SharedLocalizer["Previous"]
+                </button>
+                @for (var p = 1; p <= Model.TotalPages; p++)
+                {
+                    <button type="button" class="hou-page-btn @(p == Model.Page ? "is-active" : "")"
+                            data-page="@p" @(p == Model.Page ? "aria-current=page" : "")>
+                        @p
+                    </button>
+                }
+                <button type="button" class="hou-page-btn" data-page="@(Model.Page + 1)"
+                        @(Model.HasNext ? "" : "disabled")>
+                    @SharedLocalizer["Next"]
+                </button>
+            </nav>
+        }
+    }
+</div>

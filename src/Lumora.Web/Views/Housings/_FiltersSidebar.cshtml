@@ -1,0 +1,40 @@
+@model Lumora.Web.Models.Housings.HousingIndexViewModel
+@{
+    const decimal priceMin = 100m;
+    const decimal priceMax = 2000m;
+    var priceValue = Model.Filter.MaxPricePerMonthUsd ?? priceMax;
+}
+
+<div class="hou-filters-card">
+    <div class="hou-filters-head">
+        <h2 class="hou-filters-title">@SharedLocalizer["Filters"]</h2>
+        <button type="button" id="filtersReset" class="hou-filters-reset">@SharedLocalizer["Reset"]</button>
+    </div>
+
+    <div class="hou-filter-group">
+        <h3 class="hou-filter-label">@SharedLocalizer["CityLabel"]</h3>
+        <div class="hou-city-chips">
+            @foreach (var city in Model.Cities)
+            {
+                <button type="button"
+                        class="hou-city-chip @(Model.Filter.CityId == city.Id ? "is-active" : "")"
+                        data-city-id="@city.Id">
+                    @city.Name
+                </button>
+            }
+        </div>
+    </div>
+
+    <div class="hou-filter-group">
+        <div class="hou-price-head">
+            <h3 class="hou-filter-label">@SharedLocalizer["MaxPrice"]</h3>
+            <span id="priceLabel" class="hou-price-value"></span>
+        </div>
+        <input type="range" id="priceRange" class="hou-price-range"
+               min="@priceMin" max="@priceMax" step="50" value="@priceValue" />
+        <div class="hou-price-bounds">
+            <span>$@priceMin.ToString("N0")</span>
+            <span>$@priceMax.ToString("N0")+</span>
+        </div>
+    </div>
+</div>

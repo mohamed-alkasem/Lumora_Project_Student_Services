@@ -1,0 +1,122 @@
+/* ============================================================
+   Chat page (student /Chat and Admin conversation view).
+   Logical properties only.
+   ============================================================ */
+
+.chat-shell {
+    max-inline-size: 44rem;
+    margin-inline: auto;
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-shell-admin {
+    max-inline-size: none;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+    padding: 0.9rem 1.25rem;
+}
+
+.chat-header-dot {
+    inline-size: 0.65rem;
+    block-size: 0.65rem;
+    border-radius: 50%;
+    background: #2ecc71;
+    flex-shrink: 0;
+}
+
+.chat-header-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.chat-header-sub {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.chat-header-sub a {
+    color: var(--lum-gold);
+}
+
+.chat-messages {
+    flex: 1;
+    min-block-size: 20rem;
+    max-block-size: 55vh;
+    overflow-y: auto;
+    padding: 1.25rem;
+    background: var(--lum-cream);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.chat-empty {
+    text-align: center;
+    color: var(--lum-muted);
+    margin-block: auto;
+}
+
+.chat-bubble {
+    max-inline-size: 75%;
+    padding: 0.55rem 0.85rem;
+    border-radius: var(--lum-radius);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    word-break: break-word;
+}
+
+/* "mine" = written by the current viewer; aligned to the inline end. */
+.chat-bubble.mine {
+    align-self: flex-end;
+    background: var(--lum-navy);
+    color: var(--lum-white);
+    border-end-end-radius: 4px;
+}
+
+.chat-bubble.theirs {
+    align-self: flex-start;
+    background: var(--lum-white);
+    color: var(--lum-text);
+    box-shadow: var(--lum-shadow);
+    border-end-start-radius: 4px;
+}
+
+.chat-time {
+    font-size: 0.65rem;
+    opacity: 0.65;
+    align-self: flex-end;
+    direction: ltr;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.9rem 1.25rem;
+    border-block-start: 1px solid var(--lum-line);
+    background: var(--lum-white);
+}
+
+.chat-input .form-control {
+    border-radius: 999px;
+}
+
+.chat-input .btn {
+    border-radius: 999px;
+    padding-inline: 1.4rem;
+}

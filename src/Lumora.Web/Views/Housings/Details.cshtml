@@ -1,0 +1,102 @@
+@model Lumora.Application.DTOs.Housings.HousingDetailsDto
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/components/gallery.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pages/housing-details.css" asp-append-version="true" />
+}
+
+<section class="hdet-hero">
+    <div class="container hdet-hero-inner">
+        <div class="hdet-image-box">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="@Model.Title" />
+            }
+            else
+            {
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 4 9v12h5v-7h6v7h5V9l-8-6z"/></svg>
+            }
+        </div>
+
+        <div class="hdet-head">
+            <h1 class="hdet-title">@Model.Title</h1>
+            <p class="hdet-location">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+                @Model.CityName
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="hdet-content">
+    <div class="container">
+        <div class="hdet-layout">
+            <div class="hdet-main">
+                @if (Model.ImageUrls.Count > 0)
+                {
+                    <div class="hdet-card">
+                        <h2 class="hdet-section-title">@SharedLocalizer["GalleryLabel"]</h2>
+                        <div class="lgal">
+                            <div class="lgal-main">
+                                <img src="@Model.ImageUrls[0]" alt="@Model.Title" />
+                                @if (Model.ImageUrls.Count > 1)
+                                {
+                                    <button type="button" class="lgal-arrow lgal-prev" aria-label="prev"><svg class="lum-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+                                    <button type="button" class="lgal-arrow lgal-next" aria-label="next"><svg class="lum-icon" viewBox="0 0 24 24"><path fill="currentColor" d="m8.59 16.59 1.41 1.41 6-6-6-6-1.41 1.41L13.17 12z"/></svg></button>
+                                    <span class="lgal-count">1 / @Model.ImageUrls.Count</span>
+                                }
+                            </div>
+                            @if (Model.ImageUrls.Count > 1)
+                            {
+                                <div class="lgal-thumbs">
+                                    @foreach (var (url, i) in Model.ImageUrls.Select((u, i) => (u, i)))
+                                    {
+                                        <button type="button" class="lgal-thumb @(i == 0 ? "is-active" : "")" data-src="@url">
+                                            <img src="@url" alt="" loading="lazy" />
+                                        </button>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <div class="hdet-card">
+                    <h2 class="hdet-section-title">@SharedLocalizer["AboutHousing"]</h2>
+                    <p class="hdet-description">@Model.Description</p>
+                </div>
+
+                <div class="hdet-card">
+                    <h2 class="hdet-section-title">@SharedLocalizer["AddressLabel"]</h2>
+                    <p class="hdet-description">
+                        <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+                        @Model.Address
+                    </p>
+                </div>
+            </div>
+
+            <aside class="hdet-side">
+                <div class="hdet-card hdet-cta-card">
+                    <span class="hdet-price-label">@SharedLocalizer["PricePerMonth"]</span>
+                    <span class="hdet-price">$@Model.PricePerMonthUsd.ToString("N0") <small>@SharedLocalizer["PerMonth"]</small></span>
+
+                    <a class="btn lum-btn-navy w-100 mt-3"
+                       asp-controller="Consultations" asp-action="Request">
+                        @SharedLocalizer["FreeConsultation"]
+                    </a>
+                    <a class="btn lum-btn-outline w-100 mt-2"
+                       asp-controller="Housings" asp-action="Index">
+                        @SharedLocalizer["BackToList"]
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/pages/gallery.js" asp-append-version="true"></script>
+}

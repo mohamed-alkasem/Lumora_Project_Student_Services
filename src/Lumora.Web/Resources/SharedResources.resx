@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="AppName" xml:space="preserve">
+    <value>Lumora</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>An error occurred</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>This field is required</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Please enter a valid email address</value>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>Password must be at least 8 characters</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Passwords do not match</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Invalid email or password</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>You do not have permission to access this page</value>
+  </data>
+  <data name="AlreadyHaveAccount" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="NoAccountYet" xml:space="preserve">
+    <value>Don't have an account?</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Universities" xml:space="preserve">
+    <value>Universities</value>
+  </data>
+  <data name="Housing" xml:space="preserve">
+    <value>Housing</value>
+  </data>
+  <data name="FreeConsultation" xml:space="preserve">
+    <value>Free Consultation</value>
+  </data>
+  <data name="UniversityDirectory" xml:space="preserve">
+    <value>University Directory</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>Discover the best universities in Türkiye</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Compare public and private universities by rating, price, city and programs — and pick what fits you.</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Search by university or program...</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="UniversityType" xml:space="preserve">
+    <value>University type</value>
+  </data>
+  <data name="AllUniversities" xml:space="preserve">
+    <value>All universities</value>
+  </data>
+  <data name="Public" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="CityLabel" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="MaxTuition" xml:space="preserve">
+    <value>Max tuition</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="Matching" xml:space="preserve">
+    <value>matching</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="TopRated" xml:space="preserve">
+    <value>Top rated</value>
+  </data>
+  <data name="TuitionLowHigh" xml:space="preserve">
+    <value>Tuition: low to high</value>
+  </data>
+  <data name="TuitionHighLow" xml:space="preserve">
+    <value>Tuition: high to low</value>
+  </data>
+  <data name="Newest" xml:space="preserve">
+    <value>Newest</value>
+  </data>
+  <data name="AnnualTuition" xml:space="preserve">
+    <value>Annual tuition</value>
+  </data>
+  <data name="PerYear" xml:space="preserve">
+    <value>/yr</value>
+  </data>
+  <data name="ApplyNow" xml:space="preserve">
+    <value>Apply now</value>
+  </data>
+  <data name="TopBadge" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="Campus" xml:space="preserve">
+    <value>campus</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>No universities match your filters</value>
+  </data>
+  <data name="LoginToSave" xml:space="preserve">
+    <value>Log in to save favorites</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="FooterTagline" xml:space="preserve">
+    <value>Your trusted guide to studying in Türkiye</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>All rights reserved</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Cities" xml:space="preserve">
+    <value>Cities</value>
+  </data>
+  <data name="Programs" xml:space="preserve">
+    <value>Programs</value>
+  </data>
+  <data name="Faqs" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>Testimonials</value>
+  </data>
+  <data name="Consultations" xml:space="preserve">
+    <value>Consultations</value>
+  </data>
+  <data name="Students" xml:space="preserve">
+    <value>Students</value>
+  </data>
+  <data name="AdminUsers" xml:space="preserve">
+    <value>Admin Users</value>
+  </data>
+  <data name="ViewSite" xml:space="preserve">
+    <value>View site</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add new</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to delete this item?</value>
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value>Saved successfully</value>
+  </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value>Deleted successfully</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to list</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="TitleLabel" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="DisplayOrder" xml:space="preserve">
+    <value>Display order</value>
+  </data>
+  <data name="IsPublished" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="CampusCount" xml:space="preserve">
+    <value>Campus count</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="ImageLabel" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="PricePerMonth" xml:space="preserve">
+    <value>Price per month (USD)</value>
+  </data>
+  <data name="University" xml:space="preserve">
+    <value>University</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="StatusContacted" xml:space="preserve">
+    <value>Contacted</value>
+  </data>
+  <data name="StatusClosed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="CreateAdmin" xml:space="preserve">
+    <value>Create admin account</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="Deactivate" xml:space="preserve">
+    <value>Deactivate</value>
+  </data>
+  <data name="NewConsultations" xml:space="preserve">
+    <value>New consultations</value>
+  </data>
+  <data name="StudentName" xml:space="preserve">
+    <value>Student name</value>
+  </data>
+  <data name="StudentTitle" xml:space="preserve">
+    <value>Student title</value>
+  </data>
+  <data name="Quote" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="RatingLabel" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>Image must be smaller than 2MB</value></data>
+  <data name="ImageTypeNotAllowed" xml:space="preserve"><value>Allowed image types: PNG, JPG, WEBP, SVG</value></data>
+  <data name="All" xml:space="preserve"><value>All</value></data>
+  <data name="CreatedAt" xml:space="preserve"><value>Created</value></data>
+  <data name="Role" xml:space="preserve"><value>Role</value></data>
+  <data name="MyAccount" xml:space="preserve"><value>My account</value></data>
+  <data name="Profile" xml:space="preserve"><value>Profile</value></data>
+  <data name="ChangePassword" xml:space="preserve"><value>Change password</value></data>
+  <data name="CurrentPassword" xml:space="preserve"><value>Current password</value></data>
+  <data name="NewPassword" xml:space="preserve"><value>New password</value></data>
+  <data name="ConfirmNewPassword" xml:space="preserve"><value>Confirm new password</value></data>
+  <data name="PasswordChanged" xml:space="preserve"><value>Your password has been changed</value></data>
+  <data name="ProfileUpdated" xml:space="preserve"><value>Your profile has been updated</value></data>
+  <data name="MyFavorites" xml:space="preserve"><value>My favorites</value></data>
+  <data name="NoFavoritesYet" xml:space="preserve"><value>You have no favorite universities yet</value></data>
+  <data name="BrowseUniversities" xml:space="preserve"><value>Browse universities</value></data>
+  <data name="RequestConsultation" xml:space="preserve"><value>Request a consultation</value></data>
+  <data name="SendRequest" xml:space="preserve"><value>Send request</value></data>
+  <data name="RequestSent" xml:space="preserve"><value>Your request has been received — our team will contact you soon</value></data>
+  <data name="Optional" xml:space="preserve"><value>optional</value></data>
+  <data name="AboutUniversity" xml:space="preserve"><value>About the university</value></data>
+  <data name="AvailablePrograms" xml:space="preserve"><value>Available programs</value></data>
+  <data name="PhoneNumber" xml:space="preserve"><value>Phone number</value></data>
+  <data name="DuplicateEmail" xml:space="preserve"><value>This email is already registered</value></data>
+  <data name="PasswordRequiresDigit" xml:space="preserve"><value>Password must contain at least one digit</value></data>
+  <data name="PasswordRequiresLower" xml:space="preserve"><value>Password must contain at least one lowercase letter</value></data>
+  <data name="PasswordRequiresUpper" xml:space="preserve"><value>Password must contain at least one uppercase letter</value></data>
+  <data name="PasswordIncorrect" xml:space="preserve"><value>Current password is incorrect</value></data>
+  <data name="ConsultationIntro" xml:space="preserve"><value>Fill in your details and our team will contact you for a free consultation.</value></data>
+  <data name="HousingHeroTitle" xml:space="preserve"><value>Find comfortable student housing</value></data>
+  <data name="HousingHeroSubtitle" xml:space="preserve"><value>Browse dorms and apartments by city and price — close to your university.</value></data>
+  <data name="PerMonth" xml:space="preserve"><value>/mo</value></data>
+  <data name="MaxPrice" xml:space="preserve"><value>Max price</value></data>
+  <data name="NoHousingResults" xml:space="preserve"><value>No housing matches your filters</value></data>
+  <data name="ViewDetails" xml:space="preserve"><value>View details</value></data>
+  <data name="AboutHousing" xml:space="preserve"><value>About this housing</value></data>
+  <data name="AddressLabel" xml:space="preserve"><value>Address</value></data>
+  <data name="MatchingHousing" xml:space="preserve"><value>matching</value></data>
+  <data name="ServicesHeroSubtitle" xml:space="preserve"><value>Everything you need for your study journey in Türkiye — in one place.</value></data>
+  <data name="ServiceAdmissionsTitle" xml:space="preserve"><value>University Admissions</value></data>
+  <data name="ServiceAdmissionsText" xml:space="preserve"><value>We handle your application from choosing the right university to receiving your acceptance letter.</value></data>
+  <data name="ServiceHousingTitle" xml:space="preserve"><value>Student Housing</value></data>
+  <data name="ServiceHousingText" xml:space="preserve"><value>Dorms and apartments near your campus, matched to your budget.</value></data>
+  <data name="ServiceConsultingTitle" xml:space="preserve"><value>Free Consultation</value></data>
+  <data name="ServiceConsultingText" xml:space="preserve"><value>Talk to our advisors about programs, costs and city life — free of charge.</value></data>
+  <data name="ServiceSupportTitle" xml:space="preserve"><value>Ongoing Support</value></data>
+  <data name="ServiceSupportText" xml:space="preserve"><value>From airport pickup to residence permits — we stay with you after you arrive.</value></data>
+  <data name="AboutHeroSubtitle" xml:space="preserve"><value>Lumora guides students to the right university, home and start in Türkiye.</value></data>
+  <data name="AboutIntroTitle" xml:space="preserve"><value>Who we are</value></data>
+  <data name="AboutIntroText" xml:space="preserve"><value>Lumora is a student-services platform that helps international students discover Turkish universities, compare programs and tuition, find housing, and get personal guidance in their own language. Our team has helped hundreds of students turn their study plans into an acceptance letter.</value></data>
+  <data name="TestimonialsTitle" xml:space="preserve"><value>What our students say</value></data>
+  <data name="FaqHeroSubtitle" xml:space="preserve"><value>Answers to the questions students ask most.</value></data>
+  <data name="ChatTitle" xml:space="preserve"><value>Chat with Lumora</value></data>
+  <data name="ChatIntro" xml:space="preserve"><value>Our team replies as soon as possible.</value></data>
+  <data name="TypeMessage" xml:space="preserve"><value>Type your message...</value></data>
+  <data name="Send" xml:space="preserve"><value>Send</value></data>
+  <data name="NoMessagesYet" xml:space="preserve"><value>No messages yet — say hello!</value></data>
+  <data name="MessagesLabel" xml:space="preserve"><value>Messages</value></data>
+  <data name="Open" xml:space="preserve"><value>Open</value></data>
+  <data name="ChatNav" xml:space="preserve"><value>Chat</value></data>
+  <data name="QuickLinks" xml:space="preserve"><value>Quick links</value></data>
+  <data name="LocationText" xml:space="preserve"><value>Istanbul, Türkiye</value></data>
+  <data name="HomeHeroTitle" xml:space="preserve"><value>Light your future and begin your university journey</value></data>
+  <data name="HomeHeroText" xml:space="preserve"><value>From registration and securing university acceptance to visa and housing — Lumora walks with you at every step toward your study dream.</value></data>
+  <data name="StatStudents" xml:space="preserve"><value>students guided</value></data>
+  <data name="StatUniversities" xml:space="preserve"><value>partner universities</value></data>
+  <data name="StatYears" xml:space="preserve"><value>years of experience</value></data>
+  <data name="StatAcceptance" xml:space="preserve"><value>acceptance rate</value></data>
+  <data name="WhatWeOffer" xml:space="preserve"><value>What we offer</value></data>
+  <data name="PublicAndPrivate" xml:space="preserve"><value>Public &amp; private universities</value></data>
+  <data name="HomeUniversitiesText" xml:space="preserve"><value>A wide network of accredited universities in Türkiye — pick what fits your ambition and budget.</value></data>
+  <data name="HomeHousingTitle" xml:space="preserve"><value>Housing that feels like home</value></data>
+  <data name="HomeHousingText" xml:space="preserve"><value>We arrange comfortable, safe housing from the moment you arrive — near your university and within your budget.</value></data>
+  <data name="WhyLumora" xml:space="preserve"><value>Why Lumora?</value></data>
+  <data name="WhyLumoraSub" xml:space="preserve"><value>Like the sun lighting the road, we stand beside every student to make the journey clearer, easier and richer with opportunity.</value></data>
+  <data name="Feature1T" xml:space="preserve"><value>Personal guidance</value></data>
+  <data name="Feature1X" xml:space="preserve"><value>A tailored plan for every student's goals and abilities.</value></data>
+  <data name="Feature2T" xml:space="preserve"><value>Expert team</value></data>
+  <data name="Feature2X" xml:space="preserve"><value>Seasoned advisors who know the education system inside out.</value></data>
+  <data name="Feature3T" xml:space="preserve"><value>Trusted partnerships</value></data>
+  <data name="Feature3X" xml:space="preserve"><value>Direct university relationships that speed up your acceptance.</value></data>
+  <data name="Feature4T" xml:space="preserve"><value>Support until you settle</value></data>
+  <data name="Feature4X" xml:space="preserve"><value>We stay with you after arrival until you're fully settled.</value></data>
+  <data name="HowWeWork" xml:space="preserve"><value>How we work</value></data>
+  <data name="SimpleSteps" xml:space="preserve"><value>Simple steps</value></data>
+  <data name="Step2T" xml:space="preserve"><value>Choosing the university</value></data>
+  <data name="Step2X" xml:space="preserve"><value>We shortlist the best-fit university and program.</value></data>
+  <data name="Step3T" xml:space="preserve"><value>Acceptance &amp; documents</value></data>
+  <data name="Step3X" xml:space="preserve"><value>We prepare your file and secure your acceptance.</value></data>
+  <data name="Step4T" xml:space="preserve"><value>Visa &amp; travel</value></data>
+  <data name="Step4X" xml:space="preserve"><value>We help with the visa and travel arrangements.</value></data>
+  <data name="Step5T" xml:space="preserve"><value>Housing &amp; settling in</value></data>
+  <data name="Step5X" xml:space="preserve"><value>We arrange your housing and follow up until you settle.</value></data>
+  <data name="Step1X" xml:space="preserve"><value>We learn your goals and set a clear plan.</value></data>
+  <data name="ViewAll" xml:space="preserve"><value>View all</value></data>
+  <data name="ReadyTitle" xml:space="preserve"><value>Ready to start your journey?</value></data>
+  <data name="ReadyText" xml:space="preserve"><value>Book a free consultation now and let us map your path together.</value></data>
+  <data name="GalleryLabel" xml:space="preserve"><value>Photo gallery</value></data>
+  <data name="Upload" xml:space="preserve"><value>Upload</value></data>
+  <data name="WelcomeEmailSubject" xml:space="preserve"><value>Welcome to Lumora!</value></data>
+  <data name="WelcomeEmailBody" xml:space="preserve"><value>Hi {0},&lt;br/&gt;&lt;br/&gt;Your Lumora account is ready. Browse universities, save favorites, request a free consultation and chat with our team — we are with you at every step of your study journey in Türkiye.&lt;br/&gt;&lt;br/&gt;Lumora Team</value></data>
+</root>

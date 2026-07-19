@@ -1,0 +1,46 @@
+@model IReadOnlyList<Lumora.Application.DTOs.Chat.ChatMessageDto>
+@{
+    ViewData["Title"] = SharedLocalizer["ChatTitle"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/chat.css" asp-append-version="true" />
+}
+
+<div class="container py-4">
+    <div id="chatPage" class="chat-shell"
+         data-conversation-id="@ViewBag.ConversationId"
+         data-viewer="student"
+         data-hub-url="/hubs/chat">
+
+        <div class="chat-header">
+            <span class="chat-header-dot" aria-hidden="true"></span>
+            <div>
+                <h1 class="chat-header-title">@SharedLocalizer["ChatTitle"]</h1>
+                <p class="chat-header-sub">@SharedLocalizer["ChatIntro"]</p>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages" aria-live="polite">
+            <p class="chat-empty @(Model.Count == 0 ? "" : "d-none")" id="chatEmpty">@SharedLocalizer["NoMessagesYet"]</p>
+            @foreach (var message in Model)
+            {
+                <div class="chat-bubble @(message.IsFromAdmin ? "theirs" : "mine")">
+                    <span class="chat-text">@message.Text</span>
+                    <span class="chat-time">@message.SentAt.ToString("HH:mm")</span>
+                </div>
+            }
+        </div>
+
+        <form class="chat-input" id="chatForm" autocomplete="off">
+            <input type="text" id="chatText" class="form-control" maxlength="2000"
+                   placeholder="@SharedLocalizer["TypeMessage"]" />
+            <button type="submit" class="btn lum-btn-navy">@SharedLocalizer["Send"]</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/pages/chat.js" asp-append-version="true"></script>
+}

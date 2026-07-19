@@ -1,0 +1,292 @@
+/* ============================================================
+   University card component (used by Universities directory,
+   Favorites page and anywhere else cards render).
+   Logical properties only — mirrors automatically under RTL.
+   ============================================================ */
+
+.uni-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+@media (max-width: 767.98px) {
+    .uni-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.uni-card {
+    position: relative; /* anchor for the stretched details link */
+    background: var(--lum-white);
+    border-radius: var(--lum-radius);
+    box-shadow: var(--lum-shadow);
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.uni-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--lum-shadow-lift);
+}
+
+.uni-card-band {
+    position: relative;
+    block-size: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uni-card-public .uni-card-band {
+    background: linear-gradient(135deg, var(--lum-navy-900), var(--lum-navy-700));
+}
+
+.uni-card-private .uni-card-band {
+    background: linear-gradient(135deg, var(--lum-gold-strong), var(--lum-gold));
+}
+
+.uni-card-icon {
+    inline-size: 2.6rem;
+    block-size: 2.6rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.uni-card-logo {
+    max-block-size: 3.5rem;
+    max-inline-size: 60%;
+    object-fit: contain;
+}
+
+.uni-card-top-badge {
+    position: absolute;
+    inset-block-start: 0.6rem;
+    inset-inline-start: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--lum-gold);
+    color: var(--lum-navy-900);
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.15rem 0.55rem;
+}
+
+.uni-card-private .uni-card-top-badge {
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+}
+
+.uni-card-heart {
+    position: absolute;
+    inset-block-start: 0.6rem;
+    inset-inline-end: 0.6rem;
+    inline-size: 2rem;
+    block-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    display: grid;
+    place-items: center;
+    transition: transform 0.12s ease;
+}
+
+.uni-card-heart:hover {
+    transform: scale(1.1);
+}
+
+.uni-card-heart svg {
+    inline-size: 1.1rem;
+    block-size: 1.1rem;
+    fill: none;
+    stroke: var(--lum-muted);
+    stroke-width: 2;
+}
+
+.uni-card-heart.is-fav svg {
+    fill: #e0245e;
+    stroke: #e0245e;
+}
+
+/* ---------- Card body ---------- */
+.uni-card-body {
+    padding: 1rem 1.15rem 1.15rem;
+}
+
+.uni-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-block-end: 0.35rem;
+}
+
+.uni-card-type-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.12rem 0.55rem;
+}
+
+.uni-card-public .uni-card-type-badge {
+    background: rgba(30, 58, 102, 0.1);
+    color: var(--lum-navy);
+}
+
+.uni-card-private .uni-card-type-badge {
+    background: rgba(231, 148, 2, 0.14);
+    color: var(--lum-gold-strong);
+}
+
+.uni-card-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--lum-text);
+}
+
+.uni-card-rating .lum-icon {
+    color: var(--lum-gold);
+}
+
+.uni-card-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-block-end: 0.25rem;
+}
+
+.uni-card-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* the name link stretches over the whole card — click anywhere opens details */
+.uni-card-name a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* interactive elements stay clickable above the stretched link */
+.uni-card-heart {
+    z-index: 2;
+}
+
+.uni-card-actions {
+    position: relative;
+    z-index: 2;
+}
+
+.uni-card-name a:hover {
+    color: var(--lum-navy);
+}
+
+.uni-card-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--lum-muted);
+    margin-block-end: 0.6rem;
+}
+
+.uni-card-location .lum-icon {
+    color: var(--lum-gold-strong);
+}
+
+.uni-card-programs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-block-end: 0.85rem;
+}
+
+.uni-card-program-chip {
+    font-size: 0.7rem;
+    background: var(--lum-cream);
+    border: 1px solid var(--lum-line);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    color: var(--lum-text);
+}
+
+.uni-card-tuition {
+    display: flex;
+    flex-direction: column;
+    border-block-start: 1px dashed var(--lum-line);
+    padding-block-start: 0.7rem;
+    margin-block-end: 0.85rem;
+}
+
+.uni-card-tuition-label {
+    font-size: 0.7rem;
+    color: var(--lum-muted);
+}
+
+.uni-card-price {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--lum-navy-900);
+}
+
+.uni-card-price small {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--lum-muted);
+}
+
+.uni-card-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+}
+
+.uni-card-apply {
+    flex: 1;
+    background: var(--lum-navy);
+    color: var(--lum-white);
+    font-weight: 600;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.uni-card-apply:hover {
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+}
+
+.uni-card-more {
+    inline-size: 2.3rem;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border: 1px solid var(--lum-line);
+    background: var(--lum-white);
+    color: var(--lum-muted);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.uni-card-more:hover {
+    border-color: var(--lum-navy);
+    color: var(--lum-navy);
+}
+
+
+/* ---------- Empty state ---------- */
+.uni-empty {
+    text-align: center;
+    color: var(--lum-muted);
+    padding-block: 4rem;
+}
+
+.uni-empty .lum-icon {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    margin-block-end: 0.75rem;
+}
+

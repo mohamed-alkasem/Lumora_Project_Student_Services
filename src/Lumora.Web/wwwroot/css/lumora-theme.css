@@ -1,0 +1,568 @@
+/* ============================================================
+   Lumora shared theme — design tokens + navbar + footer.
+   All spacing uses CSS logical properties so RTL mirrors free.
+   ============================================================ */
+
+:root {
+    --lum-navy-900: #14294a;
+    --lum-navy-800: #1b3560;
+    --lum-navy-700: #273f6e;
+    --lum-navy: #1e3a66;
+    --lum-gold: #f2a51a;
+    --lum-gold-strong: #e79402;
+    --lum-gold-soft: #fce3b3;
+    --lum-cream: #faf7f1;
+    --lum-white: #ffffff;
+    --lum-text: #22304a;
+    --lum-muted: #66788f;
+    --lum-line: #e7e2d8;
+    --lum-radius: 16px;
+    --lum-radius-sm: 10px;
+    --lum-shadow: 0 6px 24px rgba(20, 41, 74, 0.08);
+    --lum-shadow-lift: 0 12px 32px rgba(20, 41, 74, 0.14);
+}
+
+body {
+    background: var(--lum-cream);
+    color: var(--lum-text);
+    font-family: "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+}
+
+.lum-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+
+/* ---------- Top utility bar ---------- */
+.lum-topbar {
+    background: var(--lum-navy-900);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+}
+
+.lum-topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.4rem;
+}
+
+.lum-topbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+.lum-lang-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lum-lang-pill {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lum-lang-pill:hover {
+    color: var(--lum-white);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.lum-lang-pill.is-active {
+    background: var(--lum-gold);
+    color: var(--lum-navy-900);
+    font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+.lum-navbar {
+    background: var(--lum-white);
+    border-block-end: 1px solid var(--lum-line);
+    padding-block: 0.6rem;
+}
+
+.lum-logo {
+    /* Latin wordmark must never flip in RTL locales */
+    direction: ltr;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+    color: var(--lum-navy-900);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.lum-logo:hover {
+    color: var(--lum-navy-900);
+}
+
+.lum-logo-dot {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    background: var(--lum-gold);
+    margin-inline: 0.06em;
+}
+
+.lum-logo-light {
+    color: var(--lum-white);
+}
+
+.lum-nav-links .nav-link {
+    color: var(--lum-text);
+    font-weight: 500;
+    padding-inline: 0.9rem;
+}
+
+.lum-nav-links .nav-link:hover {
+    color: var(--lum-navy);
+}
+
+.lum-nav-links .nav-link.is-active {
+    color: var(--lum-navy-900);
+    font-weight: 700;
+    border-block-end: 2px solid var(--lum-gold);
+}
+
+.lum-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.lum-nav-user {
+    font-size: 0.85rem;
+    color: var(--lum-muted);
+    max-inline-size: 14ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ---------- Buttons ---------- */
+.lum-btn-gold {
+    background: var(--lum-gold);
+    color: var(--lum-navy-900);
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.45rem 1.2rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.lum-btn-gold:hover {
+    background: var(--lum-gold-strong);
+    color: var(--lum-navy-900);
+}
+
+.lum-btn-navy {
+    background: var(--lum-navy);
+    color: var(--lum-white);
+    font-weight: 600;
+    border-radius: 999px;
+    border: none;
+}
+
+.lum-btn-navy:hover {
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+}
+
+.lum-btn-outline {
+    border: 1px solid var(--lum-navy);
+    color: var(--lum-navy);
+    border-radius: 999px;
+    background: transparent;
+}
+
+.lum-btn-outline:hover {
+    background: var(--lum-navy);
+    color: var(--lum-white);
+}
+
+/* ---------- Sticky footer (public layout only) ---------- */
+body:not(.admin-body) {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100vh;
+}
+
+body:not(.admin-body) main {
+    flex: 1;
+}
+
+/* ---------- Footer ---------- */
+.lum-footer {
+    background: var(--lum-navy-900);
+    color: rgba(255, 255, 255, 0.8);
+    margin-block-start: 3rem;
+    padding-block: 2.75rem 0;
+}
+
+.lum-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 2rem;
+    padding-block-end: 2rem;
+}
+
+@media (max-width: 991.98px) {
+    .lum-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .lum-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lum-footer-tagline {
+    margin: 0.6rem 0 1rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+}
+
+.lum-footer-heading {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--lum-white);
+    margin-block-end: 0.9rem;
+}
+
+.lum-footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+}
+
+.lum-footer-list a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+
+.lum-footer-list a:hover {
+    color: var(--lum-gold);
+}
+
+.lum-footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lum-footer-contact .lum-icon {
+    color: var(--lum-gold);
+    flex-shrink: 0;
+}
+
+/* Social buttons */
+.lum-social {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.lum-social-btn {
+    inline-size: 2.4rem;
+    block-size: 2.4rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--lum-white);
+    transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.lum-social-btn svg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+}
+
+.lum-social-btn:hover {
+    transform: translateY(-2px);
+    color: var(--lum-white);
+}
+
+.lum-social-wa:hover { background: #25d366; }
+.lum-social-ig:hover { background: #e1306c; }
+.lum-social-fb:hover { background: #1877f2; }
+
+.lum-footer-bottom {
+    border-block-start: 1px solid rgba(255, 255, 255, 0.12);
+    padding-block: 1.1rem;
+    text-align: center;
+}
+
+.lum-footer-copy {
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Floating action dock (WhatsApp / chat / favorites) ---------- */
+.lum-float-dock {
+    position: fixed;
+    inset-block-end: 1.4rem;
+    inset-inline-end: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    z-index: 1050;
+}
+
+.lum-float-btn {
+    inline-size: 3.1rem;
+    block-size: 3.1rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 8px 22px rgba(20, 41, 74, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lum-float-btn svg {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+}
+
+.lum-float-btn:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.lum-float-wa   { background: #25d366; }
+.lum-float-chat { background: var(--lum-navy); }
+.lum-float-fav  { background: #e0245e; }
+
+/* hover tooltip from data-tip */
+.lum-float-btn::after {
+    content: attr(data-tip);
+    position: absolute;
+    inset-inline-end: calc(100% + 0.6rem);
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+    font-size: 0.72rem;
+    white-space: nowrap;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.lum-float-btn:hover::after {
+    opacity: 1;
+}
+
+/* ---------- Topbar contact ---------- */
+.lum-topbar-contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+}
+
+.lum-topbar-contact a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.lum-topbar-contact a:hover {
+    color: var(--lum-gold);
+}
+
+@media (max-width: 575.98px) {
+    .lum-topbar-contact .lum-topbar-email {
+        display: none;
+    }
+}
+
+/* ---------- Navbar quick icons (favorites / chat) ---------- */
+.lum-nav-icon {
+    position: relative;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--lum-cream);
+    color: var(--lum-navy);
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.lum-nav-icon svg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+}
+
+.lum-nav-icon:hover {
+    transform: translateY(-2px) scale(1.06);
+}
+
+.lum-nav-icon-fav:hover {
+    background: rgba(224, 36, 94, 0.12);
+    color: #e0245e;
+}
+
+.lum-nav-icon-chat:hover {
+    background: rgba(30, 58, 102, 0.1);
+    color: var(--lum-navy-900);
+}
+
+.lum-nav-icon-ping {
+    position: absolute;
+    inset-block-start: 0.35rem;
+    inset-inline-end: 0.35rem;
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    border-radius: 50%;
+    background: var(--lum-gold);
+    animation: lum-ping 2.2s ease-out infinite;
+}
+
+@keyframes lum-ping {
+    0%   { box-shadow: 0 0 0 0 rgba(242, 165, 26, 0.55); }
+    70%  { box-shadow: 0 0 0 7px rgba(242, 165, 26, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(242, 165, 26, 0); }
+}
+
+/* icon tooltip (below, like the float dock) */
+.lum-nav-icon::after {
+    content: attr(data-tip);
+    position: absolute;
+    inset-block-start: calc(100% + 0.45rem);
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+    font-size: 0.7rem;
+    white-space: nowrap;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    z-index: 10;
+}
+
+[dir="rtl"] .lum-nav-icon::after {
+    transform: translateX(50%);
+}
+
+.lum-nav-icon:hover::after {
+    opacity: 1;
+}
+
+/* ---------- Scroll-reveal system (site-wide) ---------- */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+[data-reveal="left"]  { transform: translateX(-32px); }
+[data-reveal="right"] { transform: translateX(32px); }
+[data-reveal="zoom"]  { transform: scale(0.92); }
+
+[data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ---------- navbar elevation after scroll ---------- */
+.lum-navbar {
+    transition: box-shadow 0.2s ease;
+}
+
+.lum-navbar.is-scrolled {
+    box-shadow: 0 6px 18px rgba(20, 41, 74, 0.1);
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 575.98px) {
+    .lum-float-dock {
+        inset-block-end: 1rem;
+        inset-inline-end: 1rem;
+        gap: 0.5rem;
+    }
+
+    .lum-float-btn {
+        inline-size: 2.7rem;
+        block-size: 2.7rem;
+    }
+
+    .lum-float-btn::after {
+        display: none; /* tooltips are hover-only anyway */
+    }
+
+    .lum-topbar {
+        font-size: 0.72rem;
+    }
+}
+
+/* ---------- Horizontal scroll-snap carousel (testimonials etc.) ---------- */
+.lum-hscroll {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-block-end: 0.85rem; /* room for the scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--lum-gold) rgba(20, 41, 74, 0.08);
+}
+
+.lum-hscroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.lum-hscroll::-webkit-scrollbar-track {
+    background: rgba(20, 41, 74, 0.08);
+    border-radius: 999px;
+}
+
+.lum-hscroll::-webkit-scrollbar-thumb {
+    background: var(--lum-gold);
+    border-radius: 999px;
+}
+
+.lum-hscroll > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}

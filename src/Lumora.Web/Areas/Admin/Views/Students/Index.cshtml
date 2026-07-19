@@ -1,0 +1,39 @@
+@model IReadOnlyList<Lumora.Infrastructure.Identity.ApplicationUser>
+@{
+    ViewData["Title"] = SharedLocalizer["Students"].Value;
+}
+
+<div class="admin-toolbar">
+    <span class="text-muted">@Model.Count</span>
+    <span></span>
+</div>
+
+<div class="admin-table-wrap">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@SharedLocalizer["FullName"]</th>
+                <th>@SharedLocalizer["Email"]</th>
+                <th>@SharedLocalizer["CreatedAt"]</th>
+                <th>@SharedLocalizer["StatusLabel"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.FullName</td>
+                    <td dir="ltr">@student.Email</td>
+                    <td>@student.CreatedAt.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <span class="admin-badge @(student.IsActive ? "admin-badge-active" : "admin-badge-inactive")">
+                            @(student.IsActive ? SharedLocalizer["Active"] : SharedLocalizer["Inactive"])
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

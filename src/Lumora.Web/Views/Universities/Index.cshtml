@@ -1,0 +1,74 @@
+@model Lumora.Web.Models.Universities.UniversityIndexViewModel
+@{
+    ViewData["Title"] = SharedLocalizer["Universities"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/components/university-card.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pages/universities.css" asp-append-version="true" />
+}
+
+<div id="uniPage"
+     data-is-student="@Model.IsStudent.ToString().ToLowerInvariant()"
+     data-login-url="@Url.Action("Login", "Account", new { returnUrl = Context.Request.Path + Context.Request.QueryString })"
+     data-list-url="@Url.Action("List", "Universities")"
+     data-toggle-url="@Url.Action("Toggle", "Favorites")"
+     data-page-url="@Url.Action("Index", "Universities")">
+
+    @Html.AntiForgeryToken()
+
+    <section class="uni-hero">
+        <div class="container">
+            <span class="uni-hero-badge">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                @SharedLocalizer["UniversityDirectory"]
+            </span>
+            <h1 class="uni-hero-title">@SharedLocalizer["HeroTitle"]</h1>
+            <p class="uni-hero-subtitle">@SharedLocalizer["HeroSubtitle"]</p>
+
+            <div class="uni-search" role="search">
+                <svg class="lum-icon uni-search-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+                <input type="search" id="uniSearch" class="uni-search-input"
+                       placeholder="@SharedLocalizer["SearchPlaceholder"]"
+                       value="@Model.Filter.SearchTerm" autocomplete="off" />
+                <button type="button" id="uniSearchClear" class="uni-search-clear">@SharedLocalizer["Clear"]</button>
+            </div>
+        </div>
+        <div class="uni-hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <section class="uni-content">
+        <div class="container">
+            <div class="uni-layout">
+                <aside class="uni-sidebar">
+                    <partial name="_FiltersSidebar" model="Model" />
+                </aside>
+
+                <div class="uni-results">
+                    <div class="uni-results-bar">
+                        <span class="uni-results-count">
+                            <strong id="resultsCount">@Model.List.Results.TotalCount</strong> @SharedLocalizer["Matching"]
+                        </span>
+                        <label class="uni-sort">
+                            <span>@SharedLocalizer["SortBy"]:</span>
+                            <select id="uniSort" class="form-select form-select-sm">
+                                <option value="TopRated" selected="@(Model.Filter.SortBy == Lumora.Domain.Enums.UniversitySortOption.TopRated)">@SharedLocalizer["TopRated"]</option>
+                                <option value="TuitionAsc" selected="@(Model.Filter.SortBy == Lumora.Domain.Enums.UniversitySortOption.TuitionAsc)">@SharedLocalizer["TuitionLowHigh"]</option>
+                                <option value="TuitionDesc" selected="@(Model.Filter.SortBy == Lumora.Domain.Enums.UniversitySortOption.TuitionDesc)">@SharedLocalizer["TuitionHighLow"]</option>
+                                <option value="Newest" selected="@(Model.Filter.SortBy == Lumora.Domain.Enums.UniversitySortOption.Newest)">@SharedLocalizer["Newest"]</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div id="uniList" aria-live="polite">
+                        <partial name="_UniversityList" model="Model.List" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    <script src="~/js/pages/universities.js" asp-append-version="true"></script>
+}

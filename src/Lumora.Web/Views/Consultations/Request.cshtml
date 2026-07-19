@@ -1,0 +1,90 @@
+@model Lumora.Application.DTOs.Consultations.ConsultationCreateDto
+@{
+    ViewData["Title"] = SharedLocalizer["RequestConsultation"].Value;
+    var universityName = ViewBag.UniversityName as string;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/auth.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pages/consultation.css" asp-append-version="true" />
+}
+
+<div class="container auth-wrap">
+    <div class="auth-shell">
+        <div class="auth-brand">
+            <div class="auth-brand-glow" aria-hidden="true"></div>
+            <span class="lum-logo lum-logo-light auth-logo">LUM<span class="lum-logo-dot" aria-hidden="true"></span>RA</span>
+            <h2 class="consult-brand-title">@SharedLocalizer["ReadyTitle"]</h2>
+            <p class="auth-brand-tagline">@SharedLocalizer["ConsultationIntro"]</p>
+            <ul class="auth-perks">
+                <li>
+                    <span class="auth-perk-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                    @SharedLocalizer["ServiceAdmissionsTitle"]
+                </li>
+                <li>
+                    <span class="auth-perk-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                    @SharedLocalizer["ServiceHousingTitle"]
+                </li>
+                <li>
+                    <span class="auth-perk-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                    @SharedLocalizer["ServiceSupportTitle"]
+                </li>
+            </ul>
+            <div class="consult-steps" aria-hidden="true">
+                <span class="consult-step-dot is-on">1</span>
+                <span class="consult-step-line"></span>
+                <span class="consult-step-dot">2</span>
+                <span class="consult-step-line"></span>
+                <span class="consult-step-dot">3</span>
+            </div>
+        </div>
+
+        <div class="auth-form">
+            <h1 class="auth-form-title">@SharedLocalizer["RequestConsultation"]</h1>
+            <p class="auth-form-sub">@SharedLocalizer["ChatIntro"]</p>
+
+            @if (!string.IsNullOrEmpty(universityName))
+            {
+                <div class="consult-uni-chip">
+                    <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                    <span>@SharedLocalizer["University"]: <strong>@universityName</strong></span>
+                </div>
+            }
+
+            <form asp-controller="Consultations" asp-action="Request" method="post" id="consultForm">
+                <input type="hidden" asp-for="UniversityId" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">@SharedLocalizer["FullName"]</label>
+                    <input asp-for="FullName" class="form-control" autocomplete="name" />
+                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label">@SharedLocalizer["PhoneNumber"]</label>
+                    <input asp-for="Phone" class="form-control" autocomplete="tel" dir="ltr" />
+                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Message" class="form-label">@SharedLocalizer["Message"] (@SharedLocalizer["Optional"])</label>
+                    <textarea asp-for="Message" class="form-control" rows="4" maxlength="2000" data-counter="msgCount"></textarea>
+                    <div class="consult-counter"><span id="msgCount">0</span>/2000</div>
+                    <span asp-validation-for="Message" class="text-danger small"></span>
+                </div>
+
+                <button type="submit" class="btn auth-submit">
+                    @SharedLocalizer["SendRequest"]
+                    <svg class="lum-icon consult-send-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m2 21 21-9L2 3v7l15 2-15 2z"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/pages/auth.js" asp-append-version="true"></script>
+    <script src="~/js/pages/consultation.js" asp-append-version="true"></script>
+}

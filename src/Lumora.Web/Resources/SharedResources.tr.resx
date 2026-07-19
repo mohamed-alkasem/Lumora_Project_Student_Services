@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>Lumora</value></data>
+  <data name="Welcome" xml:space="preserve"><value>Hoş geldiniz</value></data>
+  <data name="Home" xml:space="preserve"><value>Ana Sayfa</value></data>
+  <data name="About" xml:space="preserve"><value>Hakkımızda</value></data>
+  <data name="Contact" xml:space="preserve"><value>İletişim</value></data>
+  <data name="Save" xml:space="preserve"><value>Kaydet</value></data>
+  <data name="Cancel" xml:space="preserve"><value>İptal</value></data>
+  <data name="Delete" xml:space="preserve"><value>Sil</value></data>
+  <data name="Edit" xml:space="preserve"><value>Düzenle</value></data>
+  <data name="Add" xml:space="preserve"><value>Ekle</value></data>
+  <data name="Search" xml:space="preserve"><value>Ara</value></data>
+  <data name="NotFound" xml:space="preserve"><value>Bulunamadı</value></data>
+  <data name="Error" xml:space="preserve"><value>Bir hata oluştu</value></data>
+  <data name="RequiredField" xml:space="preserve"><value>Bu alan zorunludur</value></data>
+  <data name="Login" xml:space="preserve"><value>Giriş Yap</value></data>
+  <data name="Register" xml:space="preserve"><value>Kayıt Ol</value></data>
+  <data name="Logout" xml:space="preserve"><value>Çıkış Yap</value></data>
+  <data name="FullName" xml:space="preserve"><value>Ad Soyad</value></data>
+  <data name="Email" xml:space="preserve"><value>E-posta</value></data>
+  <data name="Password" xml:space="preserve"><value>Şifre</value></data>
+  <data name="ConfirmPassword" xml:space="preserve"><value>Şifreyi Onayla</value></data>
+  <data name="RememberMe" xml:space="preserve"><value>Beni hatırla</value></data>
+  <data name="InvalidEmail" xml:space="preserve"><value>Lütfen geçerli bir e-posta adresi girin</value></data>
+  <data name="PasswordTooShort" xml:space="preserve"><value>Şifre en az 8 karakter olmalıdır</value></data>
+  <data name="PasswordMismatch" xml:space="preserve"><value>Şifreler eşleşmiyor</value></data>
+  <data name="InvalidLoginAttempt" xml:space="preserve"><value>E-posta veya şifre hatalı</value></data>
+  <data name="AccessDenied" xml:space="preserve"><value>Bu sayfaya erişim izniniz yok</value></data>
+  <data name="AlreadyHaveAccount" xml:space="preserve"><value>Zaten bir hesabınız var mı?</value></data>
+  <data name="NoAccountYet" xml:space="preserve"><value>Hesabınız yok mu?</value></data>
+  <data name="Services" xml:space="preserve"><value>Hizmetler</value></data>
+  <data name="Universities" xml:space="preserve"><value>Üniversiteler</value></data>
+  <data name="Housing" xml:space="preserve"><value>Konaklama</value></data>
+  <data name="FreeConsultation" xml:space="preserve"><value>Ücretsiz Danışmanlık</value></data>
+  <data name="UniversityDirectory" xml:space="preserve"><value>Üniversite Rehberi</value></data>
+  <data name="HeroTitle" xml:space="preserve"><value>Türkiye'deki en iyi üniversiteleri keşfedin</value></data>
+  <data name="HeroSubtitle" xml:space="preserve"><value>Devlet ve özel üniversiteleri puana, ücrete, şehre ve bölümlere göre karşılaştırın — size uygun olanı seçin.</value></data>
+  <data name="SearchPlaceholder" xml:space="preserve"><value>Üniversite veya bölüm ara...</value></data>
+  <data name="Clear" xml:space="preserve"><value>Temizle</value></data>
+  <data name="Filters" xml:space="preserve"><value>Filtreler</value></data>
+  <data name="Reset" xml:space="preserve"><value>Sıfırla</value></data>
+  <data name="UniversityType" xml:space="preserve"><value>Üniversite türü</value></data>
+  <data name="AllUniversities" xml:space="preserve"><value>Tüm üniversiteler</value></data>
+  <data name="Public" xml:space="preserve"><value>Devlet</value></data>
+  <data name="Private" xml:space="preserve"><value>Özel</value></data>
+  <data name="CityLabel" xml:space="preserve"><value>Şehir</value></data>
+  <data name="MaxTuition" xml:space="preserve"><value>Maksimum ücret</value></data>
+  <data name="Favorites" xml:space="preserve"><value>Favoriler</value></data>
+  <data name="Matching" xml:space="preserve"><value>eşleşen üniversite</value></data>
+  <data name="SortBy" xml:space="preserve"><value>Sırala</value></data>
+  <data name="TopRated" xml:space="preserve"><value>En yüksek puan</value></data>
+  <data name="TuitionLowHigh" xml:space="preserve"><value>Ücret: artan</value></data>
+  <data name="TuitionHighLow" xml:space="preserve"><value>Ücret: azalan</value></data>
+  <data name="Newest" xml:space="preserve"><value>En yeni</value></data>
+  <data name="AnnualTuition" xml:space="preserve"><value>Yıllık ücret</value></data>
+  <data name="PerYear" xml:space="preserve"><value>/yıl</value></data>
+  <data name="ApplyNow" xml:space="preserve"><value>Şimdi başvur</value></data>
+  <data name="TopBadge" xml:space="preserve"><value>En iyi</value></data>
+  <data name="Campus" xml:space="preserve"><value>kampüs</value></data>
+  <data name="NoResults" xml:space="preserve"><value>Filtrelerinize uyan üniversite bulunamadı</value></data>
+  <data name="LoginToSave" xml:space="preserve"><value>Favorilere kaydetmek için giriş yapın</value></data>
+  <data name="Previous" xml:space="preserve"><value>Önceki</value></data>
+  <data name="Next" xml:space="preserve"><value>Sonraki</value></data>
+  <data name="FooterTagline" xml:space="preserve"><value>Türkiye'de eğitim için güvenilir rehberiniz</value></data>
+  <data name="AllRightsReserved" xml:space="preserve"><value>Tüm hakları saklıdır</value></data>
+  <data name="Dashboard" xml:space="preserve"><value>Kontrol Paneli</value></data>
+  <data name="Cities" xml:space="preserve"><value>Şehirler</value></data>
+  <data name="Programs" xml:space="preserve"><value>Bölümler</value></data>
+  <data name="Faqs" xml:space="preserve"><value>SSS</value></data>
+  <data name="Testimonials" xml:space="preserve"><value>Öğrenci Yorumları</value></data>
+  <data name="Consultations" xml:space="preserve"><value>Danışmanlık Talepleri</value></data>
+  <data name="Students" xml:space="preserve"><value>Öğrenciler</value></data>
+  <data name="AdminUsers" xml:space="preserve"><value>Yönetici Kullanıcılar</value></data>
+  <data name="ViewSite" xml:space="preserve"><value>Siteyi görüntüle</value></data>
+  <data name="AddNew" xml:space="preserve"><value>Yeni ekle</value></data>
+  <data name="Actions" xml:space="preserve"><value>İşlemler</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Bu öğeyi silmek istediğinizden emin misiniz?</value></data>
+  <data name="SaveSuccess" xml:space="preserve"><value>Başarıyla kaydedildi</value></data>
+  <data name="DeleteSuccess" xml:space="preserve"><value>Başarıyla silindi</value></data>
+  <data name="BackToList" xml:space="preserve"><value>Listeye dön</value></data>
+  <data name="Name" xml:space="preserve"><value>Ad</value></data>
+  <data name="Question" xml:space="preserve"><value>Soru</value></data>
+  <data name="Answer" xml:space="preserve"><value>Cevap</value></data>
+  <data name="TitleLabel" xml:space="preserve"><value>Başlık</value></data>
+  <data name="Description" xml:space="preserve"><value>Açıklama</value></data>
+  <data name="Address" xml:space="preserve"><value>Adres</value></data>
+  <data name="DisplayOrder" xml:space="preserve"><value>Görüntüleme sırası</value></data>
+  <data name="IsPublished" xml:space="preserve"><value>Yayında</value></data>
+  <data name="CampusCount" xml:space="preserve"><value>Kampüs sayısı</value></data>
+  <data name="Logo" xml:space="preserve"><value>Logo</value></data>
+  <data name="Photo" xml:space="preserve"><value>Fotoğraf</value></data>
+  <data name="ImageLabel" xml:space="preserve"><value>Görsel</value></data>
+  <data name="PricePerMonth" xml:space="preserve"><value>Aylık fiyat (USD)</value></data>
+  <data name="University" xml:space="preserve"><value>Üniversite</value></data>
+  <data name="Phone" xml:space="preserve"><value>Telefon</value></data>
+  <data name="Message" xml:space="preserve"><value>Mesaj</value></data>
+  <data name="StatusLabel" xml:space="preserve"><value>Durum</value></data>
+  <data name="StatusNew" xml:space="preserve"><value>Yeni</value></data>
+  <data name="StatusContacted" xml:space="preserve"><value>İletişime geçildi</value></data>
+  <data name="StatusClosed" xml:space="preserve"><value>Kapatıldı</value></data>
+  <data name="Active" xml:space="preserve"><value>Aktif</value></data>
+  <data name="Inactive" xml:space="preserve"><value>Pasif</value></data>
+  <data name="CreateAdmin" xml:space="preserve"><value>Yönetici hesabı oluştur</value></data>
+  <data name="Activate" xml:space="preserve"><value>Etkinleştir</value></data>
+  <data name="Deactivate" xml:space="preserve"><value>Devre dışı bırak</value></data>
+  <data name="NewConsultations" xml:space="preserve"><value>Yeni danışmanlık talepleri</value></data>
+  <data name="StudentName" xml:space="preserve"><value>Öğrenci adı</value></data>
+  <data name="StudentTitle" xml:space="preserve"><value>Öğrenci unvanı</value></data>
+  <data name="Quote" xml:space="preserve"><value>Yorum</value></data>
+  <data name="RatingLabel" xml:space="preserve"><value>Puan</value></data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>Görsel 2MB'den küçük olmalıdır</value></data>
+  <data name="ImageTypeNotAllowed" xml:space="preserve"><value>İzin verilen görsel türleri: PNG, JPG, WEBP, SVG</value></data>
+  <data name="All" xml:space="preserve"><value>Tümü</value></data>
+  <data name="CreatedAt" xml:space="preserve"><value>Oluşturulma</value></data>
+  <data name="Role" xml:space="preserve"><value>Rol</value></data>
+  <data name="MyAccount" xml:space="preserve"><value>Hesabım</value></data>
+  <data name="Profile" xml:space="preserve"><value>Profil</value></data>
+  <data name="ChangePassword" xml:space="preserve"><value>Şifre değiştir</value></data>
+  <data name="CurrentPassword" xml:space="preserve"><value>Mevcut şifre</value></data>
+  <data name="NewPassword" xml:space="preserve"><value>Yeni şifre</value></data>
+  <data name="ConfirmNewPassword" xml:space="preserve"><value>Yeni şifreyi onayla</value></data>
+  <data name="PasswordChanged" xml:space="preserve"><value>Şifreniz değiştirildi</value></data>
+  <data name="ProfileUpdated" xml:space="preserve"><value>Profiliniz güncellendi</value></data>
+  <data name="MyFavorites" xml:space="preserve"><value>Favorilerim</value></data>
+  <data name="NoFavoritesYet" xml:space="preserve"><value>Henüz favori üniversiteniz yok</value></data>
+  <data name="BrowseUniversities" xml:space="preserve"><value>Üniversitelere göz at</value></data>
+  <data name="RequestConsultation" xml:space="preserve"><value>Danışmanlık talep et</value></data>
+  <data name="SendRequest" xml:space="preserve"><value>Talebi gönder</value></data>
+  <data name="RequestSent" xml:space="preserve"><value>Talebiniz alındı — ekibimiz en kısa sürede sizinle iletişime geçecek</value></data>
+  <data name="Optional" xml:space="preserve"><value>isteğe bağlı</value></data>
+  <data name="AboutUniversity" xml:space="preserve"><value>Üniversite hakkında</value></data>
+  <data name="AvailablePrograms" xml:space="preserve"><value>Mevcut bölümler</value></data>
+  <data name="PhoneNumber" xml:space="preserve"><value>Telefon numarası</value></data>
+  <data name="DuplicateEmail" xml:space="preserve"><value>Bu e-posta zaten kayıtlı</value></data>
+  <data name="PasswordRequiresDigit" xml:space="preserve"><value>Şifre en az bir rakam içermelidir</value></data>
+  <data name="PasswordRequiresLower" xml:space="preserve"><value>Şifre en az bir küçük harf içermelidir</value></data>
+  <data name="PasswordRequiresUpper" xml:space="preserve"><value>Şifre en az bir büyük harf içermelidir</value></data>
+  <data name="PasswordIncorrect" xml:space="preserve"><value>Mevcut şifre hatalı</value></data>
+  <data name="ConsultationIntro" xml:space="preserve"><value>Bilgilerinizi doldurun, ekibimiz ücretsiz danışmanlık için sizinle iletişime geçsin.</value></data>
+  <data name="HousingHeroTitle" xml:space="preserve"><value>Rahat öğrenci konaklaması bulun</value></data>
+  <data name="HousingHeroSubtitle" xml:space="preserve"><value>Yurt ve daireleri şehre ve fiyata göre inceleyin — üniversitenize yakın.</value></data>
+  <data name="PerMonth" xml:space="preserve"><value>/ay</value></data>
+  <data name="MaxPrice" xml:space="preserve"><value>Maksimum fiyat</value></data>
+  <data name="NoHousingResults" xml:space="preserve"><value>Filtrelerinize uyan konaklama bulunamadı</value></data>
+  <data name="ViewDetails" xml:space="preserve"><value>Detayları gör</value></data>
+  <data name="AboutHousing" xml:space="preserve"><value>Bu konaklama hakkında</value></data>
+  <data name="AddressLabel" xml:space="preserve"><value>Adres</value></data>
+  <data name="MatchingHousing" xml:space="preserve"><value>eşleşen konaklama</value></data>
+  <data name="ServicesHeroSubtitle" xml:space="preserve"><value>Türkiye'deki eğitim yolculuğunuz için ihtiyacınız olan her şey — tek yerde.</value></data>
+  <data name="ServiceAdmissionsTitle" xml:space="preserve"><value>Üniversite Kabulü</value></data>
+  <data name="ServiceAdmissionsText" xml:space="preserve"><value>Doğru üniversiteyi seçmekten kabul mektubunuzu almanıza kadar başvurunuzu biz yönetiriz.</value></data>
+  <data name="ServiceHousingTitle" xml:space="preserve"><value>Öğrenci Konaklaması</value></data>
+  <data name="ServiceHousingText" xml:space="preserve"><value>Bütçenize uygun, kampüsünüze yakın yurt ve daireler.</value></data>
+  <data name="ServiceConsultingTitle" xml:space="preserve"><value>Ücretsiz Danışmanlık</value></data>
+  <data name="ServiceConsultingText" xml:space="preserve"><value>Bölümler, maliyetler ve şehir hayatı hakkında danışmanlarımızla ücretsiz görüşün.</value></data>
+  <data name="ServiceSupportTitle" xml:space="preserve"><value>Sürekli Destek</value></data>
+  <data name="ServiceSupportText" xml:space="preserve"><value>Havalimanı karşılamadan ikamet iznine — geldikten sonra da yanınızdayız.</value></data>
+  <data name="AboutHeroSubtitle" xml:space="preserve"><value>Lumora, öğrencileri Türkiye'de doğru üniversiteye, yuvaya ve başlangıca yönlendirir.</value></data>
+  <data name="AboutIntroTitle" xml:space="preserve"><value>Biz kimiz</value></data>
+  <data name="AboutIntroText" xml:space="preserve"><value>Lumora, uluslararası öğrencilerin Türk üniversitelerini keşfetmesine, bölüm ve ücretleri karşılaştırmasına, konaklama bulmasına ve kendi dillerinde kişisel rehberlik almasına yardımcı olan bir öğrenci hizmetleri platformudur. Ekibimiz yüzlerce öğrencinin eğitim planını kabul mektubuna dönüştürdü.</value></data>
+  <data name="TestimonialsTitle" xml:space="preserve"><value>Öğrencilerimiz ne diyor</value></data>
+  <data name="FaqHeroSubtitle" xml:space="preserve"><value>Öğrencilerin en çok sorduğu soruların yanıtları.</value></data>
+  <data name="ChatTitle" xml:space="preserve"><value>Lumora ile sohbet</value></data>
+  <data name="ChatIntro" xml:space="preserve"><value>Ekibimiz en kısa sürede yanıtlar.</value></data>
+  <data name="TypeMessage" xml:space="preserve"><value>Mesajınızı yazın...</value></data>
+  <data name="Send" xml:space="preserve"><value>Gönder</value></data>
+  <data name="NoMessagesYet" xml:space="preserve"><value>Henüz mesaj yok — merhaba deyin!</value></data>
+  <data name="MessagesLabel" xml:space="preserve"><value>Mesajlar</value></data>
+  <data name="Open" xml:space="preserve"><value>Aç</value></data>
+  <data name="ChatNav" xml:space="preserve"><value>Sohbet</value></data>
+  <data name="QuickLinks" xml:space="preserve"><value>Hızlı bağlantılar</value></data>
+  <data name="LocationText" xml:space="preserve"><value>İstanbul, Türkiye</value></data>
+  <data name="HomeHeroTitle" xml:space="preserve"><value>Geleceğini aydınlat, üniversite yolculuğuna başla</value></data>
+  <data name="HomeHeroText" xml:space="preserve"><value>Kayıttan üniversite kabulüne, vizeden konaklamaya — Lumora eğitim hayaline giden her adımda yanında.</value></data>
+  <data name="StatStudents" xml:space="preserve"><value>yol gösterdiğimiz öğrenci</value></data>
+  <data name="StatUniversities" xml:space="preserve"><value>partner üniversite</value></data>
+  <data name="StatYears" xml:space="preserve"><value>yıllık deneyim</value></data>
+  <data name="StatAcceptance" xml:space="preserve"><value>kabul oranı</value></data>
+  <data name="WhatWeOffer" xml:space="preserve"><value>Neler sunuyoruz</value></data>
+  <data name="PublicAndPrivate" xml:space="preserve"><value>Devlet ve özel üniversiteler</value></data>
+  <data name="HomeUniversitiesText" xml:space="preserve"><value>Türkiye'de geniş bir akredite üniversite ağı — hedefinize ve bütçenize uygun olanı seçin.</value></data>
+  <data name="HomeHousingTitle" xml:space="preserve"><value>Ev gibi konaklama</value></data>
+  <data name="HomeHousingText" xml:space="preserve"><value>Vardığınız andan itibaren üniversitenize yakın, bütçenize uygun, rahat ve güvenli konaklama ayarlıyoruz.</value></data>
+  <data name="WhyLumora" xml:space="preserve"><value>Neden Lumora?</value></data>
+  <data name="WhyLumoraSub" xml:space="preserve"><value>Yolu aydınlatan güneş gibi, her öğrencinin yanında durur; yolculuğunu daha net, kolay ve fırsatlarla dolu kılarız.</value></data>
+  <data name="Feature1T" xml:space="preserve"><value>Kişisel rehberlik</value></data>
+  <data name="Feature1X" xml:space="preserve"><value>Her öğrencinin hedefine ve yeteneğine özel plan.</value></data>
+  <data name="Feature2T" xml:space="preserve"><value>Uzman ekip</value></data>
+  <data name="Feature2X" xml:space="preserve"><value>Eğitim sistemini yakından bilen deneyimli danışmanlar.</value></data>
+  <data name="Feature3T" xml:space="preserve"><value>Güvenilir iş birlikleri</value></data>
+  <data name="Feature3X" xml:space="preserve"><value>Üniversitelerle doğrudan ilişkiler kabulünüzü hızlandırır.</value></data>
+  <data name="Feature4T" xml:space="preserve"><value>Yerleşene kadar destek</value></data>
+  <data name="Feature4X" xml:space="preserve"><value>Vardıktan sonra da tamamen yerleşene dek yanınızdayız.</value></data>
+  <data name="HowWeWork" xml:space="preserve"><value>Nasıl çalışıyoruz</value></data>
+  <data name="SimpleSteps" xml:space="preserve"><value>Basit adımlar</value></data>
+  <data name="Step2T" xml:space="preserve"><value>Üniversite seçimi</value></data>
+  <data name="Step2X" xml:space="preserve"><value>Size en uygun üniversite ve bölümü öneriyoruz.</value></data>
+  <data name="Step3T" xml:space="preserve"><value>Kabul ve evraklar</value></data>
+  <data name="Step3X" xml:space="preserve"><value>Dosyanızı hazırlayıp kabulünüzü güvence altına alıyoruz.</value></data>
+  <data name="Step4T" xml:space="preserve"><value>Vize ve seyahat</value></data>
+  <data name="Step4X" xml:space="preserve"><value>Vize ve seyahat düzenlemelerinde yardımcı oluyoruz.</value></data>
+  <data name="Step5T" xml:space="preserve"><value>Konaklama ve yerleşme</value></data>
+  <data name="Step5X" xml:space="preserve"><value>Konaklamanızı ayarlıyor, yerleşene dek takip ediyoruz.</value></data>
+  <data name="Step1X" xml:space="preserve"><value>Hedeflerinizi öğrenip net bir plan koyuyoruz.</value></data>
+  <data name="ViewAll" xml:space="preserve"><value>Tümünü gör</value></data>
+  <data name="ReadyTitle" xml:space="preserve"><value>Yolculuğa başlamaya hazır mısın?</value></data>
+  <data name="ReadyText" xml:space="preserve"><value>Hemen ücretsiz danışmanlık alın, yolunuzu birlikte çizelim.</value></data>
+  <data name="GalleryLabel" xml:space="preserve"><value>Fotoğraf galerisi</value></data>
+  <data name="Upload" xml:space="preserve"><value>Yükle</value></data>
+  <data name="WelcomeEmailSubject" xml:space="preserve"><value>Lumora'ya hoş geldiniz!</value></data>
+  <data name="WelcomeEmailBody" xml:space="preserve"><value>Merhaba {0},&lt;br/&gt;&lt;br/&gt;Lumora hesabınız hazır. Üniversitelere göz atın, favorilerinizi kaydedin, ücretsiz danışmanlık isteyin ve ekibimizle sohbet edin — Türkiye'deki eğitim yolculuğunuzun her adımında yanınızdayız.&lt;br/&gt;&lt;br/&gt;Lumora Ekibi</value></data>
+</root>

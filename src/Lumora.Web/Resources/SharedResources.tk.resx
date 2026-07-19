@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppName" xml:space="preserve"><value>Lumora</value></data>
+  <data name="Welcome" xml:space="preserve"><value>Hoş geldiňiz</value></data>
+  <data name="Home" xml:space="preserve"><value>Baş sahypa</value></data>
+  <data name="About" xml:space="preserve"><value>Biz hakda</value></data>
+  <data name="Contact" xml:space="preserve"><value>Habarlaşmak</value></data>
+  <data name="Save" xml:space="preserve"><value>Sakla</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Ýatyr</value></data>
+  <data name="Delete" xml:space="preserve"><value>Poz</value></data>
+  <data name="Edit" xml:space="preserve"><value>Düzelt</value></data>
+  <data name="Add" xml:space="preserve"><value>Goş</value></data>
+  <data name="Search" xml:space="preserve"><value>Gözle</value></data>
+  <data name="NotFound" xml:space="preserve"><value>Tapylmady</value></data>
+  <data name="Error" xml:space="preserve"><value>Ýalňyşlyk ýüze çykdy</value></data>
+  <data name="RequiredField" xml:space="preserve"><value>Bu meýdan hökmandyr</value></data>
+  <data name="Login" xml:space="preserve"><value>Giriş</value></data>
+  <data name="Register" xml:space="preserve"><value>Hasaba alyş</value></data>
+  <data name="Logout" xml:space="preserve"><value>Çykyş</value></data>
+  <data name="FullName" xml:space="preserve"><value>Doly Ady</value></data>
+  <data name="Email" xml:space="preserve"><value>E-poçta</value></data>
+  <data name="Password" xml:space="preserve"><value>Parol</value></data>
+  <data name="ConfirmPassword" xml:space="preserve"><value>Paroly Tassykla</value></data>
+  <data name="RememberMe" xml:space="preserve"><value>Meni ýatda sakla</value></data>
+  <data name="InvalidEmail" xml:space="preserve"><value>Dogry e-poçta salgysyny giriziň</value></data>
+  <data name="PasswordTooShort" xml:space="preserve"><value>Parol azyndan 8 nyşandan ybarat bolmaly</value></data>
+  <data name="PasswordMismatch" xml:space="preserve"><value>Parollar gabat gelenok</value></data>
+  <data name="InvalidLoginAttempt" xml:space="preserve"><value>E-poçta ýa-da parol nädogry</value></data>
+  <data name="AccessDenied" xml:space="preserve"><value>Bu sahypa girmäge rugsadyňyz ýok</value></data>
+  <data name="AlreadyHaveAccount" xml:space="preserve"><value>Eýýäm hasabyňyz barmy?</value></data>
+  <data name="NoAccountYet" xml:space="preserve"><value>Hasabyňyz ýokmy?</value></data>
+  <data name="Services" xml:space="preserve"><value>Hyzmatlar</value></data>
+  <data name="Universities" xml:space="preserve"><value>Uniwersitetler</value></data>
+  <data name="Housing" xml:space="preserve"><value>Ýaşaýyş jaýy</value></data>
+  <data name="FreeConsultation" xml:space="preserve"><value>Mugt maslahat</value></data>
+  <data name="UniversityDirectory" xml:space="preserve"><value>Uniwersitet gollanmasy</value></data>
+  <data name="HeroTitle" xml:space="preserve"><value>Türkiýedäki iň gowy uniwersitetleri açyň</value></data>
+  <data name="HeroSubtitle" xml:space="preserve"><value>Döwlet we hususy uniwersitetleri baha, töleg, şäher we hünärler boýunça deňeşdiriň — özüňize laýygyny saýlaň.</value></data>
+  <data name="SearchPlaceholder" xml:space="preserve"><value>Uniwersitet ýa-da hünär gözläň...</value></data>
+  <data name="Clear" xml:space="preserve"><value>Arassala</value></data>
+  <data name="Filters" xml:space="preserve"><value>Süzgüçler</value></data>
+  <data name="Reset" xml:space="preserve"><value>Täzeden</value></data>
+  <data name="UniversityType" xml:space="preserve"><value>Uniwersitet görnüşi</value></data>
+  <data name="AllUniversities" xml:space="preserve"><value>Ähli uniwersitetler</value></data>
+  <data name="Public" xml:space="preserve"><value>Döwlet</value></data>
+  <data name="Private" xml:space="preserve"><value>Hususy</value></data>
+  <data name="CityLabel" xml:space="preserve"><value>Şäher</value></data>
+  <data name="MaxTuition" xml:space="preserve"><value>Iň ýokary töleg</value></data>
+  <data name="Favorites" xml:space="preserve"><value>Halanlarym</value></data>
+  <data name="Matching" xml:space="preserve"><value>gabat gelýän uniwersitet</value></data>
+  <data name="SortBy" xml:space="preserve"><value>Tertiple</value></data>
+  <data name="TopRated" xml:space="preserve"><value>Iň ýokary baha</value></data>
+  <data name="TuitionLowHigh" xml:space="preserve"><value>Töleg: artýan</value></data>
+  <data name="TuitionHighLow" xml:space="preserve"><value>Töleg: kemelýän</value></data>
+  <data name="Newest" xml:space="preserve"><value>Iň täze</value></data>
+  <data name="AnnualTuition" xml:space="preserve"><value>Ýyllyk töleg</value></data>
+  <data name="PerYear" xml:space="preserve"><value>/ýyl</value></data>
+  <data name="ApplyNow" xml:space="preserve"><value>Häzir ýüz tut</value></data>
+  <data name="TopBadge" xml:space="preserve"><value>Iň gowy</value></data>
+  <data name="Campus" xml:space="preserve"><value>kampus</value></data>
+  <data name="NoResults" xml:space="preserve"><value>Süzgüçleriňize gabat gelýän uniwersitet tapylmady</value></data>
+  <data name="LoginToSave" xml:space="preserve"><value>Halanlaryňyzy ýatda saklamak üçin giriň</value></data>
+  <data name="Previous" xml:space="preserve"><value>Öňki</value></data>
+  <data name="Next" xml:space="preserve"><value>Indiki</value></data>
+  <data name="FooterTagline" xml:space="preserve"><value>Türkiýede okamak üçin ynamdar gollanmaňyz</value></data>
+  <data name="AllRightsReserved" xml:space="preserve"><value>Ähli hukuklar goralan</value></data>
+  <data name="Dashboard" xml:space="preserve"><value>Dolandyryş paneli</value></data>
+  <data name="Cities" xml:space="preserve"><value>Şäherler</value></data>
+  <data name="Programs" xml:space="preserve"><value>Hünärler</value></data>
+  <data name="Faqs" xml:space="preserve"><value>Soraglar</value></data>
+  <data name="Testimonials" xml:space="preserve"><value>Talyp pikirleri</value></data>
+  <data name="Consultations" xml:space="preserve"><value>Maslahat haýyşlary</value></data>
+  <data name="Students" xml:space="preserve"><value>Talyplar</value></data>
+  <data name="AdminUsers" xml:space="preserve"><value>Admin ulanyjylar</value></data>
+  <data name="ViewSite" xml:space="preserve"><value>Saýty gör</value></data>
+  <data name="AddNew" xml:space="preserve"><value>Täze goş</value></data>
+  <data name="Actions" xml:space="preserve"><value>Amallar</value></data>
+  <data name="ConfirmDelete" xml:space="preserve"><value>Bu elementi pozmak isleýändigiňize ynanýarsyňyzmy?</value></data>
+  <data name="SaveSuccess" xml:space="preserve"><value>Üstünlikli ýatda saklandy</value></data>
+  <data name="DeleteSuccess" xml:space="preserve"><value>Üstünlikli pozuldy</value></data>
+  <data name="BackToList" xml:space="preserve"><value>Sanawa dolan</value></data>
+  <data name="Name" xml:space="preserve"><value>Ady</value></data>
+  <data name="Question" xml:space="preserve"><value>Sorag</value></data>
+  <data name="Answer" xml:space="preserve"><value>Jogap</value></data>
+  <data name="TitleLabel" xml:space="preserve"><value>Sözbaşy</value></data>
+  <data name="Description" xml:space="preserve"><value>Düşündiriş</value></data>
+  <data name="Address" xml:space="preserve"><value>Salgy</value></data>
+  <data name="DisplayOrder" xml:space="preserve"><value>Görkeziş tertibi</value></data>
+  <data name="IsPublished" xml:space="preserve"><value>Çap edilen</value></data>
+  <data name="CampusCount" xml:space="preserve"><value>Kampus sany</value></data>
+  <data name="Logo" xml:space="preserve"><value>Logotip</value></data>
+  <data name="Photo" xml:space="preserve"><value>Surat</value></data>
+  <data name="ImageLabel" xml:space="preserve"><value>Surat</value></data>
+  <data name="PricePerMonth" xml:space="preserve"><value>Aýlyk baha (USD)</value></data>
+  <data name="University" xml:space="preserve"><value>Uniwersitet</value></data>
+  <data name="Phone" xml:space="preserve"><value>Telefon</value></data>
+  <data name="Message" xml:space="preserve"><value>Hat</value></data>
+  <data name="StatusLabel" xml:space="preserve"><value>Ýagdaý</value></data>
+  <data name="StatusNew" xml:space="preserve"><value>Täze</value></data>
+  <data name="StatusContacted" xml:space="preserve"><value>Habarlaşyldy</value></data>
+  <data name="StatusClosed" xml:space="preserve"><value>Ýapyk</value></data>
+  <data name="Active" xml:space="preserve"><value>Işjeň</value></data>
+  <data name="Inactive" xml:space="preserve"><value>Işjeň däl</value></data>
+  <data name="CreateAdmin" xml:space="preserve"><value>Admin hasaby döret</value></data>
+  <data name="Activate" xml:space="preserve"><value>Işjeňleşdir</value></data>
+  <data name="Deactivate" xml:space="preserve"><value>Öçür</value></data>
+  <data name="NewConsultations" xml:space="preserve"><value>Täze maslahat haýyşlary</value></data>
+  <data name="StudentName" xml:space="preserve"><value>Talybyň ady</value></data>
+  <data name="StudentTitle" xml:space="preserve"><value>Talybyň derejesi</value></data>
+  <data name="Quote" xml:space="preserve"><value>Pikir</value></data>
+  <data name="RatingLabel" xml:space="preserve"><value>Baha</value></data>
+  <data name="ImageTooLarge" xml:space="preserve"><value>Surat 2MB-den kiçi bolmaly</value></data>
+  <data name="ImageTypeNotAllowed" xml:space="preserve"><value>Rugsat berlen surat görnüşleri: PNG, JPG, WEBP, SVG</value></data>
+  <data name="All" xml:space="preserve"><value>Ählisi</value></data>
+  <data name="CreatedAt" xml:space="preserve"><value>Döredilen</value></data>
+  <data name="Role" xml:space="preserve"><value>Roly</value></data>
+  <data name="MyAccount" xml:space="preserve"><value>Hasabym</value></data>
+  <data name="Profile" xml:space="preserve"><value>Profil</value></data>
+  <data name="ChangePassword" xml:space="preserve"><value>Paroly üýtget</value></data>
+  <data name="CurrentPassword" xml:space="preserve"><value>Häzirki parol</value></data>
+  <data name="NewPassword" xml:space="preserve"><value>Täze parol</value></data>
+  <data name="ConfirmNewPassword" xml:space="preserve"><value>Täze paroly tassykla</value></data>
+  <data name="PasswordChanged" xml:space="preserve"><value>Parolyňyz üýtgedildi</value></data>
+  <data name="ProfileUpdated" xml:space="preserve"><value>Profiliňiz täzelendi</value></data>
+  <data name="MyFavorites" xml:space="preserve"><value>Halanlarym</value></data>
+  <data name="NoFavoritesYet" xml:space="preserve"><value>Entek halanan uniwersitetiňiz ýok</value></data>
+  <data name="BrowseUniversities" xml:space="preserve"><value>Uniwersitetlere göz aýla</value></data>
+  <data name="RequestConsultation" xml:space="preserve"><value>Maslahat sora</value></data>
+  <data name="SendRequest" xml:space="preserve"><value>Haýyş iber</value></data>
+  <data name="RequestSent" xml:space="preserve"><value>Haýyşyňyz kabul edildi — toparymyz ýakynda siziň bilen habarlaşar</value></data>
+  <data name="Optional" xml:space="preserve"><value>hökman däl</value></data>
+  <data name="AboutUniversity" xml:space="preserve"><value>Uniwersitet barada</value></data>
+  <data name="AvailablePrograms" xml:space="preserve"><value>Elýeterli hünärler</value></data>
+  <data name="PhoneNumber" xml:space="preserve"><value>Telefon belgisi</value></data>
+  <data name="DuplicateEmail" xml:space="preserve"><value>Bu e-poçta eýýäm hasaba alnan</value></data>
+  <data name="PasswordRequiresDigit" xml:space="preserve"><value>Parolda azyndan bir san bolmaly</value></data>
+  <data name="PasswordRequiresLower" xml:space="preserve"><value>Parolda azyndan bir setir harp bolmaly</value></data>
+  <data name="PasswordRequiresUpper" xml:space="preserve"><value>Parolda azyndan bir baş harp bolmaly</value></data>
+  <data name="PasswordIncorrect" xml:space="preserve"><value>Häzirki parol nädogry</value></data>
+  <data name="ConsultationIntro" xml:space="preserve"><value>Maglumatlaryňyzy dolduryň, toparymyz mugt maslahat üçin siziň bilen habarlaşar.</value></data>
+  <data name="HousingHeroTitle" xml:space="preserve"><value>Amatly talyp ýaşaýyş jaýyny tapyň</value></data>
+  <data name="HousingHeroSubtitle" xml:space="preserve"><value>Umumy ýaşaýyş jaýlaryny we kwartiralary şäher we baha boýunça gözden geçiriň — uniwersitetiňize ýakyn.</value></data>
+  <data name="PerMonth" xml:space="preserve"><value>/aý</value></data>
+  <data name="MaxPrice" xml:space="preserve"><value>Iň ýokary baha</value></data>
+  <data name="NoHousingResults" xml:space="preserve"><value>Süzgüçleriňize gabat gelýän ýaşaýyş jaýy tapylmady</value></data>
+  <data name="ViewDetails" xml:space="preserve"><value>Jikme-jiklikleri gör</value></data>
+  <data name="AboutHousing" xml:space="preserve"><value>Bu ýaşaýyş jaýy barada</value></data>
+  <data name="AddressLabel" xml:space="preserve"><value>Salgy</value></data>
+  <data name="MatchingHousing" xml:space="preserve"><value>gabat gelýän jaý</value></data>
+  <data name="ServicesHeroSubtitle" xml:space="preserve"><value>Türkiýedäki okuw syýahatyňyz üçin gerek zatlaryň ählisi — bir ýerde.</value></data>
+  <data name="ServiceAdmissionsTitle" xml:space="preserve"><value>Uniwersitete kabul</value></data>
+  <data name="ServiceAdmissionsText" xml:space="preserve"><value>Dogry uniwersiteti saýlamakdan kabul hatyňyzy almaga çenli arzaňyzy biz alyp barýarys.</value></data>
+  <data name="ServiceHousingTitle" xml:space="preserve"><value>Talyp ýaşaýyş jaýy</value></data>
+  <data name="ServiceHousingText" xml:space="preserve"><value>Býujetiňize laýyk, kampusyňyza ýakyn ýaşaýyş jaýlary we kwartiralar.</value></data>
+  <data name="ServiceConsultingTitle" xml:space="preserve"><value>Mugt maslahat</value></data>
+  <data name="ServiceConsultingText" xml:space="preserve"><value>Hünärler, çykdajylar we şäher durmuşy barada maslahatçylarymyz bilen mugt gürleşiň.</value></data>
+  <data name="ServiceSupportTitle" xml:space="preserve"><value>Dowamly goldaw</value></data>
+  <data name="ServiceSupportText" xml:space="preserve"><value>Howa menzilinden garşylamakdan ýaşamak rugsadyna çenli — geleniňizden soň hem ýanyňyzdadyrys.</value></data>
+  <data name="AboutHeroSubtitle" xml:space="preserve"><value>Lumora talyplary Türkiýede dogry uniwersitete, öýe we başlangyja ugrukdyrýar.</value></data>
+  <data name="AboutIntroTitle" xml:space="preserve"><value>Biz kim</value></data>
+  <data name="AboutIntroText" xml:space="preserve"><value>Lumora — halkara talyplara türk uniwersitetlerini açmaga, hünärleri we tölegleri deňeşdirmäge, ýaşaýyş jaýyny tapmaga we öz dilinde şahsy ugrukdyrma almaga kömek edýän talyp hyzmatlary platformasy. Toparymyz ýüzlerçe talybyň okuw meýilnamasyny kabul hatyna öwürdi.</value></data>
+  <data name="TestimonialsTitle" xml:space="preserve"><value>Talyplarymyz näme diýýär</value></data>
+  <data name="FaqHeroSubtitle" xml:space="preserve"><value>Talyplaryň iň köp berýän soraglarynyň jogaplary.</value></data>
+  <data name="ChatTitle" xml:space="preserve"><value>Lumora bilen söhbet</value></data>
+  <data name="ChatIntro" xml:space="preserve"><value>Toparymyz iň gysga wagtda jogap berýär.</value></data>
+  <data name="TypeMessage" xml:space="preserve"><value>Habaryňyzy ýazyň...</value></data>
+  <data name="Send" xml:space="preserve"><value>Iber</value></data>
+  <data name="NoMessagesYet" xml:space="preserve"><value>Häzirçe habar ýok — salam ýazyň!</value></data>
+  <data name="MessagesLabel" xml:space="preserve"><value>Habarlar</value></data>
+  <data name="Open" xml:space="preserve"><value>Aç</value></data>
+  <data name="ChatNav" xml:space="preserve"><value>Söhbet</value></data>
+  <data name="QuickLinks" xml:space="preserve"><value>Çalt baglanyşyklar</value></data>
+  <data name="LocationText" xml:space="preserve"><value>Stambul, Türkiýe</value></data>
+  <data name="HomeHeroTitle" xml:space="preserve"><value>Geljegiňi ýagtylandyr, uniwersitet syýahatyňa başla</value></data>
+  <data name="HomeHeroText" xml:space="preserve"><value>Hasaba alyşdan kabul edilmäge, wizadan ýaşaýyş jaýyna çenli — Lumora okuw arzuwyňa barýan her ädimde ýanyňda.</value></data>
+  <data name="StatStudents" xml:space="preserve"><value>ýol görkezen talybymyz</value></data>
+  <data name="StatUniversities" xml:space="preserve"><value>hyzmatdaş uniwersitet</value></data>
+  <data name="StatYears" xml:space="preserve"><value>ýyl tejribe</value></data>
+  <data name="StatAcceptance" xml:space="preserve"><value>kabul derejesi</value></data>
+  <data name="WhatWeOffer" xml:space="preserve"><value>Näme hödürleýäris</value></data>
+  <data name="PublicAndPrivate" xml:space="preserve"><value>Döwlet we hususy uniwersitetler</value></data>
+  <data name="HomeUniversitiesText" xml:space="preserve"><value>Türkiýede akkreditlenen uniwersitetleriň giň tory — maksadyňyza we býujetiňize laýygyny saýlaň.</value></data>
+  <data name="HomeHousingTitle" xml:space="preserve"><value>Öý ýaly ýaşaýyş jaýy</value></data>
+  <data name="HomeHousingText" xml:space="preserve"><value>Gelen pursatyňyzdan uniwersitetiňize ýakyn, býujetiňize laýyk, amatly we howpsuz ýaşaýyş jaýyny gurnaýarys.</value></data>
+  <data name="WhyLumora" xml:space="preserve"><value>Näme üçin Lumora?</value></data>
+  <data name="WhyLumoraSub" xml:space="preserve"><value>Ýoly ýagtylandyrýan gün ýaly, her talybyň ýanynda durup, syýahatyny has aýdyň, aňsat we mümkinçiliklere baý edýäris.</value></data>
+  <data name="Feature1T" xml:space="preserve"><value>Şahsy ugrukdyrma</value></data>
+  <data name="Feature1X" xml:space="preserve"><value>Her talybyň maksadyna görä ýörite meýilnama.</value></data>
+  <data name="Feature2T" xml:space="preserve"><value>Tejribeli topar</value></data>
+  <data name="Feature2X" xml:space="preserve"><value>Bilim ulgamyny ýakyndan bilýän maslahatçylar.</value></data>
+  <data name="Feature3T" xml:space="preserve"><value>Ynamdar hyzmatdaşlyk</value></data>
+  <data name="Feature3X" xml:space="preserve"><value>Uniwersitetler bilen göni gatnaşyklar kabulyňyzy çaltlaşdyrýar.</value></data>
+  <data name="Feature4T" xml:space="preserve"><value>Ornaşýançaňyz goldaw</value></data>
+  <data name="Feature4X" xml:space="preserve"><value>Geleniňizden soň hem doly ornaşýançaňyz ýanyňyzda bolýarys.</value></data>
+  <data name="HowWeWork" xml:space="preserve"><value>Nähili işleýäris</value></data>
+  <data name="SimpleSteps" xml:space="preserve"><value>Ýönekeý ädimler</value></data>
+  <data name="Step2T" xml:space="preserve"><value>Uniwersitet saýlamak</value></data>
+  <data name="Step2X" xml:space="preserve"><value>Size iň laýyk uniwersiteti we hünäri hödürleýäris.</value></data>
+  <data name="Step3T" xml:space="preserve"><value>Kabul we resminamalar</value></data>
+  <data name="Step3X" xml:space="preserve"><value>Resminamalaryňyzy taýýarlap, kabulyňyzy üpjün edýäris.</value></data>
+  <data name="Step4T" xml:space="preserve"><value>Wiza we syýahat</value></data>
+  <data name="Step4X" xml:space="preserve"><value>Wiza we ýol taýýarlyklarynda kömek edýäris.</value></data>
+  <data name="Step5T" xml:space="preserve"><value>Ýaşaýyş jaýy we ornaşma</value></data>
+  <data name="Step5X" xml:space="preserve"><value>Ýaşaýyş jaýyňyzy gurnap, ornaşýançaňyz yzarlaýarys.</value></data>
+  <data name="Step1X" xml:space="preserve"><value>Maksatlaryňyzy öwrenip, aýdyň meýilnama düzýäris.</value></data>
+  <data name="ViewAll" xml:space="preserve"><value>Ählisini gör</value></data>
+  <data name="ReadyTitle" xml:space="preserve"><value>Syýahata başlamaga taýynmy?</value></data>
+  <data name="ReadyText" xml:space="preserve"><value>Häzir mugt maslahat alyň, ýoluňyzy bile çekeliň.</value></data>
+  <data name="GalleryLabel" xml:space="preserve"><value>Surat galereýasy</value></data>
+  <data name="Upload" xml:space="preserve"><value>Ýükle</value></data>
+  <data name="WelcomeEmailSubject" xml:space="preserve"><value>Lumora-a hoş geldiňiz!</value></data>
+  <data name="WelcomeEmailBody" xml:space="preserve"><value>Salam {0},&lt;br/&gt;&lt;br/&gt;Lumora hasabyňyz taýýar. Uniwersitetlere göz aýlaň, halanlaryňyzy ýatda saklaň, mugt maslahat soraň we toparymyz bilen söhbetdeş boluň — Türkiýedäki okuw syýahatyňyzyň her ädiminde ýanyňyzdadyrys.&lt;br/&gt;&lt;br/&gt;Lumora topary</value></data>
+</root>

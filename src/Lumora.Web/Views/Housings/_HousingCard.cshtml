@@ -1,0 +1,35 @@
+@model Lumora.Application.DTOs.Housings.HousingCardDto
+
+<article class="hou-card">
+    <div class="hou-card-band">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img class="hou-card-image" src="@Model.ImageUrl" alt="@Model.Title" loading="lazy" />
+        }
+        else
+        {
+            <svg class="hou-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 4 9v12h5v-7h6v7h5V9l-8-6z"/></svg>
+        }
+        <span class="hou-card-price-badge">$@Model.PricePerMonthUsd.ToString("N0") <small>@SharedLocalizer["PerMonth"]</small></span>
+    </div>
+
+    <div class="hou-card-body">
+        <h3 class="hou-card-title">
+            <a asp-area="" asp-controller="Housings" asp-action="Details" asp-route-id="@Model.Id">@Model.Title</a>
+        </h3>
+
+        <p class="hou-card-location">
+            <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+            @Model.CityName · @Model.Address
+        </p>
+
+        <p class="hou-card-description">@Model.Description</p>
+
+        <div class="hou-card-actions">
+            <a class="btn hou-card-view"
+               asp-area="" asp-controller="Housings" asp-action="Details" asp-route-id="@Model.Id">
+                @SharedLocalizer["ViewDetails"]
+            </a>
+        </div>
+    </div>
+</article>

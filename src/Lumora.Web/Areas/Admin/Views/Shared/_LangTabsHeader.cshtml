@@ -1,0 +1,16 @@
+@* Tab header for the 5 language panes. Model = the id prefix of the tab-content panes,
+   e.g. model "trx" expects panes with ids trx-en, trx-ar... Rendered pane markup is
+   supplied by the calling form since fields differ per entity. *@
+@model string
+<ul class="nav nav-tabs admin-lang-tabs mb-3" data-target="#@(Model)-content" role="tablist">
+    @foreach (var (code, index) in LanguageConstants.All.Select((c, i) => (c, i)))
+    {
+        <li class="nav-item" role="presentation">
+            <button class="nav-link @(index == 0 ? "active" : "")" type="button"
+                    data-bs-toggle="tab" data-bs-target="#@(Model)-@code"
+                    role="tab" aria-controls="@(Model)-@code">
+                @code.ToUpper()
+            </button>
+        </li>
+    }
+</ul>

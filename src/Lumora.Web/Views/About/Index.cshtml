@@ -1,0 +1,53 @@
+@model IReadOnlyList<Lumora.Application.DTOs.Testimonials.TestimonialDto>
+@{
+    ViewData["Title"] = SharedLocalizer["About"].Value;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/about.css" asp-append-version="true" />
+}
+
+<section class="abt-hero">
+    <div class="container">
+        <h1 class="abt-hero-title">@SharedLocalizer["About"]</h1>
+        <p class="abt-hero-subtitle">@SharedLocalizer["AboutHeroSubtitle"]</p>
+    </div>
+    <div class="abt-hero-glow" aria-hidden="true"></div>
+</section>
+
+<section class="abt-content">
+    <div class="container">
+        <div class="abt-intro-card">
+            <h2 class="abt-section-title">@SharedLocalizer["AboutIntroTitle"]</h2>
+            <p class="abt-intro-text">@SharedLocalizer["AboutIntroText"]</p>
+        </div>
+
+        @if (Model.Count > 0)
+        {
+            <h2 class="abt-section-title abt-testimonials-heading">@SharedLocalizer["TestimonialsTitle"]</h2>
+            <div class="abt-testimonials lum-hscroll">
+                @foreach (var testimonial in Model)
+                {
+                    <figure class="abt-testimonial-card">
+                        <svg class="abt-quote-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z"/></svg>
+                        <blockquote class="abt-quote">@testimonial.QuoteText</blockquote>
+                        <figcaption class="abt-student">
+                            @if (!string.IsNullOrEmpty(testimonial.PhotoUrl))
+                            {
+                                <img class="abt-student-photo" src="@testimonial.PhotoUrl" alt="@testimonial.StudentName" loading="lazy" />
+                            }
+                            else
+                            {
+                                <span class="abt-student-initial" aria-hidden="true">@(testimonial.StudentName.Length > 0 ? testimonial.StudentName[..1] : "•")</span>
+                            }
+                            <span>
+                                <strong class="abt-student-name">@testimonial.StudentName</strong>
+                                <small class="abt-student-title">@testimonial.StudentTitle</small>
+                            </span>
+                        </figcaption>
+                    </figure>
+                }
+            </div>
+        }
+    </div>
+</section>

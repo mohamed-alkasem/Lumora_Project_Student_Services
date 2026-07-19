@@ -1,0 +1,121 @@
+@model Lumora.Application.DTOs.Universities.UniversityDetailsDto
+@using Lumora.Domain.Enums
+@{
+    ViewData["Title"] = Model.Name;
+    var isPublic = Model.Type == UniversityType.Public;
+    var isFavorite = (bool)(ViewBag.IsFavorite ?? false);
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/components/gallery.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pages/university-details.css" asp-append-version="true" />
+}
+
+<section class="udet-hero @(isPublic ? "udet-hero-public" : "udet-hero-private")">
+    <div class="container udet-hero-inner">
+        <div class="udet-logo-box">
+            @if (!string.IsNullOrEmpty(Model.LogoUrl))
+            {
+                <img src="@Model.LogoUrl" alt="@Model.Name" />
+            }
+            else if (isPublic)
+            {
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11v8H2v2h20v-2h-2v-8h-2v8h-3v-8h-2v8h-3v-8H8v8H5v-8H4z"/></svg>
+            }
+            else
+            {
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3v18h6v-3.5h2V21h6V3H5zm4 14H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
+            }
+        </div>
+
+        <div class="udet-head">
+            <div class="udet-badges">
+                <span class="udet-type-badge">@(isPublic ? SharedLocalizer["Public"] : SharedLocalizer["Private"])</span>
+                <span class="udet-rating">
+                    <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    @Model.Rating.ToString("0.0")
+                </span>
+            </div>
+            <h1 class="udet-name">@Model.Name</h1>
+            <p class="udet-location">
+                <svg class="lum-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+                @Model.CityName · @Model.CampusCount @SharedLocalizer["Campus"]
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="udet-content">
+    <div class="container">
+        <div class="udet-layout">
+            <div class="udet-main">
+                @if (Model.ImageUrls.Count > 0)
+                {
+                    <div class="udet-card">
+                        <h2 class="udet-section-title">@SharedLocalizer["GalleryLabel"]</h2>
+                        <div class="lgal">
+                            <div class="lgal-main">
+                                <img src="@Model.ImageUrls[0]" alt="@Model.Name" />
+                                @if (Model.ImageUrls.Count > 1)
+                                {
+                                    <button type="button" class="lgal-arrow lgal-prev" aria-label="prev"><svg class="lum-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+                                    <button type="button" class="lgal-arrow lgal-next" aria-label="next"><svg class="lum-icon" viewBox="0 0 24 24"><path fill="currentColor" d="m8.59 16.59 1.41 1.41 6-6-6-6-1.41 1.41L13.17 12z"/></svg></button>
+                                    <span class="lgal-count">1 / @Model.ImageUrls.Count</span>
+                                }
+                            </div>
+                            @if (Model.ImageUrls.Count > 1)
+                            {
+                                <div class="lgal-thumbs">
+                                    @foreach (var (url, i) in Model.ImageUrls.Select((u, i) => (u, i)))
+                                    {
+                                        <button type="button" class="lgal-thumb @(i == 0 ? "is-active" : "")" data-src="@url">
+                                            <img src="@url" alt="" loading="lazy" />
+                                        </button>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <div class="udet-card">
+                    <h2 class="udet-section-title">@SharedLocalizer["AboutUniversity"]</h2>
+                    <p class="udet-description">@Model.ShortDescription</p>
+                </div>
+
+                @if (Model.ProgramNames.Count > 0)
+                {
+                    <div class="udet-card">
+                        <h2 class="udet-section-title">@SharedLocalizer["AvailablePrograms"]</h2>
+                        <div class="udet-programs">
+                            @foreach (var program in Model.ProgramNames)
+                            {
+                                <span class="uni-chip">@program</span>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <aside class="udet-side">
+                <div class="udet-card udet-cta-card">
+                    <span class="udet-tuition-label">@SharedLocalizer["AnnualTuition"]</span>
+                    <span class="udet-price">$@Model.AnnualTuitionUsd.ToString("N0") <small>@SharedLocalizer["PerYear"]</small></span>
+
+                    <a class="btn lum-btn-navy w-100 mt-3"
+                       asp-controller="Consultations" asp-action="Request" asp-route-universityId="@Model.Id">
+                        @SharedLocalizer["ApplyNow"]
+                    </a>
+                    <a class="btn lum-btn-outline w-100 mt-2"
+                       asp-controller="Universities" asp-action="Index">
+                        @SharedLocalizer["BackToList"]
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/pages/gallery.js" asp-append-version="true"></script>
+}

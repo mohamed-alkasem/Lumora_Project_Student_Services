@@ -1,0 +1,88 @@
+/* ============================================================
+   FAQ page (Bootstrap accordion, restyled). Logical properties.
+   ============================================================ */
+
+.faq-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--lum-navy-900) 0%, var(--lum-navy-800) 100%);
+    color: var(--lum-white);
+    padding-block: 3rem;
+    text-align: center;
+}
+
+.faq-hero-glow {
+    position: absolute;
+    inset-block-start: -4rem;
+    inset-inline-end: -4rem;
+    inline-size: 18rem;
+    block-size: 18rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 165, 26, 0.55) 0%, rgba(242, 165, 26, 0) 70%);
+    pointer-events: none;
+}
+
+.faq-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin-block-end: 0.5rem;
+}
+
+.faq-hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    margin-block-end: 0;
+}
+
+.faq-content {
+    padding-block: 2.5rem 3rem;
+}
+
+.faq-accordion {
+    max-inline-size: 46rem;
+    margin-inline: auto;
+}
+
+.faq-item {
+    border: none;
+    border-radius: var(--lum-radius) !important;
+    box-shadow: var(--lum-shadow);
+    margin-block-end: 0.9rem;
+    overflow: hidden;
+}
+
+.faq-item .accordion-button {
+    font-weight: 700;
+    color: var(--lum-navy-900);
+    background: var(--lum-white);
+    padding: 1.1rem 1.4rem;
+}
+
+.faq-item .accordion-button:not(.collapsed) {
+    background: var(--lum-navy-900);
+    color: var(--lum-white);
+    box-shadow: none;
+}
+
+.faq-item .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+.faq-item .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(242, 165, 26, 0.35);
+}
+
+.faq-answer {
+    color: var(--lum-text);
+    line-height: 1.75;
+    padding: 1.2rem 1.4rem;
+}
+
+.faq-cta {
+    text-align: center;
+    margin-block-start: 2.5rem;
+    color: var(--lum-muted);
+}
+
+.faq-cta p {
+    margin-block-end: 0.9rem;
+}
