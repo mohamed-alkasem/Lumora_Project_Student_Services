@@ -482,3 +482,5 @@ $RECYCLE.BIN/
 *.swp
 src/Lumora.Web/appsettings.Development.json 
 docs/
+src/Lumora.Web/appsettings.Development.json
+src/docs/
